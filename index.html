@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>Product description tabs builder</title>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  
+<script>
+
+//plugin to make any element text editable
+$.fn.extend({
+	editContent: function(input, submitOnEnter, beforeEdit, afterEdit){
+        $(this).each(function () {
+            let $el = $(this),
+			minHeight = $(input).css('min-height').replace('px', ''),
+            $edittextbox = $(input).css({'min-height': $el.innerHeight() > minHeight ? $el.innerHeight() : minHeight }),
+            submitChanges = function () {
+                if ($edittextbox.val() !== '') {
+				    let content = $edittextbox.val();
+					if( typeof afterEdit == 'function' ){
+						content = afterEdit(content);		
+					}
+                    $el.html( content );
+                    $el.trigger('editsubmit', [$el.html()]);
+					$(document).off('click', submitChanges);
+                    $edittextbox.detach();
+                }
+            },
+            tempVal;
+			
+            $edittextbox.on('click', function (event) {
+                event.stopPropagation();
+            });
+
+            $el.on('dblclick', function (e) {
+                tempVal = $el.html();
+				if( typeof beforeEdit == 'function' ){
+				    tempVal = beforeEdit(tempVal);		
+                }				
+                $edittextbox.val(tempVal).insertBefore(this);
+				if(submitOnEnter) {
+                    $edittextbox.bind('keypress', function (e) {
+                        var code = (e.keyCode ? e.keyCode : e.which);
+                        if (code == 13) {
+                            submitChanges();
+                        }
+                    }).select();
+				}
+                $(document).click(submitChanges);
+                return false;
+            });
+        });
+        return this;	
+	}
+});
+
+
+function addTab(){
+   let lastChild = $('ul.tabs > li').last(),
+   newHeading = $('<li class="tab-link"></li>'),
+   newContent = $('<div class="tab-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>'),
+   tabId = Number( lastChild.attr('data-tab') ),
+   newTabId = isNaN(tabId) ? 0 : tabId + 1;
+   
+   newHeading
+   .attr('data-tab', newTabId)
+   .addClass('tab-link-' + newTabId)
+   .html('New heading');
+   
+   $('ul.tabs').append(newHeading);
+   
+   newContent
+   .addClass('tab-content-' + newTabId);
+
+   $('.product-tabs').append(newContent);
+   
+   return newTabId;
+}
+
+function changeCurrent(el){
+   let $el = $(el),
+   tabId = $el.attr('data-tab');
+
+   $('.tab-link').removeClass('current');
+   $('.tab-content').removeClass('current');
+   $el.addClass('current');
+   $('.tab-content-' + tabId).addClass('current');	
+}
+
+function attachTabLinkClickEvent(el){
+    let $el = $(el),
+    tabId = $el.attr('data-tab');
+	
+    $el.on('click', function(){  
+	  changeCurrent(this);
+	});
+
+    //allow editing tab content
+    $el.editContent('<input type="text"></input>', true).on('editsubmit', function (event, val) {
+	  //Todo: if heading is empty remove tab
+	  //Replace newline \n with <br> html tag
+	  console.log('text changed to ' + val);
+    });   
+  
+    $('.tab-content-' + tabId).editContent('<textarea style="min-height:330px"></textarea>', 
+	  false, 
+	  function(value){
+		//replace all break with newline
+		//replace all double space with one
+		return value
+		.replaceAll('<br>', '<br>\n')
+		.replace(/  +/g, ' ');
+	  }, 
+	  function(value){
+	   //replace all newline with break
+	   return value.replaceAll('<br>\n', '<br>');	  
+	  }
+    );
+}
+
+//new tab
+function addNewTab(){
+  //add last heading
+  let newTabId = addTab();
+  attachTabLinkClickEvent('.tab-link-'+newTabId);
+  changeCurrent('.tab-link-'+newTabId);
+  
+  return false;
+}
+
+function removeCurrentTab(el){
+  let tab = $('.tab-link.current').prev(), tabId;
+  
+  if(el) tab = $(el).prev();
+  
+  //remove link and content
+  $('.tab-link.current').detach();
+  $('.tab-content.current').detach();
+  
+  //we removed the first
+  if(tab.length == 0) {
+     tab = $('ul.tabs > li').first();
+  }
+  
+  tabId = tab.attr('data-tab');
+  
+  //set new current tab
+  $('.tab-content-' + tabId).addClass('current');
+  $('.tab-link-' + tabId).addClass('current');
+  
+  return false;
+}
+
+function removeAllTabs(){
+  $('.tab-link').detach();
+  $('.tab-content').detach();
+}
+
+function copyToClipboard(){
+  selectAll();
+  document.execCommand("copy");
+  return false;
+}
+
+function selectAll(){
+  $('.messagepop .raw-content').select();
+  return false;
+}
+
+//generate tab content
+function generateHTML(){
+   var tabhtml = "";
+   $('ul.tabs > li').each(function(){
+      var tabId = $(this).attr('data-tab');
+	  var tabContent = $(' .tab-content-' + tabId).html().trim();
+      var heading = $(this).text().trim();
+	  tabhtml += '<h6>'+ heading +'</h6>\n'+ tabContent+'\n\n';
+	  $('.messagepop .raw-content').html(tabhtml);
+   });
+   $('.messagepop').animate({ opacity: 'toggle', height: 'toggle' }, 'fast');
+   $('#close', '.messagepop').one('click', function(){
+      $('.messagepop').animate({ opacity: 'toggle', height: 'toggle'}, 'fast', function(){
+	     $(this).css('display', 'none');
+	  });
+   });
+}
+
+$(document).ready(function() {
+  //set tab current to 0
+  $('.tab-content-0').addClass('current');
+  $('.tab-link-0').addClass('current');
+  
+  $('.tab-link').each(function(){
+     attachTabLinkClickEvent(this);
+  });
+  
+  removeAllTabs();
+  addNewTab();
+  
+});
+
+</script>
+
+<style>
+.tabs-wrapper {
+    padding-top: 30px;
+}
+
+.wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 15px 30px 15px;
+}
+.product-tabs {
+    max-width: 100%;
+}
+ul.tabs {
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+ul.tabs > li.current {
+    border-bottom: 2px solid /*!setting.color_border{*/#cccccc/*}*/;
+    color: #656565;
+    font-weight: 700;
+}
+ul.tabs > span,
+ul.tabs > input,
+ul.tabs > li {
+    background: none;
+    color: /*!setting.color_primary{*/#333333/*}*/;
+    display: inline-block;
+    padding: 15px;
+    margin: 0rem 2rem 0rem 0rem;
+    font-weight: 400;
+    cursor: pointer;
+    vertical-align: bottom;
+    border-bottom: 2px solid transparent;
+}
+.tab-content {
+    display: none;
+    border-top: 1px solid /*!setting.color_border{*/#cccccc/*}*/;
+    padding: 15px 15px 15px 0px;
+    min-height: 6rem;
+}
+.tab-content.current {
+    display: inherit;
+}
+input + .tab-link,
+textarea + .tab-content.current{
+   display: none !important;
+}
+b, strong, .strong {
+    font-weight: 700;
+}
+textarea{
+   min-width: 100%;
+   max-width: 100%;
+   padding: 0 10px;
+}
+.messagepop {
+  background-color:#FFFFFF;
+  border:1px solid #999999;
+  cursor:default;
+  display:none;
+  margin-top: 15px;
+  position:absolute;
+  text-align:left;
+  width:100%;
+  max-width: 1180px;
+  z-index:50;
+  padding: 25px 25px 20px;
+}
+.messagepop p, .messagepop.div {
+  border-bottom: 1px solid #EFEFEF;
+  margin: 8px 0;
+  padding-bottom: 8px;
+}
+.messagepop textarea{
+   min-height:430px;
+   max-width: 100%;
+   min-width: 100%;
+}
+</style>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<!-- Font-awesome icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div class="wrapper tabs-wrapper productTabsWrapper">
+   <h2>Create product description tabs</h2>
+   <p> Double click the tab heading or content to edit</p>
+   <button class="btn btn-primary" onclick="generateHTML();">Generate Tab HTML</button>
+   <button class="btn btn-danger" onclick="removeCurrentTab();"><i class="fa fa-trash"></i> Delete</button>
+   <button class="btn btn-default" onclick="addNewTab();"><i class="fa fa-plus"></i> Add</button>
+   <button class="btn btn-default" onclick="removeAllTabs();"><i class="fa fa-refresh"></i> Clear</button>
+   <div class="messagepop">
+      <h3>Formatted HTML:</h3>
+	  <div class="buttons">
+		<button class="btn btn-info" id="copyToClipboard" onclick="copyToClipboard();" title="Copies the formatted HTML document to the clipboard"><span>COPY TO CLIPBOARD</span></button>						
+		<button class="btn btn-info" id="selectAll" onclick="selectAll();" title="Selects all of the formatted HTML document"><span>SELECT ALL</span></button>
+		<button class="btn btn-danger" id="close">CLOSE</button>
+	  </div>
+	  <p>
+        <textarea class="raw-content"></textarea>	
+      </p>
+   </div>
+   <div class="product-tabs">
+      <ul class="tabs product-tabs-title">
+         <li class="tab-link tab-link-0" data-tab="0">Description</li>
+         <li class="tab-link tab-link-1" data-tab="1">How To Use</li>
+         <li class="tab-link tab-link-2" data-tab="2">Frequently Asked Questions</li>
+         <li class="tab-link tab-link-3" data-tab="3">Ingredients</li>
+         <li class="tab-link tab-link-4" data-tab="4">Shipping Information</li>
+      </ul>
+      <div class="tab-content tab-content-0">Bundle includes:<br><br>1 x Biologi BC Refresh Cleanser 150ml<br><br>2 x Biologi Microfibre Cloths<br><br>1 x Washbag<br><br>BC Refresh Cleanser<br><br>Harnessing the untouched power of soapberry extract, Bc Refresh Cleanser is packed with nourishing actives that wash away impurities to leave skin fresh, clean and clear.In a world first, naturally occurring amino acids, phenolic acids and amines work in synergy to remove all traces of dirt without disturbing the skin’s natural oils and moisture essential for hydration.<br><br>Benefits:<br><br>Deeper clean to remove impurities from the epidermis <br>Use morning and night to nourish and protect pores <br>Antioxidant protection<br>Anti-inflammatory to reduce redness and irritation<br>Suitable for sensitive and problematic skin types<br>150ml<br><br>Microfibre Cloths<br><br>Aligned with Biologi's commitment to sustainable products and practices, washable, reusable microfibre cloths are the ultimate choice in makeup removal. The uncompromising alternative to disposable makeup removers. Biologi Microfibre Cloths area ctivated by water alone. Hundreds of tiny fibres target particles and draw them away from the skin's surface moving them safely and hygienically away from the face. Place microfibre cloths in the reusable wash bag for protection during washing<br>
+      </div>
+      <div class="tab-content tab-content-1">Wet the Biologi microfibre cloth with water and sweep across the face including the eye area to remove all surface makeup, sunscreen and oil. Use both sides of the cloth to remove heavy makeup.<br><br>Apply one to two pumps of Bc Refresh Cleanser to damp skin and massage for 30 seconds.<br><br>Rinse with cool water.<br><br>Wait for the skin to dry thoroughly (approximately five minutes) and apply Biologi serum of choice
+      </div>
+      <div class="tab-content tab-content-2"><strong>Q. How long do the microfibre cloths last?</strong><br><br>A: If instructions are followed correctly, each cloth can be used up to 200 times!<br><br><strong>Q: How do I wash the cloths?</strong><br><br>A: Place cloths in the wash bag and wash on a cool, gentle cycle with washing powder. Avoid fabric softener as the conditioner can damage the microfibres and they'll loose their effectiveness faster.<br><br><strong>Q: Can I use the cleanser without the microfibre cloth?</strong> <br><br>A: Bc Refresh Cleanser is suitable on its own for the morning cleanse however for the best results, we recommend you use both the microfibre cloth and the BC Refresh Cleanser in the evening.<br><br> <br>
+      </div>
+      <div class="tab-content tab-content-3">BC Cleanser<br><br>Sapindus mukorossi(soapberry)Fruit Extract, 0.2% Sodium Benzoate<br>
+      </div>
+      <div class="tab-content tab-content-4"><p>Free AU shipping for all orders over $99. Orders under this amount flat rate of $9.95 for standard shipping.</p><p>Express shipping options - Orders below $99 flat rate $14.95. Orders over $99.00 flat rate $6.95</p><p>International shipping. Charge is based on weight which is calculated at checkout.&nbsp;</p>
+      </div>
+   </div>
+</div>
+
+</body>
+</html>
