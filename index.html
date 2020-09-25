@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <title>Product description tabs builder</title>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<!-- Font-awesome icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   
 <script>
 
@@ -57,22 +68,23 @@ $.fn.extend({
 });
 
 
-function addTab(){
+function addTab(heading, content){
    let lastChild = $('ul.tabs > li').last(),
    newHeading = $('<li class="tab-link"></li>'),
-   newContent = $('<div class="tab-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>'),
+   newContent = $('<div class="tab-content"></div>'),
    tabId = Number( lastChild.attr('data-tab') ),
    newTabId = isNaN(tabId) ? 0 : tabId + 1;
    
    newHeading
    .attr('data-tab', newTabId)
    .addClass('tab-link-' + newTabId)
-   .html('New heading');
+   .html(heading);
    
    $('ul.tabs').append(newHeading);
    
    newContent
-   .addClass('tab-content-' + newTabId);
+   .addClass('tab-content-' + newTabId)
+   .html(content);
 
    $('.product-tabs').append(newContent);
    
@@ -123,7 +135,7 @@ function attachTabLinkClickEvent(el){
 //new tab
 function addNewTab(){
   //add last heading
-  let newTabId = addTab();
+  let newTabId = addTab('New heading', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
   attachTabLinkClickEvent('.tab-link-'+newTabId);
   changeCurrent('.tab-link-'+newTabId);
   
@@ -187,17 +199,124 @@ function generateHTML(){
    });
 }
 
+
+function getShopifyProductDescription(url){
+ $.ajax({
+	 url: url,
+	 dataType: 'json',
+	 type: "GET",
+	 success: function(data) {
+		if(data.product && data.product['body_html'] ){
+			
+			let html = data.product['body_html']
+			//cleaning data
+			//remove empty html tags
+			.replaceAll(/<[^\/>][^>]*>[\s]*<\/[^>]+>/g, '')
+			//remove div tags
+			.replaceAll(/<(\/?)div.*?>/g, '')
+			//remove meta tags
+			.replaceAll(/<(\/?)meta.*?>/g, '');
+
+			//get tabs
+			const regex = /(<h[1-6].*?h[1-6]\>)/g;
+			let tabs = html.split(regex),
+			i = 0;
+			//console.log(tabs);
+			if(tabs.length > 0){
+				while( i < tabs.length - 1 ){
+					let title = tabs[i].match(regex);
+					if(title){
+						//console.log(tabs[i]);
+						//console.log(tabs[i + 1]);
+						let newTabId = addTab($(tabs[i]).text().trim(), tabs[i + 1].trim());
+						attachTabLinkClickEvent('.tab-link-'+newTabId);
+						changeCurrent('.tab-link-'+newTabId);						
+						i += 1;
+					}
+					i += 1;
+				}
+			}	
+		}
+	 }
+  });	
+	
+}
+
+function validURL(str) {
+  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,})'+ // domain name
+    '(\\/[-a-z\\d%_.~+]*)*'+ // path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return !!pattern.test(str);
+}
+
 $(document).ready(function() {
-  //set tab current to 0
-  $('.tab-content-0').addClass('current');
-  $('.tab-link-0').addClass('current');
-  
-  $('.tab-link').each(function(){
-     attachTabLinkClickEvent(this);
-  });
-  
-  removeAllTabs();
-  addNewTab();
+	//set tab current to 0
+	$('.tab-content-0').addClass('current');
+	$('.tab-link-0').addClass('current');
+
+	$('.tab-link').each(function(){
+	 attachTabLinkClickEvent(this);
+	});
+
+	removeAllTabs();
+	addNewTab();
+
+	$('.button-link').click(function(event) {
+		let sectionTo = $(this).attr('href');
+		$('html, body').animate({
+		  scrollTop: $(sectionTo).offset().top
+		}, 1000, function(){
+			window.location.hash = sectionTo;
+		});
+		return false;
+	});
+	
+	$( '.shopify-url' ).keyup(function() {
+		let link = $(this).val();
+		
+		$(this)
+			.removeClass('is-valid')
+			.removeClass('is-invalid');
+			
+		if(link.length > 0){
+			if(validURL(link) && link.indexOf("/products/") > -1){
+				$(this).addClass('is-valid');
+			} else {
+				$(this).addClass('is-invalid');
+			}
+		}
+	});	
+
+	$('#fixTabs').click(function(event) {
+		let url = $('.shopify-url.is-valid').val();
+		//check for http(s) protocol
+		const regex = /^(https?:\/\/)/;
+		if( !url.match(regex) ){
+			url = 'https://'+url;
+		}
+		//remove query string
+		url = url.split('?')[0];
+		// remove query hash
+		url = url.split('#')[0];
+		//remove trailing slash
+		url = url.replace(/\/$/, '');
+		
+		let foundext = url.indexOf('.', url.lastIndexOf('/')+1);
+		if ( foundext === -1 ){
+			//add the json extension
+			url = url+'.json';
+		} else if ( url.substr(foundext+1) !== 'json' ){
+			//extension different
+			return false;
+		}
+		//correct url found
+		removeAllTabs();
+		getShopifyProductDescription( url );
+		$('.button-link').trigger('click');
+		return false;
+	}); 	
   
 });
 
@@ -209,6 +328,7 @@ $(document).ready(function() {
 }
 
 .wrapper {
+	height: 100vh;
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 15px 30px 15px;
@@ -285,29 +405,49 @@ textarea{
    max-width: 100%;
    min-width: 100%;
 }
+@media (max-width: 768px) {
+	.btn{
+	   margin-top: 5px; 
+	   margin-bottom: 5px;
+	}
+	.btn-group-lg .btn{
+		margin-top: 10px;
+		width:100%;
+	}
+}
+kbd {
+    color: #212529;
+    background-color: #fff;
+}
 </style>
 
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-
-<!-- Font-awesome icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
 
-<div class="wrapper tabs-wrapper productTabsWrapper">
+<div class="container-fluid" style="min-height: 100vh; color: #fff; background-color:#2aabd2; display: flex; align-items: center;">
+	<div class="container text-center">
+		<div class="col text-center">
+			<h2>Product Description Tabs</h2>
+			<p class="lead">Create a product tabs or fix your product description</p>
+			<p class="lead">If frontpage password enabled use the preview link</p>
+			<p><kbd>https://jcwxsjqvbuw2hto6-20188867.shopifypreview.com/collections/womens/products/cydney-plaid</kbd></p>
+		</div>
+		<div class="input-group-lg">
+			<input class="form-control shopify-url" type="text" placeholder="https://xxxxxx.myshopify.com/products/test" aria-label="Search"/>
+		</div>
+		<div class="btn-group-lg" style="margin-top: 20px;">
+		   <a class="btn btn-primary button-link" href="#tabs"><i class="fa fa-code"></i> Create Tabs</a>
+		   <button class="btn btn-info" id="fixTabs" ><i class="fa fa-wrench"></i> Fix Tabs</button>
+		</div>
+	</div>
+</div>
+
+<div id="tabs" class="wrapper tabs-wrapper">
    <h2>Create product description tabs</h2>
    <p> Double click the tab heading or content to edit</p>
-   <button class="btn btn-primary" onclick="generateHTML();">Generate Tab HTML</button>
+   <button class="btn btn-primary" onclick="generateHTML();">Generate HTML</button>
    <button class="btn btn-danger" onclick="removeCurrentTab();"><i class="fa fa-trash"></i> Delete</button>
    <button class="btn btn-default" onclick="addNewTab();"><i class="fa fa-plus"></i> Add</button>
    <button class="btn btn-default" onclick="removeAllTabs();"><i class="fa fa-refresh"></i> Clear</button>
