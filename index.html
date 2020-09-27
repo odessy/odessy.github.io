@@ -68,229 +68,191 @@ $.fn.extend({
 });
 
 
-function addTab(heading, content){
-   let lastChild = $('ul.tabs > li').last(),
-   newHeading = $('<li class="tab-link"></li>'),
-   newContent = $('<div class="tab-content"></div>'),
-   tabId = Number( lastChild.attr('data-tab') ),
-   newTabId = isNaN(tabId) ? 0 : tabId + 1;
-   
-   newHeading
-   .attr('data-tab', newTabId)
-   .addClass('tab-link-' + newTabId)
-   .html(heading);
-   
-   $('ul.tabs').append(newHeading);
-   
-   newContent
-   .addClass('tab-content-' + newTabId)
-   .html(content);
+var productTabs = {
+   tabCount: 0,
+   $tab: null,
+   defaultHeading: 'New heading',
+   defaultContent: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod '+
+                   'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, '+
+				   'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '+
+				   'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu '+
+				   'fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in '+
+				   'culpa qui officia deserunt mollit anim id est laborum.</p>',
+   tabCurrentClass: '.current',
+   tabLinkClass: '.tab-link',
+   tabContentClass: '.tab-content',
+   messagepopClass: '.messagepop',
+   getTabLinkClass: function(id){
+      return this.tabLinkClass+'-'+id;
+   },
+   getTabContentClass: function(id){
+      return this.tabContentClass+'-'+id;
+   },   
+   addTab: function(heading, content){
+       let newTabId = this.tabCount; this.tabCount+=1;
+	   newHeading = $('<li class="tab-link"></li>'),
+	   newContent = $('<div class="tab-content"></div>');
+	   
+	   newHeading
+	   .attr('data-tab', newTabId)
+	   .addClass('tab-link-' + newTabId)
+	   .html(heading);
+	   
+	   newContent
+	   .addClass('tab-content-' + newTabId)
+	   .html(content);
+	   
+	   if( $('.tab-link'+this.tabCurrentClass).length > 0 ){
+			newHeading.insertAfter($('.tab-link'+this.tabCurrentClass));
+	   } else {
+		   $('ul.tabs').append(newHeading);
+	   }
+	   
+	   if( $('.tab-content'+this.tabCurrentClass).length > 0 ){
+		  newContent.insertAfter($('.tab-content'+this.tabCurrentClass));
+	   } else {
+		  $('.product-tabs').append(newContent);
+	   }
+	   
+	   return newTabId;
+	},
+	addNewTab: function (){
+	  //add last heading
+	  let newTabId = this.addTab(this.defaultHeading, this.defaultContent);
+	  this.attachTabLinkClickEvent(this.getTabLinkClass(newTabId));
+	  this.changeCurrent(this.getTabLinkClass(newTabId));
+	  return false;
+	},
+	attachTabLinkClickEvent: function (el){
+		let $el = $(el),
+		self = this,
+		tabId = $el.attr('data-tab');
+		
+		$el.on('click', function(){  
+		  self.changeCurrent(this);
+		});
 
-   $('.product-tabs').append(newContent);
-   
-   return newTabId;
-}
-
-function changeCurrent(el){
-   let $el = $(el),
-   tabId = $el.attr('data-tab');
-
-   $('.tab-link').removeClass('current');
-   $('.tab-content').removeClass('current');
-   $el.addClass('current');
-   $('.tab-content-' + tabId).addClass('current');	
-}
-
-function attachTabLinkClickEvent(el){
-    let $el = $(el),
-    tabId = $el.attr('data-tab');
-	
-    $el.on('click', function(){  
-	  changeCurrent(this);
-	});
-
-    //allow editing tab content
-    $el.editContent('<input type="text"></input>', true).on('editsubmit', function (event, val) {
-	  //Todo: if heading is empty remove tab
-	  //Replace newline \n with <br> html tag
-	  console.log('text changed to ' + val);
-    });   
-  
-    $('.tab-content-' + tabId).editContent('<textarea style="min-height:330px"></textarea>', 
-	  false, 
-	  function(value){
-		//replace all break with newline
-		//replace all double space with one
-		return value
-		.replaceAll('<br>', '<br>\n')
-		.replace(/  +/g, ' ');
-	  }, 
-	  function(value){
-	   //replace all newline with break
-	   return value.replaceAll('<br>\n', '<br>');	  
+		//allow editing tab content
+		$el.editContent('<input type="text"></input>', true).on('editsubmit', function (event, val) {
+		  //Todo: if heading is empty remove tab
+		  //Replace newline \n with <br> html tag
+		  console.log('text changed to ' + val);
+		});   
+	  
+		$( this.getTabContentClass(tabId) ).editContent('<textarea style="min-height:330px"></textarea>', 
+		  false, 
+		  function(value){
+			//replace all break with newline
+			//replace all double space with one
+			return value
+			.replaceAll('<br>', '<br>\n')
+			.replace(/  +/g, ' ');
+		  }, 
+		  function(value){
+		   //replace all newline with break
+		   return value.replaceAll('<br>\n', '<br>');	  
+		  }
+		);
+	},
+	changeCurrent: function (el){
+	   this.$tab = $(el);
+	   $(this.tabLinkClass).removeClass('current');
+	   $(this.tabContentClass).removeClass('current');
+	   this.$tab.addClass('current');
+	   $( this.getTabContentClass(this.$tab.attr('data-tab')) ).addClass('current');	
+	},
+	removeCurrentTab: function (el){
+	  let tab = $(this.tabLinkClass+this.tabCurrentClass).prev(), tabId;
+	  
+	  if(el) tab = $(el).prev();
+	  
+	  //remove link and content
+	  $(this.tabLinkClass+this.tabCurrentClass).detach();
+	  $(this.tabContentClass+this.tabCurrentClass).detach();
+	  
+	  //we removed the first
+	  if(tab.length == 0) {
+		 tab = $('ul.tabs > li').first();
 	  }
-    );
-}
+	  
+	  tabId = tab.attr('data-tab');
+	  
+	  //set new current tab
+	  $( this.getTabContentClass(tabId) ).addClass('current');
+	  $( this.getTabLinkClass(tabId) ).addClass('current');
+	  
+	  return false;
+	},
+	removeAllTabs:  function (){
+	  $( this.tabLinkClass ).detach();
+	  $( this.tabContentClass ).detach();
+	},
+	generateHTML: function (){
+	   let self = this, tabhtml = "";
+	   $(this.tabLinkClass).each(function(){
+		  var tabId = $(this).attr('data-tab');
+		  var tabContent = $(  self.getTabContentClass(tabId) ).html().trim();
+		  var heading = $(this).text().trim();
+		  tabhtml += '<h6>'+ heading +'</h6>\n'+ tabContent+'\n\n';
+		  $('.raw-content', this.messagepopClass).html(tabhtml);
+	   });
+	   $(this.messagepopClass).animate({ opacity: 'toggle', height: 'toggle' }, 'fast');
+	   $('#close', this.messagepopClass).one('click', function(){
+		  $(self.messagepopClass).animate({ opacity: 'toggle', height: 'toggle'}, 'fast', function(){
+			 $(this).css('display', 'none');
+		  });
+	   });
+	},
+	getShopifyProductDescription: function (url){
+	 let self = this;
+	 $.ajax({
+		 url: url,
+		 dataType: 'json',
+		 type: "GET",
+		 success: function(data) {
+			if(data.product && data.product['body_html'] ){
+				
+				let html = data.product['body_html']
+				//cleaning data
+				//remove empty html tags
+				.replaceAll(/<[^\/>][^>]*>[\s]*<\/[^>]+>/g, '')
+				//remove div tags
+				.replaceAll(/<(\/?)div.*?>/g, '')
+				//remove meta tags
+				.replaceAll(/<(\/?)meta.*?>/g, '');
 
-//new tab
-function addNewTab(){
-  //add last heading
-  let newTabId = addTab('New heading', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-  attachTabLinkClickEvent('.tab-link-'+newTabId);
-  changeCurrent('.tab-link-'+newTabId);
-  
-  return false;
-}
-
-function removeCurrentTab(el){
-  let tab = $('.tab-link.current').prev(), tabId;
-  
-  if(el) tab = $(el).prev();
-  
-  //remove link and content
-  $('.tab-link.current').detach();
-  $('.tab-content.current').detach();
-  
-  //we removed the first
-  if(tab.length == 0) {
-     tab = $('ul.tabs > li').first();
-  }
-  
-  tabId = tab.attr('data-tab');
-  
-  //set new current tab
-  $('.tab-content-' + tabId).addClass('current');
-  $('.tab-link-' + tabId).addClass('current');
-  
-  return false;
-}
-
-function removeAllTabs(){
-  $('.tab-link').detach();
-  $('.tab-content').detach();
-}
-
-function copyToClipboard(){
-  selectAll();
-  document.execCommand("copy");
-  return false;
-}
-
-function selectAll(){
-  $('.messagepop .raw-content').select();
-  return false;
-}
-
-//generate tab content
-function generateHTML(){
-   var tabhtml = "";
-   $('ul.tabs > li').each(function(){
-      var tabId = $(this).attr('data-tab');
-	  var tabContent = $(' .tab-content-' + tabId).html().trim();
-      var heading = $(this).text().trim();
-	  tabhtml += '<h6>'+ heading +'</h6>\n'+ tabContent+'\n\n';
-	  $('.messagepop .raw-content').html(tabhtml);
-   });
-   $('.messagepop').animate({ opacity: 'toggle', height: 'toggle' }, 'fast');
-   $('#close', '.messagepop').one('click', function(){
-      $('.messagepop').animate({ opacity: 'toggle', height: 'toggle'}, 'fast', function(){
-	     $(this).css('display', 'none');
-	  });
-   });
-}
-
-
-function getShopifyProductDescription(url){
- $.ajax({
-	 url: url,
-	 dataType: 'json',
-	 type: "GET",
-	 success: function(data) {
-		if(data.product && data.product['body_html'] ){
-			
-			let html = data.product['body_html']
-			//cleaning data
-			//remove empty html tags
-			.replaceAll(/<[^\/>][^>]*>[\s]*<\/[^>]+>/g, '')
-			//remove div tags
-			.replaceAll(/<(\/?)div.*?>/g, '')
-			//remove meta tags
-			.replaceAll(/<(\/?)meta.*?>/g, '');
-
-			//get tabs
-			const regex = /(<h[1-6].*?h[1-6]\>)/g;
-			let tabs = html.split(regex),
-			i = 0;
-			//console.log(tabs);
-			if(tabs.length > 0){
-				while( i < tabs.length - 1 ){
-					let title = tabs[i].match(regex);
-					if(title){
-						//console.log(tabs[i]);
-						//console.log(tabs[i + 1]);
-						let newTabId = addTab($(tabs[i]).text().trim(), tabs[i + 1].trim());
-						attachTabLinkClickEvent('.tab-link-'+newTabId);
-						changeCurrent('.tab-link-'+newTabId);						
+				//get tabs
+				const regex = /(<h[5-6].*?h[5-6]\>)/g;
+				let tabs = html.split(regex),
+				i = 0;
+				//console.log(tabs);
+				if(tabs.length > 0){
+					while( i < tabs.length - 1 ){
+						let title = tabs[i].match(regex);
+						if(title){
+							//console.log(tabs[i]);
+							//console.log(tabs[i + 1]);
+							let newTabId = self.addTab($(tabs[i]).text().trim(), tabs[i + 1].trim());
+							self.attachTabLinkClickEvent( self.getTabLinkClass(newTabId) );
+							self.changeCurrent( self.getTabLinkClass(newTabId) );						
+							i += 1;
+						}
 						i += 1;
 					}
-					i += 1;
-				}
-			}	
-		}
-	 }
-  });	
-	
-}
-
-function validURL(str) {
-  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,})'+ // domain name
-    '(\\/[-a-z\\d%_.~+]*)*'+ // path
-    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-  return !!pattern.test(str);
-}
-
-$(document).ready(function() {
-	//set tab current to 0
-	$('.tab-content-0').addClass('current');
-	$('.tab-link-0').addClass('current');
-
-	$('.tab-link').each(function(){
-	 attachTabLinkClickEvent(this);
-	});
-
-	removeAllTabs();
-	addNewTab();
-
-	$('.button-link').click(function(event) {
-		let sectionTo = $(this).attr('href');
-		$('html, body').animate({
-		  scrollTop: $(sectionTo).offset().top
-		}, 1000, function(){
-			window.location.hash = sectionTo;
-		});
-		return false;
-	});
-	
-	$( '.shopify-url' ).keyup(function() {
-		let link = $(this).val();
-		
-		$(this)
-			.removeClass('is-valid')
-			.removeClass('is-invalid');
-			
-		if(link.length > 0){
-			if(validURL(link) && link.indexOf("/products/") > -1){
-				$(this).addClass('is-valid');
-			} else {
-				$(this).addClass('is-invalid');
+				}	
 			}
-		}
-	});	
-
-	$('#fixTabs').click(function(event) {
-		let url = $('.shopify-url.is-valid').val();
+		 }
+	  });	
+	},
+	validURL: function (str) {
+	  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+		'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,})'+ // domain name
+		'(\\/[-a-z\\d%_.~+]*)*'+ // path
+		'(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+		'(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+	  return !!pattern.test(str);
+	},
+	fixTabs: function(url) {
 		//check for http(s) protocol
 		const regex = /^(https?:\/\/)/;
 		if( !url.match(regex) ){
@@ -312,8 +274,56 @@ $(document).ready(function() {
 			return false;
 		}
 		//correct url found
-		removeAllTabs();
-		getShopifyProductDescription( url );
+		this.removeAllTabs();
+		this.getShopifyProductDescription( url );	
+	},
+	copyToClipboard: function (){
+	  this.selectAll();
+	  document.execCommand("copy");
+	  return false;
+	},
+	selectAll: function (){
+	  $('.raw-content', this.messagepopClass).select();
+	  return false;
+	}
+	
+};
+
+
+$(document).ready(function() {
+
+	productTabs.removeAllTabs();
+	productTabs.addNewTab();
+
+	$('.button-link').click(function(event) {
+		let sectionTo = $(this).attr('href');
+		$('html, body').animate({
+		  scrollTop: $(sectionTo).offset().top
+		}, 1000, function(){
+			window.location.hash = sectionTo;
+		});
+		return false;
+	});
+	
+	$( '.shopify-url' ).keyup(function() {
+		let link = $(this).val();
+		
+		$(this)
+			.removeClass('is-valid')
+			.removeClass('is-invalid');
+			
+		if(link.length > 0){
+			if(productTabs.validURL(link) && link.indexOf("/products/") > -1){
+				$(this).addClass('is-valid');
+			} else {
+				$(this).addClass('is-invalid');
+			}
+		}
+	});	
+
+	$('#fixTabs').click(function(event) {
+		let url = $('.shopify-url.is-valid').val();
+		productTabs.fixTabs(url);
 		$('.button-link').trigger('click');
 		return false;
 	}); 	
@@ -431,8 +441,8 @@ kbd {
 	<div class="container text-center">
 		<div class="col text-center">
 			<h2>Product Description Tabs</h2>
-			<p class="lead">Create a product tabs or fix your product description</p>
-			<p class="lead">If frontpage password enabled use the preview link</p>
+			<p class="lead">Create product tabs or fix your product description</p>
+			<p class="lead">If password page enabled use the preview link</p>
 			<p><kbd>https://jcwxsjqvbuw2hto6-20188867.shopifypreview.com/collections/womens/products/cydney-plaid</kbd></p>
 		</div>
 		<div class="input-group-lg">
@@ -448,15 +458,15 @@ kbd {
 <div id="tabs" class="wrapper tabs-wrapper">
    <h2>Create product description tabs</h2>
    <p> Double click the tab heading or content to edit</p>
-   <button class="btn btn-primary" onclick="generateHTML();">Generate HTML</button>
-   <button class="btn btn-danger" onclick="removeCurrentTab();"><i class="fa fa-trash"></i> Delete</button>
-   <button class="btn btn-default" onclick="addNewTab();"><i class="fa fa-plus"></i> Add</button>
-   <button class="btn btn-default" onclick="removeAllTabs();"><i class="fa fa-refresh"></i> Clear</button>
+   <button class="btn btn-primary" onclick="productTabs.generateHTML();">Generate HTML</button>
+   <button class="btn btn-danger" onclick="productTabs.removeCurrentTab();"><i class="fa fa-trash"></i> Delete</button>
+   <button class="btn btn-default" onclick="productTabs.addNewTab();"><i class="fa fa-plus"></i> Add</button>
+   <button class="btn btn-default" onclick="productTabs.removeAllTabs();"><i class="fa fa-refresh"></i> Clear</button>
    <div class="messagepop">
       <h3>Formatted HTML:</h3>
 	  <div class="buttons">
-		<button class="btn btn-info" id="copyToClipboard" onclick="copyToClipboard();" title="Copies the formatted HTML document to the clipboard"><span>COPY TO CLIPBOARD</span></button>						
-		<button class="btn btn-info" id="selectAll" onclick="selectAll();" title="Selects all of the formatted HTML document"><span>SELECT ALL</span></button>
+		<button class="btn btn-info" id="copyToClipboard" onclick="productTabs.copyToClipboard();" title="Copies the formatted HTML document to the clipboard"><span>COPY TO CLIPBOARD</span></button>						
+		<button class="btn btn-info" id="selectAll" onclick="productTabs.selectAll();" title="Selects all of the formatted HTML document"><span>SELECT ALL</span></button>
 		<button class="btn btn-danger" id="close">CLOSE</button>
 	  </div>
 	  <p>
