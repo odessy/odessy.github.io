@@ -82,6 +82,7 @@ var productTabs = {
    tabLinkClass: '.tab-link',
    tabContentClass: '.tab-content',
    messagepopClass: '.messagepop',
+   contentAboveTabs: '',
    getTabLinkClass: function(id){
       return this.tabLinkClass+'-'+id;
    },
@@ -102,14 +103,14 @@ var productTabs = {
 	   .addClass('tab-content-' + newTabId)
 	   .html(content);
 	   
-	   if( $('.tab-link'+this.tabCurrentClass).length > 0 ){
-			newHeading.insertAfter($('.tab-link'+this.tabCurrentClass));
+	   if( $(this.tabLinkClass+this.tabCurrentClass).length > 0 ){
+			newHeading.insertAfter($(this.tabLinkClass+this.tabCurrentClass));
 	   } else {
 		   $('ul.tabs').append(newHeading);
 	   }
 	   
-	   if( $('.tab-content'+this.tabCurrentClass).length > 0 ){
-		  newContent.insertAfter($('.tab-content'+this.tabCurrentClass));
+	   if( $(this.tabContentClass+this.tabCurrentClass).length > 0 ){
+		  newContent.insertAfter($(this.tabContentClass+this.tabCurrentClass));
 	   } else {
 		  $('.product-tabs').append(newContent);
 	   }
@@ -188,7 +189,7 @@ var productTabs = {
 	  $( this.tabContentClass ).detach();
 	},
 	generateHTML: function (){
-	   let self = this, tabhtml = "";
+	   let self = this, tabhtml = this.contentAboveTabs+'\n';
 	   $(this.tabLinkClass).each(function(){
 		  var tabId = $(this).attr('data-tab');
 		  var tabContent = $(  self.getTabContentClass(tabId) ).html().trim();
@@ -222,23 +223,45 @@ var productTabs = {
 				.replaceAll(/<(\/?)meta.*?>/g, '');
 
 				//get tabs
-				const regex = /(<h[5-6].*?h[5-6]\>)/g;
+				const regex = /(<h6.*?>[A-Za-z0-9._+\-\'\s]+.*?[\s]*)/g;
 				let tabs = html.split(regex),
-				i = 0;
-				//console.log(tabs);
+				i = 0, 
+				foundTabs = false;
+				
 				if(tabs.length > 0){
-					while( i < tabs.length - 1 ){
+					while( tabs.length >= 2 && i < tabs.length - 1 ){
 						let title = tabs[i].match(regex);
 						if(title){
-							//console.log(tabs[i]);
-							//console.log(tabs[i + 1]);
-							let newTabId = self.addTab($(tabs[i]).text().trim(), tabs[i + 1].trim());
+							foundTabs = true;
+							//console.log(tabs[i].replaceAll(/(<[^>]*\>)/g, '').trim());
+							//console.log(tabs[i + 1].replaceAll(/(<\/h6.*?>)/g, ''));
+							//get text by removing tags since html tags can be missing.
+							//remove any remaing h6 tab from the tab content
+							let newTabId = self.addTab(tabs[i].replaceAll(/(<[^>]*\>)/g, '').trim(), tabs[i + 1].replaceAll(/(<\/h6.*?>)/g, '').trim());
 							self.attachTabLinkClickEvent( self.getTabLinkClass(newTabId) );
 							self.changeCurrent( self.getTabLinkClass(newTabId) );						
 							i += 1;
+						} else if(foundTabs === false){
+							//this is content added above the tabs.
+							//it can be shown above the generateHTML tabs
+							self.contentAboveTabs = tabs[i];
 						}
 						i += 1;
 					}
+					
+					
+					//show content above tabs
+					$('.content-above-tabs').html(self.contentAboveTabs);
+					$('.content-above-tabs-wrapper').show();
+					
+					$('.readmore').off().click(function() {
+					  if ( $('.content-above-tabs').is( ":hidden" ) ) {
+						$('.content-above-tabs').show( "slow" );
+					  } else {
+						$('.content-above-tabs').slideUp();
+					  }
+					});					
+					
 				}	
 			}
 		 }
@@ -430,6 +453,18 @@ kbd {
     background-color: #fff;
 	word-break: break-all;
 }
+.content-above-tabs-wrapper{
+   text-align: center;
+}
+.content-above-tabs{
+   text-align: left;
+}
+.content-above-tabs-wrapper .readmore{
+   display: block;
+   background: #fafafa;
+   font-weight: 200;
+   margin: 10px 0;
+}
 </style>
 
 
@@ -474,6 +509,7 @@ kbd {
       </p>
    </div>
    <div class="product-tabs">
+	  <div class="content-above-tabs-wrapper" style="display:none"><a href="#tabs" class="readmore">----- Content above tabs -----</a><div style="display: none;" class="content-above-tabs"></div></div>
       <ul class="tabs product-tabs-title">
          <li class="tab-link tab-link-0" data-tab="0">Description</li>
          <li class="tab-link tab-link-1" data-tab="1">How To Use</li>
