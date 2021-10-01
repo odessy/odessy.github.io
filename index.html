@@ -257,22 +257,22 @@ var productTabs = {
 					
 					//show content above tabs
 					$('.content-above-tabs').html(self.contentAboveTabs);
-					$('.content-above-tabs-wrapper').show();
-					
-					$('.readmore').off().click(function() {
-					  if ( $('.content-above-tabs').is( ":hidden" ) ) {
-						$('.content-above-tabs').show( "slow" );
-					  } else {
-						$('.content-above-tabs').slideUp();
-					  }
-					});				
+					$('.content-above-tabs-wrapper').show();			
 					
 				} else {
 				   console.log(html);
 				   $('.content-above-tabs').html(html);
 				   $('.content-above-tabs-wrapper').show();
 				   $('.content-above-tabs').show();
-				}	
+				}
+
+				$('.readmore').off().click(function() {
+				  if ( $('.content-above-tabs').is( ":hidden" ) ) {
+					$('.content-above-tabs').show( "slow" );
+				  } else {
+					$('.content-above-tabs').slideUp();
+				  }
+				});
 			}
 		 }
 	  });	
