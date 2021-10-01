@@ -212,7 +212,7 @@ var productTabs = {
 		 type: "GET",
 		 success: function(data) {
 			if(data.product && data.product['body_html'] ){
-				
+			
 				let html = data.product['body_html']
 				//cleaning data
 				//remove empty html tags
@@ -228,7 +228,9 @@ var productTabs = {
 				i = 0, 
 				foundTabs = false;
 				
-				if(tabs.length > 0){
+				console.log("tabs found: " + tabs.length );
+				
+				if(tabs.length > 1){
 					while( tabs.length >= 2 && i < tabs.length - 1 ){
 						let title = tabs[i].match(regex);
 						if(title){
@@ -253,7 +255,6 @@ var productTabs = {
 						i += 1;
 					}
 					
-					
 					//show content above tabs
 					$('.content-above-tabs').html(self.contentAboveTabs);
 					$('.content-above-tabs-wrapper').show();
@@ -264,8 +265,13 @@ var productTabs = {
 					  } else {
 						$('.content-above-tabs').slideUp();
 					  }
-					});					
+					});				
 					
+				} else {
+				   console.log(html);
+				   $('.content-above-tabs').html(html);
+				   $('.content-above-tabs-wrapper').show();
+				   $('.content-above-tabs').show();
 				}	
 			}
 		 }
