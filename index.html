@@ -83,6 +83,7 @@ var productTabs = {
    tabContentClass: '.tab-content',
    messagepopClass: '.messagepop',
    contentAboveTabs: '',
+   headingTag: 'h6',
    getTabLinkClass: function(id){
       return this.tabLinkClass+'-'+id;
    },
@@ -194,7 +195,7 @@ var productTabs = {
 		  var tabId = $(this).attr('data-tab');
 		  var tabContent = $(  self.getTabContentClass(tabId) ).html().trim();
 		  var heading = $(this).text().trim();
-		  tabhtml += '<h6>'+ heading +'</h6>\n'+ tabContent+'\n\n';
+		  tabhtml += '<'+self.headingTag+'>'+ heading +'</'+self.headingTag+'>\n'+ tabContent+'\n\n';
 		  $('.raw-content', this.messagepopClass).html(tabhtml);
 	   });
 	   $(this.messagepopClass).animate({ opacity: 'toggle', height: 'toggle' }, 'fast');
@@ -223,7 +224,7 @@ var productTabs = {
 				.replaceAll(/<(\/?)meta.*?>/g, '');
 
 				//get tabs
-				const regex = /(<h6.*?>[A-Za-z0-9._+\-\'\s]+.*?[\s]*)/g;
+				const regex = /(<h[1-6].*?>[A-Za-z0-9._+\-\?\,\!\'\s]+.*?[\s]*)/g;
 				let tabs = html.split(regex),
 				i = 0, 
 				foundTabs = false;
@@ -241,6 +242,11 @@ var productTabs = {
 							//remove any remaing h6 tab from the tab content
 							//check if heading is empty
 							let heading = tabs[i].replaceAll(/(<[^>]*\>)/g, '').trim();
+							
+							if(tabs[i].indexOf('h1') != -1){
+								self.headingTag = 'h1';
+							}
+							
 							if( heading !== '' ) {
 								let newTabId = self.addTab(heading, tabs[i + 1].replaceAll(/(<\/h6.*?>)/g, '').trim());
 								self.attachTabLinkClickEvent( self.getTabLinkClass(newTabId) );
