@@ -1,5 +1,7 @@
 [comment]: <> (https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
+[comment]: <> (  tab-#tab-number-#list-number-#list-number-part )
+
 # Pipeline theme version 6
 
 ## Simple CSS changes
@@ -38,10 +40,10 @@ May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
 This allows the add to cart button to use the primary accent color
 
 <ul class="tabs">
-<li><a href="#tab-1">version 6.1.3</a></li>
-<li><a href="#tab-2">version 6.2.0</a></li>
+<li><a href="#tab-1-1">version 6.1.3</a></li>
+<li><a href="#tab-2-1">version 6.2.0</a></li>
 </ul>
-<div id="tab-1">
+<div id="tab-1-1">
 
 ```css
 /* CSS - change Add to Cart button color */
@@ -70,7 +72,7 @@ This allows the add to cart button to use the primary accent color
 ```
 
 </div>
-<div id="tab-2">
+<div id="tab-2-1">
 
 ```css
 /* CSS - change Add to Cart button color */
@@ -107,10 +109,10 @@ This allows the add to cart button to use the primary accent color
 To use custom colors instead of the primary theme color also add this CSS code. Use any valid hex color for the properties
 
 <ul class="tabs">
-<li><a href="#tab-1-2">version 6.1.3</a></li>
-<li><a href="#tab-2-2">version 6.2.0</a></li>
+<li><a href="#tab-1-1-1">version 6.1.3</a></li>
+<li><a href="#tab-2-1-1">version 6.2.0</a></li>
 </ul>
-<div id="tab-1-2">
+<div id="tab-1-1-1">
 
 ```css
 ---color-primary  - the background color
@@ -129,7 +131,7 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 ```
   
 </div>
-<div id="tab-2-2">
+<div id="tab-2-1-1">
   
 ```css
 --COLOR-PRIMARY  - the background color
@@ -399,49 +401,95 @@ Add this to make the labels round
 
 ### 11. Show dots for mobile product page thumbnails <a name="11"></a>
 
+<ul class="tabs">
+<li><a href="#tab-1-11">version 6.1.3</a></li>
+<li><a href="#tab-2-11">version 6.2.0</a></li>
+</ul>
+<div id="tab-1-11">
+
 ```css
 /* CSS - Show dots for mobile product page thumbnails */
 @media only screen and (max-width: 480px){
-.media__thumb__wrapper .flickity-viewport {
-  height: auto !important;
-}
-.media__thumb__wrapper .flickity-viewport,
-.media__thumb__wrapper .flickity-slider,
-.media__thumb__wrapper .media__thumb {
-  position: relative !important;
-  transform: none !important;
-  left: 0 !important;
-}
-.media__thumb__wrapper  .media__thumb:before {
-  content: "";
-  background-color: #dcdcdc;
-  width: 8px;
-  height: 8px;
-  display: block;
-  border-radius: 50%;
-}
-.media__thumb__wrapper  .media__thumb.is-selected:before{
- background-color: #5c5c5c;
-}
-.media__thumb__wrapper .media__thumb.is-selected:after,
-.media__thumb__wrapper .media__thumb img{
-  display: none;
-}
-.media__thumb__wrapper .media__thumb{
-  width: 8px;
-  height: 8px;
-}
-.media__thumb__wrapper .media__thumb{
-  text-align: center;
-}
-.media__thumb__wrapper.flickity-enabled .flickity-slider{
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-}
+  .media__thumb__wrapper .flickity-viewport {
+    height: auto !important;
+  }
+  .media__thumb__wrapper .flickity-viewport,
+  .media__thumb__wrapper .flickity-slider,
+  .media__thumb__wrapper .media__thumb {
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+  }
+  .media__thumb__wrapper  .media__thumb:before {
+    content: "";
+    background-color: #dcdcdc;
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 50%;
+  }
+  .media__thumb__wrapper  .media__thumb.is-selected:before{
+   background-color: #5c5c5c;
+  }
+  .media__thumb__wrapper .media__thumb.is-selected:after,
+  .media__thumb__wrapper .media__thumb img{
+    display: none;
+  }
+  .media__thumb__wrapper .media__thumb{
+    width: 8px;
+    height: 8px;
+  }
+  .media__thumb__wrapper .media__thumb{
+    text-align: center;
+  }
+  .media__thumb__wrapper.flickity-enabled .flickity-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
 }
 /* end */
 ```
+
+</div>
+<div id="tab-2-11">
+
+```css
+/* CSS - Show dots for mobile product page thumbnails */
+@media only screen and (max-width: 480px){
+  .media__thumb__wrapper  .media__thumb:before {
+    content: "";
+    background-color: #dcdcdc;
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 50%;
+  }
+  .media__thumb__wrapper  .media__thumb.is-activated:before{
+   background-color: #5c5c5c;
+  }
+  .media__thumb__wrapper .media__thumb.is-activated:after,
+  .media__thumb__wrapper .media__thumb img{
+    display: none;
+  }
+  .media__thumb__wrapper .media__thumb{
+    width: 8px;
+    height: 8px;
+  }
+  .media__thumb__wrapper{
+    justify-content: center;
+  }
+  .media__thumb__wrapper.flickity-disabled-mobile {
+    overflow: auto;
+  }
+  .media__thumb__wrapper + .custom-scrollbar{
+    display: none !important;
+  }
+}
+/* end */
+```
+
+</div>
 
 #### Example when this is used
 
