@@ -57,6 +57,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       <head>
         <title>` + pageTitle + `</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type='text/css'>` + styleData + `</style>		
       </head>
       <body>
         <div id='content'>
@@ -65,7 +66,6 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
     let postContent = `
 
         </div>
-        <style type='text/css'>` + styleData + `</style>
         <script>` + scriptData + `</script>
       </body>
     </html>`;
