@@ -104,8 +104,14 @@ This allows the add to cart button to use the primary accent color
 
 ![image](https://user-images.githubusercontent.com/1010232/142236205-beccfc66-05d4-4f86-8c41-fcdfdfda6cc1.png)
 
-
 To use custom colors instead of the primary theme color also add this CSS code. Use any valid hex color for the properties
+
+<ul class="tabs">
+<li><a href="#tab-1-2">version 6.1.3</a></li>
+<li><a href="#tab-2-2">version 6.2.0</a></li>
+</ul>
+<div id="tab-1-2">
+
  - ```---color-primary```  - the background color
  - ```---color-primary-hover```  - the hover background color
  - ```---color-primary-opposite``` - the text color
@@ -119,7 +125,25 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 }
 /* - end - */
 ```
+  
+</div>
+<div id="tab-2-2">
+  
+ - ```--COLOR-PRIMARY```  - the background color
+ - ```--COLOR-PRIMARY-HOVER```  - the hover background color
+ - ```--COLOR-PRIMARY-OPPOSITE``` - the text color
 
+```css
+/* CSS - custom colors Add to Cart button */
+.product__submit__buttons .btn--add-to-cart {
+  --COLOR-PRIMARY: #444444;
+  --COLOR-PRIMARY-HOVER: #111111;
+  --COLOR-PRIMARY-OPPOSITE: #ffffff;
+}
+/* - end - */
+``` 
+ </div>
+ 
 ![image](https://user-images.githubusercontent.com/1010232/142880271-8f1d2ae4-e3ba-4ad8-a33d-da3ab2068454.png)
 
 
