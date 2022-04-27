@@ -115,13 +115,11 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 <div id="tab-1-1-1">
 
 ```css
+/* CSS - custom colors Add to Cart button 
 ---color-primary  - the background color
 ---color-primary-hover  - the hover background color
 ---color-primary-opposite - the text color
-```
-
-```css
-/* CSS - custom colors Add to Cart button */
+*/
 .product__submit__buttons .btn--add-to-cart {
   ---color-primary: #444444;
   ---color-primary-hover: #111111;
@@ -134,13 +132,11 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 <div id="tab-2-1-1">
   
 ```css
+/* CSS - custom colors Add to Cart button 
 --COLOR-PRIMARY  - the background color
 --COLOR-PRIMARY-HOVER  - the hover background color
 --COLOR-PRIMARY-OPPOSITE - the text color
-```
-
-```css
-/* CSS - custom colors Add to Cart button */
+*/
 .product__submit__buttons .btn--add-to-cart {
   --COLOR-PRIMARY: #444444;
   --COLOR-PRIMARY-HOVER: #111111;
