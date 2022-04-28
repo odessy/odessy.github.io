@@ -346,8 +346,8 @@ ul.tabs:after {
 <h3 id="1-solid-color-for-add-to-cart-button-a-name1a">1. Solid Color for Add to cart button <a name="1"></a></h3>
 <p>This allows the add to cart button to use the primary accent color</p>
 <ul class="tabs">
-<li><a href="#tab-1-1">version 6.1.3</a></li>
-<li><a href="#tab-2-1">version 6.2.0</a></li>
+<li><a href="#tab-1-1">version 6.1</a></li>
+<li><a href="#tab-2-1">version 6.2</a></li>
 </ul>
 <div id="tab-1-1">
 <pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change Add to Cart button color */</span>
@@ -407,8 +407,8 @@ ul.tabs:after {
 <p><img src="https://user-images.githubusercontent.com/1010232/142236205-beccfc66-05d4-4f86-8c41-fcdfdfda6cc1.png" alt="image" /></p>
 <p>To use custom colors instead of the primary theme color also add this CSS code. Use any valid hex color for the properties</p>
 <ul class="tabs">
-<li><a href="#tab-1-1-1">version 6.1.3</a></li>
-<li><a href="#tab-2-1-1">version 6.2.0</a></li>
+<li><a href="#tab-1-1-1">version 6.1</a></li>
+<li><a href="#tab-2-1-1">version 6.2</a></li>
 </ul>
 <div id="tab-1-1-1">
 <pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - custom colors Add to Cart button 
@@ -500,12 +500,28 @@ ul.tabs:after {
 <h4 id="b-overriding-the-theme-font">b. Overriding the theme font</h4>
 <p>Add this CSS below the <a href="https://github.com/font-face">@font-face</a> code. The 'Gotham' is only an example in this code sample. Modify the code to use your custom <code>font-family</code>.</p>
 <p>The variables with "--font-stack-" can be updated for the body, heading, and accent. For more specific elements different CSS code would be needed.</p>
+<ul class="tabs">
+<li><a href="#tab-1-6">version 6.1</a></li>
+<li><a href="#tab-2-6">version 6.2</a></li>
+</ul>
+<div id="tab-1-6">
 <pre><code class="hljs css language-css"><span class="hljs-selector-pseudo">:root</span> {
   -<span class="hljs-attr">--font-stack-body</span>: <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
   -<span class="hljs-attr">--font-stack-heading</span>:  <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
   -<span class="hljs-attr">--font-stack-accent</span>:  <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
 }
 </code></pre>
+
+</div>
+<div id="tab-2-6">
+<pre><code class="hljs css language-css"><span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-attr">--FONT-STACK-BODY</span>: <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
+  <span class="hljs-attr">--FONT-STACK-HEADING</span>:  <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
+  <span class="hljs-attr">--FONT-STACK-ACCENT</span>:  <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
+}
+</code></pre>
+
+</div>
 <p><img src="https://user-images.githubusercontent.com/1010232/142937317-00396a84-493e-4947-b8ae-3cfb64cae866.png" alt="image" /></p>
 <h3 id="7-change-color-of-size-chart-link-a-name7a">7. Change color of size chart link <a name="7"></a></h3>
 <p>You can update the background-color and color properties with any valid HEX color code.<br />
@@ -594,26 +610,26 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 <span class="hljs-comment">/* end */</span>
 </code></pre>
 <h3 id="10-change-background-color-and-roundness-of-variant-radio-labels-a-name10a">10. Change background-color and roundness of variant radio labels <a name="10"></a></h3>
-<p>Update the <code>---background-color</code> and <code>---color</code> properties to any valid HEX code. </p>
+<p>Update the <code>--background-color</code> and <code>--color</code> properties to any valid HEX code. </p>
 <pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Change background-color and roundness of variant radio labels */</span>
 <span class="hljs-selector-class">.radio__fieldset</span> <span class="hljs-selector-class">.radio__button</span>{
-  -<span class="hljs-attr">--background-color</span>: <span class="hljs-number">#f9f9f9</span>;
-  -<span class="hljs-attr">--color</span>: <span class="hljs-number">#1b1546</span>;
+  <span class="hljs-attr">--background-color</span>: <span class="hljs-number">#f9f9f9</span>;
+  <span class="hljs-attr">--color</span>: <span class="hljs-number">#1b1546</span>;
 }
 <span class="hljs-selector-class">.radio__fieldset</span> <span class="hljs-selector-class">.radio__button</span> <span class="hljs-selector-tag">input</span>~<span class="hljs-selector-tag">label</span> {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(---background-color);
-    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(---color);
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--background-color);
+    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--color);
 }
 <span class="hljs-comment">/* When the radio button is checked */</span>
 <span class="hljs-selector-class">.radio__fieldset</span> <span class="hljs-selector-class">.radio__button</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:checked</span>~<span class="hljs-selector-tag">label</span> {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(---color);
-    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(---background-color);
-    <span class="hljs-attribute">border-color</span>: <span class="hljs-built_in">var</span>(---background-color);
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--color);
+    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--background-color);
+    <span class="hljs-attribute">border-color</span>: <span class="hljs-built_in">var</span>(--background-color);
 }
 <span class="hljs-comment">/* When the radio button is hover */</span>
 <span class="hljs-selector-class">.radio__fieldset</span> <span class="hljs-selector-class">.radio__button</span> <span class="hljs-selector-tag">label</span><span class="hljs-selector-pseudo">:active</span>, <span class="hljs-selector-class">.radio__fieldset</span> <span class="hljs-selector-class">.radio__button</span> <span class="hljs-selector-tag">label</span><span class="hljs-selector-pseudo">:focus</span>, <span class="hljs-selector-class">.radio__fieldset</span> <span class="hljs-selector-class">.radio__button</span> <span class="hljs-selector-tag">label</span><span class="hljs-selector-pseudo">:hover</span> {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(---background-color);
-    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(---color);
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--background-color);
+    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--color);
     <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.7</span>;
 }
 </code></pre>
@@ -628,8 +644,8 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 <p><img src="https://user-images.githubusercontent.com/1010232/142664998-c79541a6-8873-4c2d-a396-18b06f726195.png" alt="image" /></p>
 <h3 id="11-show-dots-for-mobile-product-page-thumbnails-a-name11a">11. Show dots for mobile product page thumbnails <a name="11"></a></h3>
 <ul class="tabs">
-<li><a href="#tab-1-11">version 6.1.3</a></li>
-<li><a href="#tab-2-11">version 6.2.0</a></li>
+<li><a href="#tab-1-11">version 6.1</a></li>
+<li><a href="#tab-2-11">version 6.2</a></li>
 </ul>
 <div id="tab-1-11">
 <pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Show dots for mobile product page thumbnails */</span>
@@ -849,7 +865,7 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 <span class="hljs-comment">/* end */</span>
 </code></pre>
 <h4 id="example-when-this-is-used-10">Example when this is used</h4>
-<p>https://www.loom.com/embed/9f05e0b5a58f4d45a5bdeacfece4ac00</p>
+<p><a href="https://www.loom.com/embed/9f05e0b5a58f4d45a5bdeacfece4ac00">Loom video link</a></p>
 <h3 id="2-add-sku-to-product-section-a-name22a">2. Add SKU to product section <a name="22"></a></h3>
 <p>Add the code below to the Liquid section block on the product page</p>
 <p><img src="https://user-images.githubusercontent.com/1010232/144634266-5e250919-68f8-4987-8f49-b69557e09f4b.png" alt="image" /></p>

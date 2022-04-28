@@ -40,8 +40,8 @@ May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
 This allows the add to cart button to use the primary accent color
 
 <ul class="tabs">
-<li><a href="#tab-1-1">version 6.1.3</a></li>
-<li><a href="#tab-2-1">version 6.2.0</a></li>
+<li><a href="#tab-1-1">version 6.1</a></li>
+<li><a href="#tab-2-1">version 6.2</a></li>
 </ul>
 <div id="tab-1-1">
 
@@ -109,8 +109,8 @@ This allows the add to cart button to use the primary accent color
 To use custom colors instead of the primary theme color also add this CSS code. Use any valid hex color for the properties
 
 <ul class="tabs">
-<li><a href="#tab-1-1-1">version 6.1.3</a></li>
-<li><a href="#tab-2-1-1">version 6.2.0</a></li>
+<li><a href="#tab-1-1-1">version 6.1</a></li>
+<li><a href="#tab-2-1-1">version 6.2</a></li>
 </ul>
 <div id="tab-1-1-1">
 
@@ -234,6 +234,12 @@ Add this CSS below the @font-face code. The 'Gotham' is only an example in this 
 
 The variables with "--font-stack-" can be updated for the body, heading, and accent. For more specific elements different CSS code would be needed.
 
+<ul class="tabs">
+<li><a href="#tab-1-6">version 6.1</a></li>
+<li><a href="#tab-2-6">version 6.2</a></li>
+</ul>
+<div id="tab-1-6">
+
 ```css
 :root {
   ---font-stack-body: 'Gotham', sans-serif;
@@ -241,6 +247,19 @@ The variables with "--font-stack-" can be updated for the body, heading, and acc
   ---font-stack-accent:  'Gotham', sans-serif;
 }
 ```
+
+</div>
+<div id="tab-2-6">
+
+```css
+:root {
+  --FONT-STACK-BODY: 'Gotham', sans-serif;
+  --FONT-STACK-HEADING:  'Gotham', sans-serif;
+  --FONT-STACK-ACCENT:  'Gotham', sans-serif;
+}
+```
+
+</div>
 
 ![image](https://user-images.githubusercontent.com/1010232/142937317-00396a84-493e-4947-b8ae-3cfb64cae866.png)
 
@@ -355,28 +374,28 @@ This will force text to use normal letter case.
 
 ### 10. Change background-color and roundness of variant radio labels <a name="10"></a>
 
-Update the ```---background-color``` and ```---color``` properties to any valid HEX code. 
+Update the ```--background-color``` and ```--color``` properties to any valid HEX code. 
 
 ```css
 /* CSS - Change background-color and roundness of variant radio labels */
 .radio__fieldset .radio__button{
-  ---background-color: #f9f9f9;
-  ---color: #1b1546;
+  --background-color: #f9f9f9;
+  --color: #1b1546;
 }
 .radio__fieldset .radio__button input~label {
-    background-color: var(---background-color);
-    color: var(---color);
+    background-color: var(--background-color);
+    color: var(--color);
 }
 /* When the radio button is checked */
 .radio__fieldset .radio__button input:checked~label {
-    background-color: var(---color);
-    color: var(---background-color);
-    border-color: var(---background-color);
+    background-color: var(--color);
+    color: var(--background-color);
+    border-color: var(--background-color);
 }
 /* When the radio button is hover */
 .radio__fieldset .radio__button label:active, .radio__fieldset .radio__button label:focus, .radio__fieldset .radio__button label:hover {
-    background-color: var(---background-color);
-    color: var(---color);
+    background-color: var(--background-color);
+    color: var(--color);
     opacity: 0.7;
 }
 ```
@@ -398,8 +417,8 @@ Add this to make the labels round
 ### 11. Show dots for mobile product page thumbnails <a name="11"></a>
 
 <ul class="tabs">
-<li><a href="#tab-1-11">version 6.1.3</a></li>
-<li><a href="#tab-2-11">version 6.2.0</a></li>
+<li><a href="#tab-1-11">version 6.1</a></li>
+<li><a href="#tab-2-11">version 6.2</a></li>
 </ul>
 <div id="tab-1-11">
 
@@ -667,7 +686,7 @@ document.addEventListener('theme:cart:popdown', (e) => {
 ```
 
 #### Example when this is used
-https://www.loom.com/embed/9f05e0b5a58f4d45a5bdeacfece4ac00
+[Loom video link](https://www.loom.com/embed/9f05e0b5a58f4d45a5bdeacfece4ac00)
 
 
 ### 2. Add SKU to product section <a name="22"></a>
