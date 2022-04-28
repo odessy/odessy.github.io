@@ -39,12 +39,8 @@ May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
 
 This allows the add to cart button to use the primary accent color
 
-<ul class="tabs">
-<li><a href="#tab-1-1">version 6.1</a></li>
-<li><a href="#tab-2-1">version 6.2</a></li>
-</ul>
-<div id="tab-1-1">
-
+[tabs]
+[tab name="version 6.1"]
 ```css
 /* CSS - change Add to Cart button color */
 .upsell__btn,
@@ -70,10 +66,8 @@ This allows the add to cart button to use the primary accent color
 }
 /* - end - */
 ```
-
-</div>
-<div id="tab-2-1">
-
+[/tab]
+[tab name="version 6.2"]
 ```css
 /* CSS - change Add to Cart button color */
 .upsell__btn,
@@ -99,8 +93,8 @@ This allows the add to cart button to use the primary accent color
 }
 /* - end - */
 ```
-
-</div>
+[/tab]
+[/tabs]
 
 #### Example when this is used
 
@@ -108,12 +102,8 @@ This allows the add to cart button to use the primary accent color
 
 To use custom colors instead of the primary theme color also add this CSS code. Use any valid hex color for the properties
 
-<ul class="tabs">
-<li><a href="#tab-1-1-1">version 6.1</a></li>
-<li><a href="#tab-2-1-1">version 6.2</a></li>
-</ul>
-<div id="tab-1-1-1">
-
+[tabs]
+[tab name="version 6.1"]
 ```css
 /* CSS - custom colors Add to Cart button 
 ---color-primary  - the background color
@@ -127,10 +117,8 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 }
 /* - end - */
 ```
-  
-</div>
-<div id="tab-2-1-1">
-  
+[/tab]
+[tab name="version 6.2"]
 ```css
 /* CSS - custom colors Add to Cart button 
 --COLOR-PRIMARY  - the background color
@@ -144,7 +132,8 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 }
 /* - end - */
 ``` 
- </div>
+[/tab]
+[/tabs]
  
 ![image](https://user-images.githubusercontent.com/1010232/142880271-8f1d2ae4-e3ba-4ad8-a33d-da3ab2068454.png)
 
@@ -234,12 +223,8 @@ Add this CSS below the @font-face code. The 'Gotham' is only an example in this 
 
 The variables with "--font-stack-" can be updated for the body, heading, and accent. For more specific elements different CSS code would be needed.
 
-<ul class="tabs">
-<li><a href="#tab-1-6">version 6.1</a></li>
-<li><a href="#tab-2-6">version 6.2</a></li>
-</ul>
-<div id="tab-1-6">
-
+[tabs]
+[tab name="version 6.1"]
 ```css
 :root {
   ---font-stack-body: 'Gotham', sans-serif;
@@ -247,10 +232,8 @@ The variables with "--font-stack-" can be updated for the body, heading, and acc
   ---font-stack-accent:  'Gotham', sans-serif;
 }
 ```
-
-</div>
-<div id="tab-2-6">
-
+[/tab]
+[tab name="version 6.2"]
 ```css
 :root {
   --FONT-STACK-BODY: 'Gotham', sans-serif;
@@ -258,8 +241,8 @@ The variables with "--font-stack-" can be updated for the body, heading, and acc
   --FONT-STACK-ACCENT:  'Gotham', sans-serif;
 }
 ```
-
-</div>
+[/tab]
+[/tabs]
 
 ![image](https://user-images.githubusercontent.com/1010232/142937317-00396a84-493e-4947-b8ae-3cfb64cae866.png)
 
@@ -416,12 +399,8 @@ Add this to make the labels round
 
 ### 11. Show dots for mobile product page thumbnails <a name="11"></a>
 
-<ul class="tabs">
-<li><a href="#tab-1-11">version 6.1</a></li>
-<li><a href="#tab-2-11">version 6.2</a></li>
-</ul>
-<div id="tab-1-11">
-
+[tabs]
+[tab name="version 6.1"]
 ```css
 /* CSS - Show dots for mobile product page thumbnails */
 @media only screen and (max-width: 480px){
@@ -465,10 +444,8 @@ Add this to make the labels round
 }
 /* end */
 ```
-
-</div>
-<div id="tab-2-11">
-
+[/tab]
+[tab name="version 6.2"]
 ```css
 /* CSS - Show dots for mobile product page thumbnails */
 @media only screen and (max-width: 480px){
@@ -503,8 +480,8 @@ Add this to make the labels round
 }
 /* end */
 ```
-
-</div>
+[/tab]
+[/tabs]
 
 #### Example when this is used
 

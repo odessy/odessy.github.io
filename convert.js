@@ -35,6 +35,33 @@ showdown.extension('highlight', function () {
   }];
 });
 
+showdown.extension('tabs', function () {
+  return [{
+    type: "output",
+    filter: function (text, converter, options) {
+      var left = "\\[tabs\\]",
+          right = "\\[/tabs\\]",
+          flags = "g";
+		  
+      var leftTab = "\\[tab\\b[^\\]]*\\]",
+          rightTab = "\\[/tab\\]";
+		  
+      var tabReplacement = function (wholeMatch, match, left, right) {
+        var name = (left.match(/name=\"([^\"]+)/) || [])[1];
+        return '<div class="tab" name="'+name+'"><span class="tab-name">'+name+'</span>' + match + '</div>';
+      };
+	  
+      var replacement = function (wholeMatch, match, left, right) {
+        return '<div class="tabs">' + 
+		showdown.helper.replaceRecursiveRegExp(match, tabReplacement, leftTab, rightTab, flags) + 
+		'</div>';
+      };
+      return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
+    }
+  }];
+});
+
+
 
 fs.readFile(__dirname + '/script.js', function (err, scriptData) {
 fs.readFile(__dirname + '/style.css', function (err, styleData) {
@@ -49,7 +76,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       simpleLineBreaks: true,
       ghMentions: true,
       tables: true,
-	  extensions: ['highlight']
+	  extensions: ['tabs', 'highlight']
     });
 
     let preContent = `
