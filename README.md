@@ -1,7 +1,5 @@
 [comment]: <> (https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
-[comment]: <> (  tab-#tab-number-#list-number-#list-number-part )
-
 # Pipeline theme version 6
 
 ## Simple CSS changes
