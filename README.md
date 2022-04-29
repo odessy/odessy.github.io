@@ -23,6 +23,7 @@ To add any <b>CSS</b> code in this list follow these steps:
 14. [Show footer logo within footer section](#14)
 15. [Increase max width for theme wrapper](#15)
 16. [Products: Large vertical image display with sticky column](#16)
+17. [Products: Move thumbnails to left or right of featured product image](#17)
 
 ## Advanced Changes
 May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
@@ -628,6 +629,98 @@ With this modification, you can display all your product images in full size dow
 #### Example with sticky right column:
 
 ![image](https://user-images.githubusercontent.com/1010232/162497630-a5a72cf0-8555-4049-ab70-a5340fa451fb.png)
+
+
+### 17. Products: Move thumbnails to left or right of featured product image <a name="17"></a>
+
+Update the ```--position``` and ```--large-position``` to change the position to right or left. 
+
+
+```css
+/* -- Start Pipeline override code for thumbnails positioned on the left -- */
+.product-page {
+
+  /* Set left or right position of thumbnails: */
+  --position: left;
+
+  /* Set left or right position of main image opposite of thumbnails: */
+  --large-position: right;
+
+  /* Set size of thumbnails use 50 for small or 100 for large: */
+  --thumb-size: 80px;
+
+  /* Set height of thumbs container: */
+  --thumb-container-height: 80vw;
+
+  /* Set height of thumbs container on desktop: */	
+  --thumb-container-desktop-height: 38vw;	
+
+  /* Set width of scrollbar: */
+  --scroll-bar-width: 3px;
+
+  /* Stop do not change below this line. */
+
+  --spacing: 10px;
+  --spacing-adjusted: calc(var(--spacing) * 0.5);
+  --thumb-full: calc(var(--thumb-size) + var(--scroll-bar-width) );
+  --thumb-space: calc(var(--thumb-size) + var(--scroll-bar-width) + var(--spacing));
+  --adjusted-width: calc(var(--thumb-size) + var(--scroll-bar-width) + var(--spacing) + var(--spacing-adjusted));
+
+  padding-top: var(--spacing);
+}
+@media only screen and (min-width: 768px){
+	.product-page {
+	  --thumb-container-height: var(--thumb-container-desktop-height);
+	}
+}
+.media__thumb__wrapper .flickity-viewport {
+	height: auto !important;
+}
+.media__thumb__wrapper .flickity-viewport,
+.media__thumb__wrapper .flickity-slider,
+.media__thumb__wrapper .media__thumb {
+	position: relative !important;
+	transform: none !important;
+	left: 0 !important;
+}
+
+.media__thumb__wrapper::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: var(--scroll-bar-width);
+}
+.media__thumb__wrapper::-webkit-scrollbar-thumb {
+	border-radius: 14px;
+	background-color: var(--border);
+	box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}  
+.media__thumb__wrapper .media__thumb {
+	margin-bottom: 10px;
+	margin-top: 0;
+	width: var(--thumb-size);
+	height: var(--thumb-size);  	  
+}
+.media__thumb__wrapper.flickity-disabled-mobile{
+	display: block;
+}
+.product__media__wrapper .custom-scrollbar{
+	display: none !important;
+}
+.media__thumb__wrapper {
+	float: var(--position);
+	width: var(--thumb-space);
+	overflow: scroll !important;
+	overflow-x: hidden !important;
+	max-height: var(--thumb-container-height);
+}
+.product__slides {
+	float: var(--large-position);
+	width: calc(100% - var(--adjusted-width));
+}
+/* - end - */
+```
+
+
+#### Example with the default code:
 
 
 
