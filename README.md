@@ -635,7 +635,6 @@ With this modification, you can display all your product images in full size dow
 
 Update the ```--position``` and ```--large-position``` to change the position to right or left. 
 
-
 ```css
 /* -- Start Pipeline override code for thumbnails positioned on the left -- */
 .product-page {
@@ -665,8 +664,6 @@ Update the ```--position``` and ```--large-position``` to change the position to
   --thumb-full: calc(var(--thumb-size) + var(--scroll-bar-width) );
   --thumb-space: calc(var(--thumb-size) + var(--scroll-bar-width) + var(--spacing));
   --adjusted-width: calc(var(--thumb-size) + var(--scroll-bar-width) + var(--spacing) + var(--spacing-adjusted));
-
-  padding-top: var(--spacing);
 }
 @media only screen and (min-width: 768px){
 	.product-page {
@@ -722,7 +719,17 @@ Update the ```--position``` and ```--large-position``` to change the position to
 
 #### Example with the default code:
 
+[tabs]
 
+[tab name="mobile"]
+![image](https://user-images.githubusercontent.com/1010232/165979118-8e32ac09-03d9-4cd1-a260-9ae5f778a908.png)
+[/tab]
+
+[tab name="desktop"]
+![image](https://user-images.githubusercontent.com/1010232/165978984-020e7e5c-6493-4bca-b9e3-6e8ff98e255c.png)
+[/tab]
+
+[/tabs]
 
 ## Advanced Changes
 
