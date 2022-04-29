@@ -308,3 +308,61 @@ h1, h2, h3 {
 .hljs-strong {
   font-weight: bold;
 }
+
+/* CSS - Scroll to top button */
+.btn--scroll-top {
+  --btn-bg: #24292e;
+  --btn-text: #FFFFFF;
+  --btn-bg-hover: #24292e;
+  --btn-text-hover: #FFFFFF;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 500;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+}
+.btn--scroll-top:after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-width: 0 0 1px 1px;
+  border-style: solid;
+  border-color: currentcolor;
+  margin: 0;
+  vertical-align: middle;
+  transform: rotate(135deg);
+  transform-origin: 50% 50%;
+  transition: all 0.3s;
+}
+.btn--scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0s;
+}
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    margin: 0;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 1em;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    transition: background-color .5s cubic-bezier(.215,.61,.355,1);
+}
+/* end */

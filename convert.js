@@ -93,6 +93,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
     let postContent = `
 
         </div>
+		<button type="button" class="btn btn--scroll-top" data-scroll-top-button></button>
         <script>` + scriptData + `</script>
       </body>
     </html>`;
