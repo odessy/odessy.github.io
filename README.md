@@ -721,12 +721,12 @@ Update the ```--position``` and ```--large-position``` to change the position to
 
 [tabs]
 
-[tab name="mobile"]
-![image](https://user-images.githubusercontent.com/1010232/165979118-8e32ac09-03d9-4cd1-a260-9ae5f778a908.png)
-[/tab]
-
 [tab name="desktop"]
 ![image](https://user-images.githubusercontent.com/1010232/165978984-020e7e5c-6493-4bca-b9e3-6e8ff98e255c.png)
+[/tab]
+
+[tab name="mobile"]
+![image](https://user-images.githubusercontent.com/1010232/165979118-8e32ac09-03d9-4cd1-a260-9ae5f778a908.png)
 [/tab]
 
 [/tabs]

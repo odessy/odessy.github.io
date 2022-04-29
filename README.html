@@ -337,6 +337,7 @@ h1, h2, h3 {
 <li><a href="#14">Show footer logo within footer section</a></li>
 <li><a href="#15">Increase max width for theme wrapper</a></li>
 <li><a href="#16">Products: Large vertical image display with sticky column</a></li>
+<li><a href="#17">Products: Move thumbnails to left or right of featured product image</a></li>
 </ol>
 <h2 id="advanced-changes">Advanced Changes</h2>
 <p>May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes</p>
@@ -833,6 +834,96 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 </code></pre>
 <h4 id="example-with-sticky-right-column">Example with sticky right column:</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/162497630-a5a72cf0-8555-4049-ab70-a5340fa451fb.png" alt="image" /></p>
+<h3 id="17-products-move-thumbnails-to-left-or-right-of-featured-product-image-a-name17a">17. Products: Move thumbnails to left or right of featured product image <a name="17"></a></h3>
+<p>Update the <code>--position</code> and <code>--large-position</code> to change the position to right or left. </p>
+<pre><code class="hljs css language-css"><span class="hljs-comment">/* -- Start Pipeline override code for thumbnails positioned on the left -- */</span>
+<span class="hljs-selector-class">.product-page</span> {
+
+  <span class="hljs-comment">/* Set left or right position of thumbnails: */</span>
+  <span class="hljs-attr">--position</span>: left;
+
+  <span class="hljs-comment">/* Set left or right position of main image opposite of thumbnails: */</span>
+  <span class="hljs-attr">--large-position</span>: right;
+
+  <span class="hljs-comment">/* Set size of thumbnails use 50 for small or 100 for large: */</span>
+  <span class="hljs-attr">--thumb-size</span>: <span class="hljs-number">80px</span>;
+
+  <span class="hljs-comment">/* Set height of thumbs container: */</span>
+  <span class="hljs-attr">--thumb-container-height</span>: <span class="hljs-number">80vw</span>;
+
+  <span class="hljs-comment">/* Set height of thumbs container on desktop: */</span>    
+  <span class="hljs-attr">--thumb-container-desktop-height</span>: <span class="hljs-number">38vw</span>;    
+
+  <span class="hljs-comment">/* Set width of scrollbar: */</span>
+  <span class="hljs-attr">--scroll-bar-width</span>: <span class="hljs-number">3px</span>;
+
+  <span class="hljs-comment">/* Stop do not change below this line. */</span>
+
+  <span class="hljs-attr">--spacing</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attr">--spacing-adjusted</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--spacing) * <span class="hljs-number">0.5</span>);
+  <span class="hljs-attr">--thumb-full</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--thumb-size) + <span class="hljs-built_in">var</span>(--scroll-bar-width) );
+  <span class="hljs-attr">--thumb-space</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--thumb-size) + <span class="hljs-built_in">var</span>(--scroll-bar-width) + <span class="hljs-built_in">var</span>(--spacing));
+  <span class="hljs-attr">--adjusted-width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--thumb-size) + <span class="hljs-built_in">var</span>(--scroll-bar-width) + <span class="hljs-built_in">var</span>(--spacing) + <span class="hljs-built_in">var</span>(--spacing-adjusted));
+}
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>){
+    <span class="hljs-selector-class">.product-page</span> {
+      <span class="hljs-attr">--thumb-container-height</span>: <span class="hljs-built_in">var</span>(--thumb-container-desktop-height);
+    }
+}
+<span class="hljs-selector-class">.media__thumb__wrapper</span> <span class="hljs-selector-class">.flickity-viewport</span> {
+    <span class="hljs-attribute">height</span>: auto <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-selector-class">.media__thumb__wrapper</span> <span class="hljs-selector-class">.flickity-viewport</span>,
+<span class="hljs-selector-class">.media__thumb__wrapper</span> <span class="hljs-selector-class">.flickity-slider</span>,
+<span class="hljs-selector-class">.media__thumb__wrapper</span> <span class="hljs-selector-class">.media__thumb</span> {
+    <span class="hljs-attribute">position</span>: relative <span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">transform</span>: none <span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+}
+
+<span class="hljs-selector-class">.media__thumb__wrapper</span>::-webkit-scrollbar {
+    -webkit-appearance: none;
+    <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--scroll-bar-width);
+}
+<span class="hljs-selector-class">.media__thumb__wrapper</span>::-webkit-scrollbar-thumb {
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">14px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--border);
+    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, .<span class="hljs-number">5</span>);
+}  
+<span class="hljs-selector-class">.media__thumb__wrapper</span> <span class="hljs-selector-class">.media__thumb</span> {
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--thumb-size);
+    <span class="hljs-attribute">height</span>: <span class="hljs-built_in">var</span>(--thumb-size);        
+}
+<span class="hljs-selector-class">.media__thumb__wrapper</span><span class="hljs-selector-class">.flickity-disabled-mobile</span>{
+    <span class="hljs-attribute">display</span>: block;
+}
+<span class="hljs-selector-class">.product__media__wrapper</span> <span class="hljs-selector-class">.custom-scrollbar</span>{
+    <span class="hljs-attribute">display</span>: none <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-selector-class">.media__thumb__wrapper</span> {
+    <span class="hljs-attribute">float</span>: <span class="hljs-built_in">var</span>(--position);
+    <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--thumb-space);
+    <span class="hljs-attribute">overflow</span>: scroll <span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">overflow-x</span>: hidden <span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">max-height</span>: <span class="hljs-built_in">var</span>(--thumb-container-height);
+}
+<span class="hljs-selector-class">.product__slides</span> {
+    <span class="hljs-attribute">float</span>: <span class="hljs-built_in">var</span>(--large-position);
+    <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-built_in">var</span>(--adjusted-width));
+}
+<span class="hljs-comment">/* - end - */</span>
+</code></pre>
+<h4 id="example-with-the-default-code">Example with the default code:</h4>
+<p><div class="tabs"></p>
+<p><div class="tab" name="desktop"><span class="tab-name">desktop</span><br />
+<img src="https://user-images.githubusercontent.com/1010232/165978984-020e7e5c-6493-4bca-b9e3-6e8ff98e255c.png" alt="image" /><br />
+</div></p>
+<p><div class="tab" name="mobile"><span class="tab-name">mobile</span><br />
+<img src="https://user-images.githubusercontent.com/1010232/165979118-8e32ac09-03d9-4cd1-a260-9ae5f778a908.png" alt="image" /><br />
+</div></p>
+<p></div></p>
 <h2 id="advanced-changes-1">Advanced Changes</h2>
 <h3 id="1-show-cart-drawer-when-product-added-to-cart-a-name21a">1. Show cart drawer when product added to cart <a name="21"></a></h3>
 <pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Hide the product add popdown */</span>
