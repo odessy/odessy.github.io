@@ -400,6 +400,7 @@ h1, h2, h3 {
 <li><a href="#15">Increase max width for theme wrapper</a></li>
 <li><a href="#16">Products: Large vertical image display with sticky column</a></li>
 <li><a href="#17">Products: Move thumbnails to left or right of featured product image</a></li>
+<li><a href="#18">Add drop-down arrow indicators to top-level menus</a></li>
 </ol>
 <h2 id="advanced-changes">Advanced Changes</h2>
 <p>May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes</p>
@@ -986,6 +987,31 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 <img src="https://user-images.githubusercontent.com/1010232/165979118-8e32ac09-03d9-4cd1-a260-9ae5f778a908.png" alt="image" /><br />
 </div></p>
 <p></div></p>
+<h3 id="18-add-drop-down-arrow-indicators-to-top-level-menus-a-name18a">18. Add drop-down arrow indicators to top-level menus <a name="18"></a></h3>
+<pre><code class="hljs css language-css"><span class="hljs-comment">/* -- code to add dropdown arrows in top-level navigation -- */</span>
+<span class="hljs-selector-class">.header__desktop</span> <span class="hljs-selector-class">.navlink--toplevel</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-pseudo">:only-child</span>) <span class="hljs-selector-class">.navtext</span><span class="hljs-selector-pseudo">:after</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>; 
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">top</span>: -<span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">0.5em</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">0.5em</span>;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">vertical-align</span>: middle;
+  <span class="hljs-attribute">border-left</span>: <span class="hljs-number">0.15em</span> solid currentColor;
+  <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">0.15em</span> solid currentColor;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">45deg</span>);
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">8px</span>;
+  <span class="hljs-attribute">margin-top</span>: -<span class="hljs-number">0.25em</span>;
+}
+<span class="hljs-selector-class">.header__desktop</span> <span class="hljs-selector-attr">[aria-expanded=<span class="hljs-string">&quot;true&quot;</span>]</span> <span class="hljs-selector-class">.navlink--toplevel</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-pseudo">:only-child</span>) <span class="hljs-selector-class">.navtext</span><span class="hljs-selector-pseudo">:after</span>,
+<span class="hljs-selector-class">.header__desktop</span> <span class="hljs-selector-class">.navlink--toplevel</span><span class="hljs-selector-pseudo">:hover</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-pseudo">:only-child</span>) <span class="hljs-selector-class">.navtext</span><span class="hljs-selector-pseudo">:after</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">135deg</span>);
+  <span class="hljs-attribute">transition</span>: <span class="hljs-number">0.2s</span> all;
+}
+<span class="hljs-comment">/* - end - */</span>
+</code></pre>
+<h4 id="example-with-the-default-code-1">Example with the default code:</h4>
+<p><img src="https://user-images.githubusercontent.com/1010232/167903869-6fa8fdba-1629-4176-a1f8-d6b5809b78c6.png" alt="image" /></p>
 <h2 id="advanced-changes-1">Advanced Changes</h2>
 <h3 id="1-show-cart-drawer-when-product-added-to-cart-a-name21a">1. Show cart drawer when product added to cart <a name="21"></a></h3>
 <pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Hide the product add popdown */</span>
