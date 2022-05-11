@@ -24,6 +24,7 @@ To add any <b>CSS</b> code in this list follow these steps:
 15. [Increase max width for theme wrapper](#15)
 16. [Products: Large vertical image display with sticky column](#16)
 17. [Products: Move thumbnails to left or right of featured product image](#17)
+18. [Add drop-down arrow indicators to top-level menus](#18)
 
 ## Advanced Changes
 May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
@@ -730,6 +731,39 @@ Update the ```--position``` and ```--large-position``` to change the position to
 [/tab]
 
 [/tabs]
+
+
+
+### 18. Add drop-down arrow indicators to top-level menus <a name="18"></a>
+
+```css
+/* -- code to add dropdown arrows in top-level navigation -- */
+.header__desktop .navlink--toplevel:not(:only-child) .navtext:after {
+  content: ''; 
+  position: relative;
+  top: -1px;
+  width: 0.5em;
+  height: 0.5em;
+  display: inline-block;
+  vertical-align: middle;
+  border-left: 0.15em solid currentColor;
+  border-bottom: 0.15em solid currentColor;
+  transform: rotate(-45deg);
+  margin-left: 8px;
+  margin-top: -0.25em;
+}
+.header__desktop [aria-expanded="true"] .navlink--toplevel:not(:only-child) .navtext:after,
+.header__desktop .navlink--toplevel:hover:not(:only-child) .navtext:after {
+  transform: rotate(-135deg);
+  transition: 0.2s all;
+}
+/* - end - */
+```
+
+#### Example with the default code:
+
+![image](https://user-images.githubusercontent.com/1010232/167903869-6fa8fdba-1629-4176-a1f8-d6b5809b78c6.png)
+
 
 ## Advanced Changes
 
