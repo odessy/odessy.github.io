@@ -637,7 +637,7 @@ With this modification, you can display all your product images in full size dow
 Update the ```--position``` and ```--large-position``` to change the position to right or left. 
 
 ```css
-/* -- Start Pipeline override code for thumbnails positioned on the left -- */
+/* CSS - Start Pipeline override code for thumbnails positioned on the left - */
 .product-page {
 
   /* Set left or right position of thumbnails: */
@@ -737,7 +737,7 @@ Update the ```--position``` and ```--large-position``` to change the position to
 ### 18. Add drop-down arrow indicators to top-level menus <a name="18"></a>
 
 ```css
-/* -- code to add dropdown arrows in top-level navigation -- */
+/* CSS - code to add dropdown arrows in top-level navigation - */
 .header__desktop .navlink--toplevel:not(:only-child) .navtext:after {
   content: ''; 
   position: relative;
