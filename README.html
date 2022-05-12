@@ -1023,13 +1023,15 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 <p>Add this to the end of your theme.js javascript file</p>
 <pre><code class="hljs js language-js"><span class="hljs-comment">/* Javascript - Show cart drawer when product added to cart */</span>
 <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;theme:cart:popdown&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
-  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;theme:cart:change&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">listener</span> = (<span class="hljs-params">e</span>) =&gt; {
     <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;[data-drawer=&quot;drawer-cart&quot;]&#x27;</span>).<span class="hljs-title function_">dispatchEvent</span>(
       <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomEvent</span>(<span class="hljs-string">&#x27;theme:drawer:open&#x27;</span>, {
         <span class="hljs-attr">bubbles</span>: <span class="hljs-literal">false</span>,
       })
     );
-  });
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#x27;theme:cart:change&#x27;</span>, listener);
+  };
+  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;theme:cart:change&#x27;</span>, listener);
 });
 <span class="hljs-comment">/* end */</span>
 </code></pre>

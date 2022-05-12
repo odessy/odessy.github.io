@@ -783,13 +783,15 @@ Add this to the end of your theme.js javascript file
 ```js
 /* Javascript - Show cart drawer when product added to cart */
 document.addEventListener('theme:cart:popdown', (e) => {
-  document.addEventListener('theme:cart:change', (e) => {
+  const listener = (e) => {
     document.querySelector('[data-drawer="drawer-cart"]').dispatchEvent(
       new CustomEvent('theme:drawer:open', {
         bubbles: false,
       })
     );
-  });
+	document.removeEventListener('theme:cart:change', listener);
+  };
+  document.addEventListener('theme:cart:change', listener);
 });
 /* end */
 ```
