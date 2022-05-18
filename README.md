@@ -157,16 +157,17 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 You can adjust the px values in the code to further reduce the padding-top and padding-bottom values
 ```css
 /* CSS - reduce section padding */
+.homepage-logos.homepage-logos--tall,
 .homepage-collection-tabs,
 .homepage-blog, .homepage-collection, .homepage-columns, 
 .homepage-icons, .homepage-newsletter, .homepage-product {
-    padding-top: 66px;
-    padding-bottom: 66px;
+    padding-top: 36px;
+    padding-bottom: 36px;
 }
 .homepage-collection-grid, 
 .section-recent .recent__container__inner:not(.is-hidden), 
 .section-related {
-    padding-top: 66px;
+    padding-top: 36px;
     padding-bottom: 34px;
 }
 .collection-tabs{
