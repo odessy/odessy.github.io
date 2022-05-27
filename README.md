@@ -541,7 +541,8 @@ Hide the colors available text and show the swatches on desktop.
     .product-grid-item .grid__swatch__container .grid__swatch__hover {
         visibility: visible;
         opacity: 1;
-        height: auto;
+        height: initial;
+        top: 0;
     }
 }
 /* end */
