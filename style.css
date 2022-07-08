@@ -317,6 +317,7 @@ h1, h2, h3 {
   position: -webkit-sticky;
   top: 0;
   background: #fdfdfd;
+  padding: 10px 0;
 }
 
 /* CSS - Scroll to top button */
