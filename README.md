@@ -4,8 +4,7 @@
 
 ## Simple CSS changes
 
-To add any <b>CSS</b> code in this list follow these steps:
-[Where to add CSS](https://groupthought-themes.gitbook.io/tutorials/)
+To add any <b>CSS</b> code in this list follow these steps: [Where to add CSS](https://groupthought-themes.gitbook.io/tutorials/)
 
 1. [Solid Color for Add to cart button](#1)
 2. [Hide Add to cart button price](#2)
