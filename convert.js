@@ -42,19 +42,19 @@ showdown.extension('tabs', function () {
       var left = "\\[tabs\\]",
           right = "\\[/tabs\\]",
           flags = "g";
-		  
+          
       var leftTab = "\\[tab\\b[^\\]]*\\]",
           rightTab = "\\[/tab\\]";
-		  
+          
       var tabReplacement = function (wholeMatch, match, left, right) {
         var name = (left.match(/name=\"([^\"]+)/) || [])[1];
         return '<div class="tab" name="'+name+'"><span class="tab-name">'+name+'</span>' + match + '</div>';
       };
-	  
+      
       var replacement = function (wholeMatch, match, left, right) {
         return '<div class="tabs">' + 
-		showdown.helper.replaceRecursiveRegExp(match, tabReplacement, leftTab, rightTab, flags) + 
-		'</div>';
+        showdown.helper.replaceRecursiveRegExp(match, tabReplacement, leftTab, rightTab, flags) + 
+        '</div>';
       };
       return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
     }
@@ -76,7 +76,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       simpleLineBreaks: true,
       ghMentions: true,
       tables: true,
-	  extensions: ['tabs', 'highlight']
+      extensions: ['tabs', 'highlight']
     });
 
     let preContent = `
@@ -84,7 +84,15 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       <head>
         <title>` + pageTitle + `</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style type='text/css'>` + styleData + `</style>		
+        <style type='text/css'>` + styleData + `</style>        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XJY07B7F4G"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XJY07B7F4G');
+        </script>        
       </head>
       <body>
         <div id='content'>
@@ -93,7 +101,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
     let postContent = `
 
         </div>
-		<button type="button" class="btn btn--scroll-top" data-scroll-top-button></button>
+        <button type="button" class="btn btn--scroll-top" data-scroll-top-button></button>
         <script>` + scriptData + `</script>
       </body>
     </html>`;
