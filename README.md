@@ -426,7 +426,8 @@ Add this to make the labels round
    background-color: #5c5c5c;
   }
   .media__thumb__wrapper .media__thumb.is-selected:after,
-  .media__thumb__wrapper .media__thumb img{
+  .media__thumb__wrapper .media__thumb img,
+  .media__thumb__wrapper .media__thumb svg{
     display: none;
   }
   .media__thumb__wrapper .media__thumb{
@@ -461,7 +462,8 @@ Add this to make the labels round
    background-color: #5c5c5c;
   }
   .media__thumb__wrapper .media__thumb.is-activated:after,
-  .media__thumb__wrapper .media__thumb img{
+  .media__thumb__wrapper .media__thumb img,
+  .media__thumb__wrapper .media__thumb svg{
     display: none;
   }
   .media__thumb__wrapper .media__thumb{
