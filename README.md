@@ -605,6 +605,7 @@ With this modification, you can display all your product images in full size dow
     position: relative !important;
     transform: none !important;
     left: 0 !important;
+	padding-bottom: 0 !important;
   }
   .product__media__wrapper .flickity-slider .product__media {
       margin: 0;
