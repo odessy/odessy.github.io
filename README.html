@@ -3,8 +3,8 @@
       <head>
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style type='text/css'>html{
-  scroll-behavior: smooth; 	
+        <style type='text/css'>html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -25,12 +25,12 @@ body {
     padding: 5px;
   }
 
-  body > #content {
+  body>#content {
     padding: 0px 20px 20px 20px !important;
   }
 }
 
-body > #content {
+body>#content {
   margin: 0px;
   max-width: 900px;
   border: 1px solid #e1e4e8;
@@ -56,12 +56,17 @@ hr {
  */
 a {
   color: #0366d6;
-  text-decoration: none; }
-  a:visited {
-    color: #0366d6; }
-  a:hover {
-    color: #0366d6;
-    text-decoration: underline; }
+  text-decoration: none;
+}
+
+a:visited {
+  color: #0366d6;
+}
+
+a:hover {
+  color: #0366d6;
+  text-decoration: underline;
+}
 
 pre {
   background-color: #f6f8fa;
@@ -77,16 +82,16 @@ pre {
   */
 
 code {
-  background-color: rgba(27,31,35,.05);
+  background-color: rgba(27, 31, 35, .05);
   border-radius: 3px;
   font-size: 85%;
   margin: 0;
   word-wrap: break-word;
   padding: .2em .4em;
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
 }
 
-pre > code {
+pre>code {
   background-color: transparent;
   border: 0;
   display: inline;
@@ -115,6 +120,7 @@ blockquote {
   letter-spacing: -1px;
   font-style: italic;
 }
+
 blockquote * {
   font-style: normal !important;
   letter-spacing: 0;
@@ -167,76 +173,93 @@ p {
   line-height: 24px;
   font-weight: 400;
   font-size: 16px;
-  color: #24292e; }
+  color: #24292e;
+}
 
 ul {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 li {
   color: #24292e;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5; }
+  line-height: 1.5;
+}
 
-li + li {
-  margin-top: 0.25em; }
+li+li {
+  margin-top: 0.25em;
+}
 
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #24292e; }
+  color: #24292e;
+}
 
 a:visited {
-  color: #0366d6; }
+  color: #0366d6;
+}
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   border-bottom: 1px solid #eaecef;
   color: #24292f;
-  /* Darker */ }
-  
+  /* Darker */
+}
+
 /* -- page tabs styles -- */
-.tabs ul ~ br,
-.tabs ul ~ .tab .tab-name{
-	display: none;
+.tabs ul~br,
+.tabs ul~.tab .tab-name {
+  display: none;
 }
+
 .tabs ul {
-    border-bottom: 1px solid #d7d7d7;
-    display: flex;
-    margin: 0 0 20px;
-    padding: 0;
+  border-bottom: 1px solid #d7d7d7;
+  display: flex;
+  margin: 0 0 20px;
+  padding: 0;
 }
+
 .tabs ul li {
-    display: block;
-    float: left;
-    height: 30px;
-    margin-bottom: 0;
-    margin: 0rem 2.5rem 0rem 0rem;  
-    padding: 0;
-    width: auto;
+  display: block;
+  float: left;
+  height: 30px;
+  margin-bottom: 0;
+  margin: 0rem 2.5rem 0rem 0rem;
+  padding: 0;
+  width: auto;
 }
+
 .tabs ul li a {
-    display: block;
-    font-size: 14px;
-    margin: 0;
-    text-decoration: none;
-    width: auto;
+  display: block;
+  font-size: 14px;
+  margin: 0;
+  text-decoration: none;
+  width: auto;
 }
+
 .tabs ul li a.active {
-    border-bottom: 2px solid #d7d7d7;
-    padding-bottom: 6px;
+  border-bottom: 2px solid #d7d7d7;
+  padding-bottom: 6px;
 }
+
 .tabs ul li:first-child a.active {
-    margin-left: 0;
+  margin-left: 0;
 }
-.tabs:before ul,.tabs:after ul {
-    content: " ";
-    display: block;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
-    width: 0;
-}
+
+.tabs:before ul,
 .tabs:after ul {
-    clear: both;
+  content: " ";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+.tabs:after ul {
+  clear: both;
 }
 
 /* Highlight js code */
@@ -247,17 +270,20 @@ h1, h2, h3 {
   color: #333;
   background: #f6f8fa;
 }
+
 .hljs-comment,
 .hljs-quote {
   color: #998;
   font-style: italic;
 }
+
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
   color: #333;
   font-weight: bold;
 }
+
 .hljs-number,
 .hljs-literal,
 .hljs-variable,
@@ -265,63 +291,77 @@ h1, h2, h3 {
 .hljs-tag .hljs-attr {
   color: #008080;
 }
+
 .hljs-string,
 .hljs-doctag {
   color: #d14;
 }
+
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
   color: #900;
   font-weight: bold;
 }
+
 .hljs-subst {
   font-weight: normal;
 }
+
 .hljs-type,
 .hljs-class .hljs-title {
   color: #458;
   font-weight: bold;
 }
+
 .hljs-tag,
 .hljs-name,
 .hljs-attribute {
   color: #000080;
   font-weight: normal;
 }
+
 .hljs-regexp,
 .hljs-link {
   color: #009926;
 }
+
 .hljs-symbol,
 .hljs-bullet {
   color: #990073;
 }
+
 .hljs-built_in,
 .hljs-builtin-name {
   color: #0086b3;
 }
+
 .hljs-meta {
   color: #999;
   font-weight: bold;
 }
+
 .hljs-deletion {
   background: #fdd;
 }
+
 .hljs-addition {
   background: #dfd;
 }
+
 .hljs-emphasis {
   font-style: italic;
 }
+
 .hljs-strong {
   font-weight: bold;
 }
-#simple-css-changes + p{
+
+#simple-css-changes+p {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  background: rgba(245,247,249,1.00);
+  background: rgba(245, 247, 249, 1.00);
   padding: 5px;
 }
 
@@ -342,6 +382,7 @@ h1, h2, h3 {
   transform: translateY(100%);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
 }
+
 .btn--scroll-top:after {
   content: "";
   display: inline-block;
@@ -356,31 +397,101 @@ h1, h2, h3 {
   transform-origin: 50% 50%;
   transition: all 0.3s;
 }
+
 .btn--scroll-top.is-visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0s;
 }
+
 .btn {
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    margin: 0;
-    line-height: 1;
-    text-decoration: none;
-    text-align: center;
-    vertical-align: middle;
-    border: none;
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    font-size: 1em;
-    background-color: var(--btn-bg);
-    color: var(--btn-text);
-    transition: background-color .5s cubic-bezier(.215,.61,.355,1);
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  margin: 0;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1em;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  transition: background-color .5s cubic-bezier(.215, .61, .355, 1);
 }
+
+/* end */
+
+/* ClipboardButton */
+.ClipboardButton {
+  padding: 0.8rem 1rem;
+}
+
+.content:hover .clipboard-container {
+  display: block;
+  animation: fade-in 200ms both;
+}
+
+.content .clipboard-container {
+  display: none;
+  animation: fade-out 200ms both;
+}
+
+@keyframes tooltip-appear {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.tooltipped:hover::before,
+.tooltipped:hover::after,
+.tooltipped:active::before,
+.tooltipped:active::after,
+.tooltipped:focus::before,
+.tooltipped:focus::after {
+  display: inline-block;
+  text-decoration: none;
+  animation-name: tooltip-appear;
+  animation-duration: .1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: .4s;
+}
+
+.tooltipped::after {
+  position: absolute;
+  z-index: 1000000;
+  display: none;
+  padding: 0.5em 0.75em;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  white-space: pre;
+  pointer-events: none;
+  content: attr(data-copy-feedback);
+  background: #fff;
+  border-radius: 6px;
+  right: 100%;
+  bottom: 50%;
+  margin-right: 6px;
+  transform: translateY(50%);
+  opacity: 0;
+}
+
 /* end */</style>        
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XJY07B7F4G"></script>
@@ -392,8 +503,7 @@ h1, h2, h3 {
         </script>        
       </head>
       <body>
-        <div id='content'>
-    <h1 id="pipeline-theme-version-6">Pipeline theme version 6</h1>
+        <div id='content'><h1 id="pipeline-theme-version-6">Pipeline theme version 6</h1>
 <h2 id="simple-css-changes">Simple CSS changes</h2>
 <p>To add any <b>CSS</b> code in this list follow these steps: <a href="https://groupthought-themes.gitbook.io/tutorials/">Where to add CSS</a></p>
 <ol>
@@ -429,7 +539,40 @@ h1, h2, h3 {
 <p>This allows the add to cart button to use the primary accent color</p>
 <p><div class="tabs"><br />
 <div class="tab" name="version 6.1"><span class="tab-name">version 6.1</span></p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change Add to Cart button color */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - change Add to Cart button color */
+.upsell__btn,
+.product__submit__buttons .btn--add-to-cart {
+  background-color: var(---color-primary);
+  border: 1px solid var(---color-primary);
+  color: var(---color-primary-opposite);
+}
+.upsell__btn:hover, .upsell__btn:focus,
+.product__submit__buttons .btn--add-to-cart:hover, .product__submit__buttons .btn--add-to-cart:focus {
+  background-color: var(---color-primary-hover);
+  border: 1px solid var(---color-primary-hover);
+  color: var(---color-primary-opposite);
+}
+/* Change loading and complete state colors */
+.btn-state-loading .svg-loader circle,
+.btn-state-loading .svg-loader circle~circle{
+  stroke: var(---color-primary-opposite);
+}
+.btn-state-complete{
+    border-left: 2px solid var(---color-primary-opposite);
+    border-bottom: 2px solid var(---color-primary-opposite);  
+}
+/* - end - */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change Add to Cart button color */</span>
 <span class="hljs-selector-class">.upsell__btn</span>,
 <span class="hljs-selector-class">.product__submit__buttons</span> <span class="hljs-selector-class">.btn--add-to-cart</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(---color-primary);
@@ -452,10 +595,43 @@ h1, h2, h3 {
     <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid <span class="hljs-built_in">var</span>(---color-primary-opposite);  
 }
 <span class="hljs-comment">/* - end - */</span>
-</code></pre>
+</code></pre></div>
 <p></div><br />
 <div class="tab" name="version 6.2"><span class="tab-name">version 6.2</span></p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change Add to Cart button color */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - change Add to Cart button color */
+.upsell__btn,
+.product__submit__buttons .btn--add-to-cart {
+  background-color: var(--COLOR-PRIMARY);
+  border: 1px solid var(--COLOR-PRIMARY);
+  color: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.upsell__btn:hover, .upsell__btn:focus,
+.product__submit__buttons .btn--add-to-cart:hover, .product__submit__buttons .btn--add-to-cart:focus {
+  background-color: var(--COLOR-PRIMARY-HOVER);
+  border: 1px solid var(--COLOR-PRIMARY-HOVER);
+  color: var(--COLOR-PRIMARY-OPPOSITE);
+}
+/* Change loading and complete state colors */
+.btn-state-loading .svg-loader circle,
+.btn-state-loading .svg-loader circle~circle{
+  stroke: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.btn-state-complete{
+    border-left: 2px solid var(--COLOR-PRIMARY-OPPOSITE);
+    border-bottom: 2px solid var(--COLOR-PRIMARY-OPPOSITE);  
+}
+/* - end - */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change Add to Cart button color */</span>
 <span class="hljs-selector-class">.upsell__btn</span>,
 <span class="hljs-selector-class">.product__submit__buttons</span> <span class="hljs-selector-class">.btn--add-to-cart</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY);
@@ -478,7 +654,7 @@ h1, h2, h3 {
     <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);  
 }
 <span class="hljs-comment">/* - end - */</span>
-</code></pre>
+</code></pre></div>
 <p></div><br />
 </div></p>
 <h4 id="example-when-this-is-used">Example when this is used</h4>
@@ -486,7 +662,28 @@ h1, h2, h3 {
 <p>To use custom colors instead of the primary theme color also add this CSS code. Use any valid hex color for the properties</p>
 <p><div class="tabs"><br />
 <div class="tab" name="version 6.1"><span class="tab-name">version 6.1</span></p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - custom colors Add to Cart button 
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - custom colors Add to Cart button 
+---color-primary  - the background color
+---color-primary-hover  - the hover background color
+---color-primary-opposite - the text color
+*/
+.product__submit__buttons .btn--add-to-cart {
+  ---color-primary: #444444;
+  ---color-primary-hover: #111111;
+  ---color-primary-opposite: #ffffff;
+}
+/* - end - */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - custom colors Add to Cart button 
 ---color-primary  - the background color
 ---color-primary-hover  - the hover background color
 ---color-primary-opposite - the text color
@@ -497,10 +694,31 @@ h1, h2, h3 {
   -<span class="hljs-attr">--color-primary-opposite</span>: <span class="hljs-number">#ffffff</span>;
 }
 <span class="hljs-comment">/* - end - */</span>
-</code></pre>
+</code></pre></div>
 <p></div><br />
 <div class="tab" name="version 6.2"><span class="tab-name">version 6.2</span></p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - custom colors Add to Cart button 
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - custom colors Add to Cart button 
+--COLOR-PRIMARY  - the background color
+--COLOR-PRIMARY-HOVER  - the hover background color
+--COLOR-PRIMARY-OPPOSITE - the text color
+*/
+.product__submit__buttons .btn--add-to-cart {
+  --COLOR-PRIMARY: #444444;
+  --COLOR-PRIMARY-HOVER: #111111;
+  --COLOR-PRIMARY-OPPOSITE: #ffffff;
+}
+/* - end - */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - custom colors Add to Cart button 
 --COLOR-PRIMARY  - the background color
 --COLOR-PRIMARY-HOVER  - the hover background color
 --COLOR-PRIMARY-OPPOSITE - the text color
@@ -511,23 +729,66 @@ h1, h2, h3 {
   <span class="hljs-attr">--COLOR-PRIMARY-OPPOSITE</span>: <span class="hljs-number">#ffffff</span>;
 }
 <span class="hljs-comment">/* - end - */</span>
-</code></pre>
+</code></pre></div>
 <p><br />
 </div><br />
 </div></p>
 <p><img src="https://user-images.githubusercontent.com/1010232/142880271-8f1d2ae4-e3ba-4ad8-a33d-da3ab2068454.png" alt="image" /></p>
 <h3 id="2-hide-add-to-cart-button-price-a-name2a">2. Hide Add to cart button price <a name="2"></a></h3>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - hide Add to Cart button price */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - hide Add to Cart button price */
+.btn--add-to-cart .btn-state-ready span:not([data-add-to-cart-text]){ 
+  display:none; 
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - hide Add to Cart button price */</span>
 <span class="hljs-selector-class">.btn--add-to-cart</span> <span class="hljs-selector-class">.btn-state-ready</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-attr">[data-add-to-cart-text]</span>){ 
   <span class="hljs-attribute">display</span>:none; 
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-1">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142242186-f46e55a5-ba3a-4bd4-b0cd-4b5b44cbf135.png" alt="image" /></p>
 <h3 id="3-reduce-padding-above-and-below-sections-a-name3a">3. Reduce padding above and below sections <a name="3"></a></h3>
 <p>You can adjust the px values in the code to further reduce the padding-top and padding-bottom values</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - reduce section padding */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - reduce section padding */
+.homepage-logos.homepage-logos--tall,
+.homepage-collection-tabs,
+.homepage-blog, .homepage-collection, .homepage-columns, 
+.homepage-icons, .homepage-newsletter, .homepage-product {
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+.homepage-collection-grid, 
+.section-recent .recent__container__inner:not(.is-hidden), 
+.section-related {
+    padding-top: 36px;
+    padding-bottom: 34px;
+}
+.collection-tabs{
+  position: relative;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - reduce section padding */</span>
 <span class="hljs-selector-class">.homepage-logos</span><span class="hljs-selector-class">.homepage-logos--tall</span>,
 <span class="hljs-selector-class">.homepage-collection-tabs</span>,
 <span class="hljs-selector-class">.homepage-blog</span>, <span class="hljs-selector-class">.homepage-collection</span>, <span class="hljs-selector-class">.homepage-columns</span>, 
@@ -545,24 +806,55 @@ h1, h2, h3 {
   <span class="hljs-attribute">position</span>: relative;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h3 id="4-hide-navigation-cart-link-a-name4a">4. Hide navigation cart link <a name="4"></a></h3>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - hide navigation cart link */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - hide navigation cart link */
+.header__desktop__button .navlink--cart,
+.header__mobile__button[data-drawer-toggle="drawer-cart"]{
+  display: none;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - hide navigation cart link */</span>
 <span class="hljs-selector-class">.header__desktop__button</span> <span class="hljs-selector-class">.navlink--cart</span>,
 <span class="hljs-selector-class">.header__mobile__button</span><span class="hljs-selector-attr">[data-drawer-toggle=<span class="hljs-string">&quot;drawer-cart&quot;</span>]</span>{
   <span class="hljs-attribute">display</span>: none;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-2">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142244474-aaf98a1a-9c61-4b46-be78-1f30b577b301.png" alt="image" /></p>
 <h3 id="5-solid-background-color-for-header-when-scrolling-a-name5a">5. Solid background-color for header when scrolling <a name="5"></a></h3>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - solid background-color header */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - solid background-color header */
+.js__header__stuck .theme__header:after {
+    opacity: 1 !important;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - solid background-color header */</span>
 <span class="hljs-selector-class">.js__header__stuck</span> <span class="hljs-selector-class">.theme__header</span><span class="hljs-selector-pseudo">:after</span> {
     <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span> <span class="hljs-meta">!important</span>;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h3 id="6-overriding-the-theme-font-a-name6a">6. Overriding the theme font <a name="6"></a></h3>
 <h4 id="a-uploading-the-custom-font">a. Uploading the custom font</h4>
 <p>Use the steps in this guide to upload the fonts to the theme assets folder.<br />
@@ -572,55 +864,159 @@ h1, h2, h3 {
 <p>The <code>asset_url</code> allows the theme to find the font files in the assets folder. This is Shopify-specific code. Adding the code ensures the browser downloads the correct files instead of returning a 404 not fount.</p>
 <p>This needs the name of the file exactly like it is in your assets folder and then the code <code>| asset_url</code> generate the correct path to your file. </p>
 <p>Example of that code. This is used for the URL property for font-face import code.</p>
-<pre><code class="hljs liquid language-liquid"><span class="hljs-template-variable">{{ <span class="hljs-name">&quot;Gotham-Bold.eot&quot;</span> | asset_url }}</span><span class="language-xml">
-</span></code></pre>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{{ "Gotham-Bold.eot" | asset_url }}
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs liquid language-liquid"><span class="hljs-template-variable">{{ <span class="hljs-name">&quot;Gotham-Bold.eot&quot;</span> | asset_url }}</span><span class="language-xml">
+</span></code></pre></div>
 <h4 id="b-overriding-the-theme-font">b. Overriding the theme font</h4>
 <p>Add this CSS below the <a href="https://github.com/font-face">@font-face</a> code. The 'Gotham' is only an example in this code sample. Modify the code to use your custom <code>font-family</code>.</p>
 <p>The variables with "--font-stack-" can be updated for the body, heading, and accent. For more specific elements different CSS code would be needed.</p>
 <p><div class="tabs"><br />
 <div class="tab" name="version 6.1"><span class="tab-name">version 6.1</span></p>
-<pre><code class="hljs css language-css"><span class="hljs-selector-pseudo">:root</span> {
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value=":root {
+  ---font-stack-body: 'Gotham', sans-serif;
+  ---font-stack-heading:  'Gotham', sans-serif;
+  ---font-stack-accent:  'Gotham', sans-serif;
+}
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-selector-pseudo">:root</span> {
   -<span class="hljs-attr">--font-stack-body</span>: <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
   -<span class="hljs-attr">--font-stack-heading</span>:  <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
   -<span class="hljs-attr">--font-stack-accent</span>:  <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
 }
-</code></pre>
+</code></pre></div>
 <p></div><br />
 <div class="tab" name="version 6.2"><span class="tab-name">version 6.2</span></p>
-<pre><code class="hljs css language-css"><span class="hljs-selector-pseudo">:root</span> {
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value=":root {
+  --FONT-STACK-BODY: 'Gotham', sans-serif;
+  --FONT-STACK-HEADING:  'Gotham', sans-serif;
+  --FONT-STACK-ACCENT:  'Gotham', sans-serif;
+}
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-selector-pseudo">:root</span> {
   <span class="hljs-attr">--FONT-STACK-BODY</span>: <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
   <span class="hljs-attr">--FONT-STACK-HEADING</span>:  <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
   <span class="hljs-attr">--FONT-STACK-ACCENT</span>:  <span class="hljs-string">&#x27;Gotham&#x27;</span>, sans-serif;
 }
-</code></pre>
+</code></pre></div>
 <p></div><br />
 </div></p>
 <p><img src="https://user-images.githubusercontent.com/1010232/142937317-00396a84-493e-4947-b8ae-3cfb64cae866.png" alt="image" /></p>
 <h3 id="7-change-color-of-size-chart-link-a-name7a">7. Change color of size chart link <a name="7"></a></h3>
 <p>You can update the background-color and color properties with any valid HEX color code.<br />
 To find additional HEX color codes, visit:  https://colorhunt.co</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change color of size chart link */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - change color of size chart link */
+.product__info__link--inline,
+.product__info__link{
+  background-color: #d02e2e; 
+  color: #ffffff;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change color of size chart link */</span>
 <span class="hljs-selector-class">.product__info__link--inline</span>,
 <span class="hljs-selector-class">.product__info__link</span>{
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#d02e2e</span>; 
   <span class="hljs-attribute">color</span>: <span class="hljs-number">#ffffff</span>;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <p>For the link hover color</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change hover color of size chart link */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - change hover color of size chart link */
+.product__info__link--inline:hover,
+.product__info__link:hover{
+  background-color: #ffffff; 
+  color: #d02e2e;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change hover color of size chart link */</span>
 <span class="hljs-selector-class">.product__info__link--inline</span><span class="hljs-selector-pseudo">:hover</span>,
 <span class="hljs-selector-class">.product__info__link</span><span class="hljs-selector-pseudo">:hover</span>{
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffffff</span>; 
   <span class="hljs-attribute">color</span>: <span class="hljs-number">#d02e2e</span>;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-3">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142249538-3dee8a4a-afde-4dea-9723-fb2e522a6b0a.png" alt="image" /></p>
 <h3 id="8-sticky-currency-and-language-selectors-a-name8a">8. Sticky currency and language selectors <a name="8"></a></h3>
 <p>Use this to apply the change to both desktop and mobile</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Sticky currency and language selectors */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Sticky currency and language selectors */
+#localization-form-footer{
+  position: fixed;
+  z-index: 1000;
+  bottom: 0px;
+  left: 15px;
+}
+#localization-form-footer .popout-list,
+#localization-form-footer .popout__toggle{
+  background: #ffffff;
+  color: #000;
+}
+#localization-form-footer .popout__toggle{
+  border: 1px solid #f0f0f0;
+}
+#localization-form-footer .popout-list__item a{
+  color: #000;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Sticky currency and language selectors */</span>
 <span class="hljs-selector-id">#localization-form-footer</span>{
   <span class="hljs-attribute">position</span>: fixed;
   <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1000</span>;
@@ -639,9 +1035,40 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <p>Use this to apply the change only to desktop</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Sticky currency and language selectors desktop */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Sticky currency and language selectors desktop */
+@media only screen and (min-width: 480px){ 
+  #localization-form-footer{
+    position: fixed;
+    z-index: 1000;
+    bottom: 0px;
+    left: 15px;
+  }
+  #localization-form-footer .popout-list,
+  #localization-form-footer .popout__toggle{
+    background: #ffffff;
+    color: #000;
+  }
+  #localization-form-footer .popout__toggle{
+    border: 1px solid #f0f0f0;
+  }
+  #localization-form-footer .popout-list__item a{
+    color: #000;
+  }
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Sticky currency and language selectors desktop */</span>
 <span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">480px</span>){ 
   <span class="hljs-selector-id">#localization-form-footer</span>{
     <span class="hljs-attribute">position</span>: fixed;
@@ -662,12 +1089,36 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   }
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-4">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142250897-0b113da9-1cbe-419f-a27f-5a728aeab0c9.png" alt="image" /></p>
 <h3 id="9-use-initial-case-for-all-text-a-name9a">9. Use initial case for all text <a name="9"></a></h3>
 <p>This will force text to use normal letter case.</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Use initial text transform for all text */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Use initial text transform for all text */
+.announcement__more, .announcement__text, .announcement__text p, .rte.icon__bar__paragraph p,
+.footer-quicklinks, .footer-secondary, .breadcrumb, .navtext, .sliderow, .uppercase, .home--uppercase, .home__subtitle,
+.grid__title, .icon__column__heading, .product__grid__title, .standard__kicker, .product__info__link--inline, 
+.radio__legend__label, .shopify-payment-button .shopify-payment-button__button--unbranded,
+.accordion__title, .collection__filters__toggle, .popout--navbar .popout__toggle, .share__text,
+.product__badge, .subcollection__title, .sidebar__item a, .sidebar__item span, .popout-list__option,
+.tabs--pill>.tab-link, .hero__kicker, .play__button--text, .caps--link{
+  text-transform: initial !important;
+}
+:root{
+    ---font-heading-caps: initial;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Use initial text transform for all text */</span>
 <span class="hljs-selector-class">.announcement__more</span>, <span class="hljs-selector-class">.announcement__text</span>, <span class="hljs-selector-class">.announcement__text</span> <span class="hljs-selector-tag">p</span>, <span class="hljs-selector-class">.rte</span><span class="hljs-selector-class">.icon__bar__paragraph</span> <span class="hljs-selector-tag">p</span>,
 <span class="hljs-selector-class">.footer-quicklinks</span>, <span class="hljs-selector-class">.footer-secondary</span>, <span class="hljs-selector-class">.breadcrumb</span>, <span class="hljs-selector-class">.navtext</span>, <span class="hljs-selector-class">.sliderow</span>, <span class="hljs-selector-class">.uppercase</span>, <span class="hljs-selector-class">.home--uppercase</span>, <span class="hljs-selector-class">.home__subtitle</span>,
 <span class="hljs-selector-class">.grid__title</span>, <span class="hljs-selector-class">.icon__column__heading</span>, <span class="hljs-selector-class">.product__grid__title</span>, <span class="hljs-selector-class">.standard__kicker</span>, <span class="hljs-selector-class">.product__info__link--inline</span>, 
@@ -681,10 +1132,41 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
     -<span class="hljs-attr">--font-heading-caps</span>: initial;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h3 id="10-change-background-color-and-roundness-of-variant-radio-labels-a-name10a">10. Change background-color and roundness of variant radio labels <a name="10"></a></h3>
 <p>Update the <code>--background-color</code> and <code>--color</code> properties to any valid HEX code. </p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Change background-color and roundness of variant radio labels */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Change background-color and roundness of variant radio labels */
+.radio__fieldset .radio__button{
+  --background-color: #f9f9f9;
+  --color: #1b1546;
+}
+.radio__fieldset .radio__button input~label {
+    background-color: var(--background-color);
+    color: var(--color);
+}
+/* When the radio button is checked */
+.radio__fieldset .radio__button input:checked~label {
+    background-color: var(--color);
+    color: var(--background-color);
+    border-color: var(--background-color);
+}
+/* When the radio button is hover */
+.radio__fieldset .radio__button label:active, .radio__fieldset .radio__button label:focus, .radio__fieldset .radio__button label:hover {
+    background-color: var(--background-color);
+    color: var(--color);
+    opacity: 0.7;
+}
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Change background-color and roundness of variant radio labels */</span>
 <span class="hljs-selector-class">.radio__fieldset</span> <span class="hljs-selector-class">.radio__button</span>{
   <span class="hljs-attr">--background-color</span>: <span class="hljs-number">#f9f9f9</span>;
   <span class="hljs-attr">--color</span>: <span class="hljs-number">#1b1546</span>;
@@ -705,20 +1187,87 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
     <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--color);
     <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.7</span>;
 }
-</code></pre>
+</code></pre></div>
 <p>Add this to make the labels round</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* Make button round */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* Make button round */
+.radio__fieldset .radio__button label{
+    border-radius: 25px;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* Make button round */</span>
 <span class="hljs-selector-class">.radio__fieldset</span> <span class="hljs-selector-class">.radio__button</span> <span class="hljs-selector-tag">label</span>{
     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">25px</span>;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-5">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142664998-c79541a6-8873-4c2d-a396-18b06f726195.png" alt="image" /></p>
 <h3 id="11-show-dots-for-mobile-product-page-thumbnails-a-name11a">11. Show dots for mobile product page thumbnails <a name="11"></a></h3>
 <p><div class="tabs"><br />
 <div class="tab" name="version 6.1"><span class="tab-name">version 6.1</span></p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Show dots for mobile product page thumbnails */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Show dots for mobile product page thumbnails */
+@media only screen and (max-width: 480px){
+  .media__thumb__wrapper .flickity-viewport {
+    height: auto !important;
+  }
+  .media__thumb__wrapper .flickity-viewport,
+  .media__thumb__wrapper .flickity-slider,
+  .media__thumb__wrapper .media__thumb {
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+  }
+  .media__thumb__wrapper  .media__thumb:before {
+    content: "";
+    background-color: #dcdcdc;
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 50%;
+  }
+  .media__thumb__wrapper  .media__thumb.is-selected:before{
+   background-color: #5c5c5c;
+  }
+  .media__thumb__wrapper .media__thumb.is-selected:after,
+  .media__thumb__wrapper .media__thumb img,
+  .media__thumb__wrapper .media__thumb svg{
+    display: none;
+  }
+  .media__thumb__wrapper .media__thumb{
+    width: 8px;
+    height: 8px;
+  }
+  .media__thumb__wrapper .media__thumb{
+    text-align: center;
+  }
+  .media__thumb__wrapper.flickity-enabled .flickity-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Show dots for mobile product page thumbnails */</span>
 <span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">480px</span>){
   <span class="hljs-selector-class">.media__thumb__wrapper</span> <span class="hljs-selector-class">.flickity-viewport</span> {
     <span class="hljs-attribute">height</span>: auto <span class="hljs-meta">!important</span>;
@@ -760,10 +1309,53 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   }
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <p></div><br />
 <div class="tab" name="version 6.2"><span class="tab-name">version 6.2</span></p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Show dots for mobile product page thumbnails */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Show dots for mobile product page thumbnails */
+@media only screen and (max-width: 480px){
+  .media__thumb__wrapper  .media__thumb:before {
+    content: "";
+    background-color: #dcdcdc;
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 50%;
+  }
+  .media__thumb__wrapper  .media__thumb.is-activated:before{
+   background-color: #5c5c5c;
+  }
+  .media__thumb__wrapper .media__thumb.is-activated:after,
+  .media__thumb__wrapper .media__thumb img,
+  .media__thumb__wrapper .media__thumb svg{
+    display: none;
+  }
+  .media__thumb__wrapper .media__thumb{
+    width: 8px;
+    height: 8px;
+  }
+  .media__thumb__wrapper{
+    justify-content: center;
+  }
+  .media__thumb__wrapper.flickity-disabled-mobile {
+    overflow: auto;
+  }
+  .media__thumb__wrapper + .custom-scrollbar{
+    display: none !important;
+  }
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Show dots for mobile product page thumbnails */</span>
 <span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">480px</span>){
   <span class="hljs-selector-class">.media__thumb__wrapper</span>  <span class="hljs-selector-class">.media__thumb</span><span class="hljs-selector-pseudo">:before</span> {
     <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;&quot;</span>;
@@ -796,13 +1388,49 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   }
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <p></div><br />
 </div></p>
 <h4 id="example-when-this-is-used-6">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142922046-352e2699-c5a2-4207-9ced-8abd71252be2.png" alt="image" /></p>
 <h3 id="12-borderless-product-page-image-on-mobile-a-name12a">12. Borderless product page image on mobile <a name="12"></a></h3>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Borderless product page image on mobile */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Borderless product page image on mobile */
+@media only screen and (max-width: 480px) {  
+  .product__media > div{
+    width: 100% !important;
+  } 
+  .product-page{
+    padding-top: 0;
+  }
+  .product-page > .wrapper {
+      padding: 0;
+  }
+  .grid.product-single{
+    margin-left: 0;
+  }  
+  .grid.product-single > .grid__item{
+    padding-left: 0;
+  }
+  .breadcrumb,
+  .media__thumb__wrapper {
+     margin: 0 var(--gutter) 0 var(--gutter);
+  }
+  .grid.product-single > .grid__item:not(.product__media__wrapper){
+     padding: 0 var(--gutter);
+  }
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Borderless product page image on mobile */</span>
 <span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">480px</span>) {  
   <span class="hljs-selector-class">.product__media</span> &gt; <span class="hljs-selector-tag">div</span>{
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span> <span class="hljs-meta">!important</span>;
@@ -828,13 +1456,36 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   }
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-7">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/144066487-ddc1605f-f12b-4065-8bec-30605b2ddade.png" alt="image" /></p>
 <h3 id="13-always-show-grid-swatches-a-name13a">13. Always show grid swatches <a name="13"></a></h3>
 <p>Hide the colors available text and show the swatches on desktop.</p>
 <p><img src="https://user-images.githubusercontent.com/1010232/145248439-98f894ee-f16a-4669-aeb5-614987d011b8.png" alt="image" /></p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Always show grid swatches on desktop */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Always show grid swatches on desktop */
+@media only screen and (min-width: 480px){
+    .product-grid-item .grid__swatch__container .grid__swatch__placeholder {
+        display: none;
+    }
+    .product-grid-item .grid__swatch__container .grid__swatch__hover {
+        visibility: visible;
+        opacity: 1;
+        height: initial;
+        top: 0;
+    }
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Always show grid swatches on desktop */</span>
 <span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">480px</span>){
     <span class="hljs-selector-class">.product-grid-item</span> <span class="hljs-selector-class">.grid__swatch__container</span> <span class="hljs-selector-class">.grid__swatch__placeholder</span> {
         <span class="hljs-attribute">display</span>: none;
@@ -847,11 +1498,31 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
     }
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-8">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/145248164-f1baea1f-7222-49eb-9db6-5ed8eb2b115b.png" alt="image" /></p>
 <h3 id="14-show-footer-logo-within-footer-section-a-name14a">14. Show footer logo within footer section <a name="14"></a></h3>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Show footer logo within footer section */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Show footer logo within footer section */
+.footer-logo-wrapper{
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.site-footer {
+    padding-top: 0px;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Show footer logo within footer section */</span>
 <span class="hljs-selector-class">.footer-logo-wrapper</span>{
   <span class="hljs-attribute">height</span>: auto;
   <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">10px</span>;
@@ -861,12 +1532,32 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
     <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">0px</span>;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-9">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/146030338-362c84db-f9e5-41c1-9e28-1b4b030dbce4.png" alt="image" /></p>
 <h3 id="15-increase-max-width-for-theme-wrapper-a-name15a">15. Increase max width for theme wrapper <a name="15"></a></h3>
 <p>The theme wrapper limits the max-width of the section to 1080px. This CSS changes it to 1500px.</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Increase max width for wrapper */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Increase max width for wrapper */
+.wrapper, .wrapper .grandparent .header__dropdown__wrapper {
+    max-width: 1500px;
+}
+@media only screen and (min-width: 768px){
+  .wrapper--brick {
+    max-width: 1500px;
+  }
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Increase max width for wrapper */</span>
 <span class="hljs-selector-class">.wrapper</span>, <span class="hljs-selector-class">.wrapper</span> <span class="hljs-selector-class">.grandparent</span> <span class="hljs-selector-class">.header__dropdown__wrapper</span> {
     <span class="hljs-attribute">max-width</span>: <span class="hljs-number">1500px</span>;
 }
@@ -876,10 +1567,54 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   }
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h3 id="16-products-large-vertical-image-display-with-sticky-column-a-name16a">16. Products: Large vertical image display with sticky column <a name="16"></a></h3>
 <p>With this modification, you can display all your product images in full size down the main product image column.</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Products: Large vertical image display with sticky column */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Products: Large vertical image display with sticky column */
+@media only screen and (min-width: 768px){
+  .product__media__wrapper .flickity-viewport {
+    height: auto !important;
+  }
+  .product__media__wrapper .flickity-viewport,
+  .product__media__wrapper .flickity-slider,
+  .product__media__wrapper .product__media {
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .product__media__wrapper .flickity-slider .product__media {
+      margin: 0;
+      width: 100%;
+      height: auto;
+  }
+  .product__slides .flickity-slider>*{
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .product__media__wrapper .flickity-slider .product__media:not(:first-of-type) {margin-top: var(--gutter);}  
+  /* end */
+
+  /* --- code to make product info column sticky --- */
+  .product-single > .grid__item:not(.product__media__wrapper) {
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    z-index: 5001;
+  }
+  /* - end - */
+}
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Products: Large vertical image display with sticky column */</span>
 <span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>){
   <span class="hljs-selector-class">.product__media__wrapper</span> <span class="hljs-selector-class">.flickity-viewport</span> {
     <span class="hljs-attribute">height</span>: auto <span class="hljs-meta">!important</span>;
@@ -913,12 +1648,100 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   }
   <span class="hljs-comment">/* - end - */</span>
 }
-</code></pre>
+</code></pre></div>
 <h4 id="example-with-sticky-right-column">Example with sticky right column:</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/162497630-a5a72cf0-8555-4049-ab70-a5340fa451fb.png" alt="image" /></p>
 <h3 id="17-products-move-thumbnails-to-left-or-right-of-featured-product-image-a-name17a">17. Products: Move thumbnails to left or right of featured product image <a name="17"></a></h3>
 <p>Update the <code>--position</code> and <code>--large-position</code> to change the position to right or left. </p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Start Pipeline override code for thumbnails positioned on the left - */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Start Pipeline override code for thumbnails positioned on the left - */
+.product-page {
+
+  /* Set left or right position of thumbnails: */
+  --position: left;
+
+  /* Set left or right position of main image opposite of thumbnails: */
+  --large-position: right;
+
+  /* Set size of thumbnails use 50 for small or 100 for large: */
+  --thumb-size: 80px;
+
+  /* Set height of thumbs container: */
+  --thumb-container-height: 80vw;
+
+  /* Set height of thumbs container on desktop: */    
+  --thumb-container-desktop-height: 38vw;    
+
+  /* Set width of scrollbar: */
+  --scroll-bar-width: 3px;
+
+  /* Stop do not change below this line. */
+
+  --spacing: 10px;
+  --spacing-adjusted: calc(var(--spacing) * 0.5);
+  --thumb-full: calc(var(--thumb-size) + var(--scroll-bar-width) );
+  --thumb-space: calc(var(--thumb-size) + var(--scroll-bar-width) + var(--spacing));
+  --adjusted-width: calc(var(--thumb-size) + var(--scroll-bar-width) + var(--spacing) + var(--spacing-adjusted));
+}
+@media only screen and (min-width: 768px){
+    .product-page {
+      --thumb-container-height: var(--thumb-container-desktop-height);
+    }
+}
+.media__thumb__wrapper .flickity-viewport {
+    height: auto !important;
+}
+.media__thumb__wrapper .flickity-viewport,
+.media__thumb__wrapper .flickity-slider,
+.media__thumb__wrapper .media__thumb {
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+}
+
+.media__thumb__wrapper::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: var(--scroll-bar-width);
+}
+.media__thumb__wrapper::-webkit-scrollbar-thumb {
+    border-radius: 14px;
+    background-color: var(--border);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}  
+.media__thumb__wrapper .media__thumb {
+    margin-bottom: 10px;
+    margin-top: 0;
+    width: var(--thumb-size);
+    height: var(--thumb-size);        
+}
+.media__thumb__wrapper.flickity-disabled-mobile{
+    display: block;
+}
+.product__media__wrapper .custom-scrollbar{
+    display: none !important;
+}
+.media__thumb__wrapper {
+    float: var(--position);
+    width: var(--thumb-space);
+    overflow: scroll !important;
+    overflow-x: hidden !important;
+    max-height: var(--thumb-container-height);
+}
+.product__slides {
+    float: var(--large-position);
+    width: calc(100% - var(--adjusted-width));
+}
+/* - end - */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Start Pipeline override code for thumbnails positioned on the left - */</span>
 <span class="hljs-selector-class">.product-page</span> {
 
   <span class="hljs-comment">/* Set left or right position of thumbnails: */</span>
@@ -996,7 +1819,7 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
     <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-built_in">var</span>(--adjusted-width));
 }
 <span class="hljs-comment">/* - end - */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-with-the-default-code">Example with the default code:</h4>
 <p><div class="tabs"></p>
 <p><div class="tab" name="desktop"><span class="tab-name">desktop</span><br />
@@ -1007,7 +1830,38 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 </div></p>
 <p></div></p>
 <h3 id="18-add-drop-down-arrow-indicators-to-top-level-menus-a-name18a">18. Add drop-down arrow indicators to top-level menus <a name="18"></a></h3>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - code to add dropdown arrows in top-level navigation - */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - code to add dropdown arrows in top-level navigation - */
+.header__desktop .navlink--toplevel:not(:only-child) .navtext:after {
+  content: ''; 
+  position: relative;
+  top: -1px;
+  width: 0.5em;
+  height: 0.5em;
+  display: inline-block;
+  vertical-align: middle;
+  border-left: 0.15em solid currentColor;
+  border-bottom: 0.15em solid currentColor;
+  transform: rotate(-45deg);
+  margin-left: 8px;
+  margin-top: -0.25em;
+}
+.header__desktop [aria-expanded="true"] .navlink--toplevel:not(:only-child) .navtext:after,
+.header__desktop .navlink--toplevel:hover:not(:only-child) .navtext:after {
+  transform: rotate(-135deg);
+  transition: 0.2s all;
+}
+/* - end - */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - code to add dropdown arrows in top-level navigation - */</span>
 <span class="hljs-selector-class">.header__desktop</span> <span class="hljs-selector-class">.navlink--toplevel</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-pseudo">:only-child</span>) <span class="hljs-selector-class">.navtext</span><span class="hljs-selector-pseudo">:after</span> {
   <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>; 
   <span class="hljs-attribute">position</span>: relative;
@@ -1028,19 +1882,57 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   <span class="hljs-attribute">transition</span>: <span class="hljs-number">0.2s</span> all;
 }
 <span class="hljs-comment">/* - end - */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-with-the-default-code-1">Example with the default code:</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/167903869-6fa8fdba-1629-4176-a1f8-d6b5809b78c6.png" alt="image" /></p>
 <h2 id="advanced-changes-1">Advanced Changes</h2>
 <h3 id="1-show-cart-drawer-when-product-added-to-cart-a-name21a">1. Show cart drawer when product added to cart <a name="21"></a></h3>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Hide the product add popdown */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Hide the product add popdown */
+.product-add-popdown{
+  display: none !important;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Hide the product add popdown */</span>
 <span class="hljs-selector-class">.product-add-popdown</span>{
   <span class="hljs-attribute">display</span>: none <span class="hljs-meta">!important</span>;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <p>Add this to the end of your theme.js javascript file</p>
-<pre><code class="hljs js language-js"><span class="hljs-comment">/* Javascript - Show cart drawer when product added to cart */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* Javascript - Show cart drawer when product added to cart */
+document.addEventListener('theme:cart:popdown', (e) => {
+  const listener = (e) => {
+    document.querySelector('[data-drawer="drawer-cart"]').dispatchEvent(
+      new CustomEvent('theme:drawer:open', {
+        bubbles: false,
+      })
+    );
+    document.removeEventListener('theme:cart:change', listener);
+  };
+  document.addEventListener('theme:cart:change', listener);
+});
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs js language-js"><span class="hljs-comment">/* Javascript - Show cart drawer when product added to cart */</span>
 <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;theme:cart:popdown&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> <span class="hljs-title function_">listener</span> = (<span class="hljs-params">e</span>) =&gt; {
     <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;[data-drawer=&quot;drawer-cart&quot;]&#x27;</span>).<span class="hljs-title function_">dispatchEvent</span>(
@@ -1053,13 +1945,58 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;theme:cart:change&#x27;</span>, listener);
 });
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-10">Example when this is used</h4>
 <p><a href="https://www.loom.com/embed/9f05e0b5a58f4d45a5bdeacfece4ac00">Loom video link</a></p>
 <h3 id="2-add-sku-to-product-section-a-name22a">2. Add SKU to product section <a name="22"></a></h3>
 <p>Add the code below to the Liquid section block on the product page</p>
 <p><img src="https://user-images.githubusercontent.com/1010232/144634266-5e250919-68f8-4987-8f49-b69557e09f4b.png" alt="image" /></p>
-<pre><code class="hljs liquid language-liquid"><span class="language-xml"><span class="hljs-comment">&lt;!-- Liquid - Add product SKU --&gt;</span>                       
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<!-- Liquid - Add product SKU -->                       
+{% assign current_variant = product.selected_or_first_available_variant %}
+<p class="sku-wrapper radio__legend"><span class="radio__legend__label" {% if current_variant.sku == "" %}style="display:none;" {% endif %}>SKU</span><span class="variant-sku">{{ current_variant.sku }}</span></p>
+
+<script>
+  document.addEventListener('theme:variant:change', function(event) {
+    const variant = event.detail.variant;
+    let container = event.target;
+
+    if(event.target.outerWrapper){
+      container = event.target.outerWrapper;
+    }
+
+    const skuWrapper = container.querySelectorAll(".sku-wrapper");
+
+    if (skuWrapper.length) {
+      skuWrapper.forEach((element) => {
+        const sku = element.querySelector(".variant-sku");
+        if (variant) {
+          if (variant.sku) {
+            if(sku) {
+              sku.innerHTML = variant.sku;
+            }
+            element.style.display = "block"
+          } else {
+            element.style.display = "none";
+          }
+        } else {
+          element.style.display = "none";
+        }
+      });
+    }  
+  });
+</script>
+<!-- end SKU --> 
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs liquid language-liquid"><span class="language-xml"><span class="hljs-comment">&lt;!-- Liquid - Add product SKU --&gt;</span>                       
 </span><span class="hljs-template-tag">{% <span class="hljs-name">assign</span> current_variant = product.selected_or_first_available_variant %}</span><span class="language-xml">
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sku-wrapper radio__legend&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;radio__legend__label&quot;</span> </span></span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">if</span></span> current_variant.sku == &quot;&quot; %}</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none;&quot;</span> </span></span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">endif</span></span> %}</span><span class="language-xml"><span class="hljs-tag">&gt;</span>SKU<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;variant-sku&quot;</span>&gt;</span></span><span class="hljs-template-variable">{{ current_variant.sku }}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
@@ -1094,12 +2031,38 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
   });
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-comment">&lt;!-- end SKU --&gt;</span> 
-</span></code></pre>
+</span></code></pre></div>
 <h4 id="example-when-this-is-used-11">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/144634357-43abd557-cbd0-4b7f-8144-b15f0472b991.png" alt="image" /></p>
 <h3 id="3-show-native-quantity-selector-for-quantity-input-a-name23a">3. Show native quantity selector for quantity input <a name="23"></a></h3>
 <p>This allows the quantity selector to use the min/max/step attributes.</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Show native quantity selection for quantity input*/</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Show native quantity selection for quantity input*/
+.quantity__button{
+  display: none;
+}
+.quantity__input{ 
+  text-align: left;
+  padding: 8px 10px;
+}
+input[type=number],
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1 !important;
+  -webkit-appearance: auto !important;
+  -moz-appearance auto !important;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Show native quantity selection for quantity input*/</span>
 <span class="hljs-selector-class">.quantity__button</span>{
   <span class="hljs-attribute">display</span>: none;
 }
@@ -1115,13 +2078,35 @@ input[type=number]::-webkit-outer-spin-button {
   -moz-appearance auto !important;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <h4 id="example-when-this-is-used-12">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/144886979-cc352c4c-8da4-46c7-95f2-239e9f322d2a.png" alt="image" /></p>
 <h3 id="4-show-payment-types-below-add-to-cart-button-a-name24a">4. Show payment types below add to cart button <a name="24"></a></h3>
 <p>Add the code below to the <strong>Liquid</strong> section block on the product page.</p>
 <p><img src="https://user-images.githubusercontent.com/1010232/147277810-58630c9c-1e2a-4d6b-a0ae-5e5bc0c587cc.png" alt="image" /></p>
-<pre><code class="hljs liquid language-liquid"><span class="language-xml"><span class="hljs-comment">&lt;!-- Liquid - Add payment types --&gt;</span> 
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<!-- Liquid - Add payment types --> 
+{% unless shop.enabled_payment_types == empty %}
+<ul class="footer-payment payment-icons inline-list">
+  {% for type in shop.enabled_payment_types %}
+  <li>
+    {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+    <span class="visually-hidden">{{ type | capitalize | replace: '_', ' ' }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endunless %}
+<!-- end payment types --> 
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs liquid language-liquid"><span class="language-xml"><span class="hljs-comment">&lt;!-- Liquid - Add payment types --&gt;</span> 
 {% unless shop.enabled_payment_types == empty %}
 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;footer-payment payment-icons inline-list&quot;</span>&gt;</span>
   {% for type in shop.enabled_payment_types %}
@@ -1133,14 +2118,58 @@ input[type=number]::-webkit-outer-spin-button {
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 {% endunless %}
 <span class="hljs-comment">&lt;!-- end payment types --&gt;</span> 
-</span></code></pre>
+</span></code></pre></div>
 <p>Place the <strong>Liquid</strong> block below the <strong>Form</strong> block.</p>
 <p><img src="https://user-images.githubusercontent.com/1010232/147277912-30a26d4b-6988-4271-81c1-e11263954e8b.png" alt="image" /></p>
 <h4 id="example-when-this-is-used-13">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/147277865-fc54676a-f38c-4c4f-8f48-7c1ef6ba6d4f.png" alt="image" /></p>
 <h3 id="5-scroll-to-top-button-a-name25a">5. Scroll to top button <a name="25"></a></h3>
 <p>Add this to the theme.css file</p>
-<pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Scroll to top button */</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Scroll to top button */
+.btn--scroll-top {
+  position: fixed;
+  right: var(--outer);
+  bottom: var(--outer);
+  z-index: 500;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+}
+.btn--scroll-top:after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-width: 0 0 1px 1px;
+  border-style: solid;
+  border-color: currentcolor;
+  margin: 0;
+  vertical-align: middle;
+  transform: rotate(135deg);
+  transform-origin: 50% 50%;
+  transition: all 0.3s;
+}
+.btn--scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0s;
+}
+/* end */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Scroll to top button */</span>
 <span class="hljs-selector-class">.btn--scroll-top</span> {
   <span class="hljs-attribute">position</span>: fixed;
   <span class="hljs-attribute">right</span>: <span class="hljs-built_in">var</span>(--outer);
@@ -1174,11 +2203,52 @@ input[type=number]::-webkit-outer-spin-button {
   <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.5s</span> ease, transform <span class="hljs-number">0.5s</span> ease, visibility <span class="hljs-number">0s</span> linear <span class="hljs-number">0s</span>;
 }
 <span class="hljs-comment">/* end */</span>
-</code></pre>
+</code></pre></div>
 <p>Add this to the end of your theme.liquid file after this line</p>
-<pre><code class="hljs html language-html"><span class="hljs-comment">&lt;!-- Paste popup code or third party scripts below this comment line ============== --&gt;</span>
-</code></pre>
-<pre><code class="hljs html language-html">  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn--scroll-top btn--neutral&quot;</span> <span class="hljs-attr">data-scroll-top-button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<!-- Paste popup code or third party scripts below this comment line ============== -->
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs html language-html"><span class="hljs-comment">&lt;!-- Paste popup code or third party scripts below this comment line ============== --&gt;</span>
+</code></pre></div>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="  <button type="button" class="btn btn--scroll-top btn--neutral" data-scroll-top-button></button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Scroll to top button
+      const scrollTopButton = document.querySelector('[data-scroll-top-button]');
+      if (scrollTopButton) {
+        scrollTopButton.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+          });
+        });
+        document.addEventListener('theme:scroll', () => {
+          scrollTopButton.classList.toggle('is-visible', window.pageYOffset > window.innerHeight);
+        });
+      }
+    });
+  </script>
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs html language-html">  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn--scroll-top btn--neutral&quot;</span> <span class="hljs-attr">data-scroll-top-button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
     <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;DOMContentLoaded&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
@@ -1198,53 +2268,222 @@ input[type=number]::-webkit-outer-spin-button {
       }
     });
   </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
+</code></pre></div>
 
         </div>
         <button type="button" class="btn btn--scroll-top" data-scroll-top-button></button>
-        <script>/* -- page tabs javascript -- */
-document.addEventListener("DOMContentLoaded", function(){
+        <script>/* -- Copy text javascript -- */
+function createNode(text) {
+  const node = document.createElement('pre');
+  node.style.width = '1px';
+  node.style.height = '1px';
+  node.style.position = 'fixed';
+  node.style.top = '5px';
+  node.textContent = text;
+  return node;
+}
+
+function copyNode(node) {
+  //if ('clipboard' in navigator) {
+  // eslint-disable-next-line flowtype/no-flow-fix-me-comments
+  // $FlowFixMe Clipboard is not defined in Flow yet.
+  //return navigator.clipboard.writeText(node.textContent);
+  //}
+
+  const selection = getSelection();
+
+  if (selection == null) {
+    return Promise.reject(new Error());
+  }
+
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(node);
+  selection.addRange(range);
+  document.execCommand('copy');
+  selection.removeAllRanges();
+  return Promise.resolve();
+}
+
+function copyText(text) {
+  if ('clipboard' in navigator) {
+    // eslint-disable-next-line flowtype/no-flow-fix-me-comments
+    // $FlowFixMe Clipboard is not defined in Flow yet.
+    return navigator.clipboard.writeText(text);
+  }
+
+  const body = document.body;
+
+  if (!body) {
+    return Promise.reject(new Error());
+  }
+
+  const node = createNode(text);
+  body.appendChild(node);
+  copyNode(node);
+  body.removeChild(node);
+  return Promise.resolve();
+}
+
+function copyTarget(content) {
+  if (content instanceof HTMLInputElement || content instanceof HTMLTextAreaElement) {
+    return copyText(content.value);
+  } else if (content instanceof HTMLAnchorElement && content.hasAttribute('href')) {
+    return copyText(content.href);
+  } else {
+    return copyNode(content);
+  }
+}
+
+function copy(button) {
+  const id = button.getAttribute('for');
+  const text = button.getAttribute('value');
+
+  function trigger() {
+    button.dispatchEvent(new CustomEvent('clipboard-copy', {
+      bubbles: true
+    }));
+  }
+
+  if (text) {
+    copyText(text).then(trigger);
+  } else if (id) {
+    const root = 'getRootNode' in Element.prototype ? button.getRootNode() : button.ownerDocument;
+    if (!(root instanceof Document || 'ShadowRoot' in window && root instanceof ShadowRoot)) return;
+    const node = root.getElementById(id);
+    if (node) copyTarget(node).then(trigger);
+  }
+}
+
+function clicked(event) {
+  const button = event.currentTarget;
+
+  if (button instanceof HTMLElement) {
+    copy(button);
+  }
+}
+
+function keydown(event) {
+  if (event.key === ' ' || event.key === 'Enter') {
+    const button = event.currentTarget;
+
+    if (button instanceof HTMLElement) {
+      event.preventDefault();
+      copy(button);
+    }
+  }
+}
+
+function focused(event) {
+  event.currentTarget.addEventListener('keydown', keydown);
+}
+
+function blurred(event) {
+  event.currentTarget.removeEventListener('keydown', keydown);
+}
+
+class ClipboardCopyElement extends HTMLElement {
+  constructor() {
+    super();
+    this.addEventListener('click', clicked);
+    this.addEventListener('focus', focused);
+    this.addEventListener('blur', blurred);
+  }
+
+  connectedCallback() {
+    if (!this.hasAttribute('tabindex')) {
+      this.setAttribute('tabindex', '0');
+    }
+
+    if (!this.hasAttribute('role')) {
+      this.setAttribute('role', 'button');
+    }
+  }
+
+  get value() {
+    return this.getAttribute('value') || '';
+  }
+
+  set value(text) {
+    this.setAttribute('value', text);
+  }
+
+}
+
+if (!window.customElements.get('clipboard-copy')) {
+  window.ClipboardCopyElement = ClipboardCopyElement;
+  window.customElements.define('clipboard-copy', ClipboardCopyElement);
+}
+
+function toogleDisplay(elem){
+  if(elem){
+    if (elem.style.display === "none") {
+      elem.style.display = "block";
+    } else {
+      elem.style.display = "none";
+    }   
+  }
+}
+
+document.addEventListener('clipboard-copy', (e) => {
+  //get target and add success class to clipboard element
+  let svgs = e.target.querySelectorAll('svg');
+  if(svgs.length == 2){
+    let toggle = function(){
+      toogleDisplay(svgs[0]);
+      toogleDisplay(svgs[1]);
+      e.target.classList.toggle('tooltipped');
+    }
+    toggle();
+    setTimeout(toggle, 2000);    
+  }
+
+});
+/* -- end -- */
+
+/* -- page tabs javascript -- */
+document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll('.tabs');
   //generate tab links
-  tabs.forEach(function(el){
+  tabs.forEach(function (el) {
     let links = el.querySelectorAll('.tab');
-	let tabNav = '';
+    let tabNav = '';
     links.forEach(function (link, index) {
-		let name = link.getAttribute('name');
-		link.setAttribute('id','tab-'+index); 
-		tabNav += '<li><a href="#tab-'+index+'">'+name+'</a></li>';
+      let name = link.getAttribute('name');
+      link.setAttribute('id', 'tab-' + index);
+      tabNav += '<li><a href="#tab-' + index + '">' + name + '</a></li>';
     });
-	el.innerHTML = '<ul class="tabs-nav">'+tabNav+'</ul>' + el.innerHTML;
+    el.innerHTML = '<ul class="tabs-nav">' + tabNav + '</ul>' + el.innerHTML;
   });
   //add event to tab links
-  tabs.forEach(function(el){
+  tabs.forEach(function (el) {
     let links = el.querySelectorAll('a');
     let active = el.querySelector('li:first-child a');
     let content = el.querySelector(active.getAttribute('href'));
 
     active.classList.add('active');
-    
+
     links.forEach(function (link) {
       const a = el.querySelector(link.getAttribute('href'));
-      if(a && link !== active){
+      if (a && link !== active) {
         a.style.display = 'none';
       }
-      link.addEventListener('click', function(e){
+      link.addEventListener('click', function (e) {
         e.preventDefault();
         active.classList.remove('active');
         content.style.display = 'none';
         active = e.target;
         content = el.querySelector(active.getAttribute('href'));
         active.classList.add('active');
-        if(content){
-           content.style.display = 'block';
+        if (content) {
+          content.style.display = 'block';
         }
         return false;
-      });       
+      });
     });
   });
-  
-  
+
+
   let prev = window.pageYOffset;
   let up = null;
   let down = null;
@@ -1272,8 +2511,8 @@ document.addEventListener("DOMContentLoaded", function(){
         bubbles: false,
       })
     );
-  }  
-  
+  }
+
   function scrollListener() {
     let timeout;
     window.addEventListener(
@@ -1286,27 +2525,27 @@ document.addEventListener("DOMContentLoaded", function(){
           dispatch();
         });
       },
-      {passive: true}
+      { passive: true }
     );
   }
 
-  scrollListener();  
-  
+  scrollListener();
+
   // Scroll to top button
   const scrollTopButton = document.querySelector('[data-scroll-top-button]');
   if (scrollTopButton) {
-	scrollTopButton.addEventListener('click', () => {
-	  window.scrollTo({
-		top: 0,
-		left: 0,
-		behavior: 'smooth',
-	  });
-	});
-	document.addEventListener('theme:scroll', () => {
-	  scrollTopButton.classList.toggle('is-visible', window.pageYOffset > window.innerHeight);
-	});
-  }  
-  
+    scrollTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    });
+    document.addEventListener('theme:scroll', () => {
+      scrollTopButton.classList.toggle('is-visible', window.pageYOffset > window.innerHeight);
+    });
+  }
+
 });
 /* - end tabs - */</script>
       </body>
