@@ -200,21 +200,18 @@ You can adjust the px values in the code to further reduce the padding-top and p
 
 #### a. Uploading the custom font
 
-Use the steps in this guide to upload the fonts to the theme assets folder.
-[Fonts: Adding a custom downloaded font to your theme](https://help.groupthought.com/article/274-fonts-add-gotham-bold-to-your-theme)
+We recommend uploading the font files to Settings > Files.
 
-The code to import the font can be added to the end of your css-variables.liquid file. Add it before the last line ```{% endstyle %}```
+You can use the links from files in the code for the URL.
 
-![image](https://user-images.githubusercontent.com/1010232/142245929-01f7b2d3-40b5-4b46-b39e-6899faf54b1f.png)
-
-The ```asset_url``` allows the theme to find the font files in the assets folder. This is Shopify-specific code. Adding the code ensures the browser downloads the correct files instead of returning a 404 not fount.
-
-This needs the name of the file exactly like it is in your assets folder and then the code ```| asset_url``` generate the correct path to your file. 
-
-Example of that code. This is used for the URL property for font-face import code.
+Example of the font-face import code.
 
 ```liquid
-{{ "Gotham-Bold.eot" | asset_url }}
+@font-face{
+  font-family:"Gotham";
+  src:url('https://cdn.shopify.com/s/files/1/0611/7824/9366/files/font.woff2?v=1661161539') format("woff2"),
+  url('https://cdn.shopify.com/s/files/1/0611/7824/9366/files/font.woff?v=1661161539')format("woff");
+}
 ```
 
 #### b. Overriding the theme font
@@ -243,8 +240,6 @@ The variables with "--font-stack-" can be updated for the body, heading, and acc
 ```
 [/tab]
 [/tabs]
-
-![image](https://user-images.githubusercontent.com/1010232/142937317-00396a84-493e-4947-b8ae-3cfb64cae866.png)
 
 
 ### 7. Change color of size chart link <a name="7"></a>

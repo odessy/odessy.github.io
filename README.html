@@ -856,16 +856,16 @@ h3 {
 </code></pre></div>
 <h3 id="6-overriding-the-theme-font-a-name6a">6. Overriding the theme font <a name="6"></a></h3>
 <h4 id="a-uploading-the-custom-font">a. Uploading the custom font</h4>
-<p>Use the steps in this guide to upload the fonts to the theme assets folder.<br />
-<a href="https://help.groupthought.com/article/274-fonts-add-gotham-bold-to-your-theme">Fonts: Adding a custom downloaded font to your theme</a></p>
-<p>The code to import the font can be added to the end of your css-variables.liquid file. Add it before the last line <code>{% endstyle %}</code></p>
-<p><img src="https://user-images.githubusercontent.com/1010232/142245929-01f7b2d3-40b5-4b46-b39e-6899faf54b1f.png" alt="image" /></p>
-<p>The <code>asset_url</code> allows the theme to find the font files in the assets folder. This is Shopify-specific code. Adding the code ensures the browser downloads the correct files instead of returning a 404 not fount.</p>
-<p>This needs the name of the file exactly like it is in your assets folder and then the code <code>| asset_url</code> generate the correct path to your file. </p>
-<p>Example of that code. This is used for the URL property for font-face import code.</p>
+<p>We recommend uploading the font files to Settings &gt; Files.</p>
+<p>You can use the links from files in the code for the URL.</p>
+<p>Example of the font-face import code.</p>
 <div class="content" style="position: relative;">
     <div class="clipboard-container" style="position:absolute; right:0; top:0;">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{{ &quot;Gotham-Bold.eot&quot; | asset_url }}
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@font-face{
+  font-family:&quot;Gotham&quot;;
+  src:url(&#039;https://cdn.shopify.com/s/files/1/0611/7824/9366/files/font.woff2?v=1661161539&#039;) format(&quot;woff2&quot;),
+  url(&#039;https://cdn.shopify.com/s/files/1/0611/7824/9366/files/font.woff?v=1661161539&#039;)format(&quot;woff&quot;);
+}
 " tabindex="0" role="button">
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
        <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
@@ -874,8 +874,12 @@ h3 {
       <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
       </svg>
     </clipboard-copy>
-  </div><pre><code class="hljs liquid language-liquid"><span class="hljs-template-variable">{{ <span class="hljs-name">&quot;Gotham-Bold.eot&quot;</span> | asset_url }}</span><span class="language-xml">
-</span></code></pre></div>
+  </div><pre><code class="hljs liquid language-liquid"><span class="hljs-keyword">@font-face</span>{
+  <span class="hljs-attribute">font-family</span>:<span class="hljs-string">&quot;Gotham&quot;</span>;
+  <span class="hljs-attribute">src</span>:<span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;https://cdn.shopify.com/s/files/1/0611/7824/9366/files/font.woff2?v=1661161539&#x27;</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;woff2&quot;</span>),
+  <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;https://cdn.shopify.com/s/files/1/0611/7824/9366/files/font.woff?v=1661161539&#x27;</span>)<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;woff&quot;</span>);
+}
+</code></pre></div>
 <h4 id="b-overriding-the-theme-font">b. Overriding the theme font</h4>
 <p>Add this CSS below the <a href="https://github.com/font-face">@font-face</a> code. The 'Gotham' is only an example in this code sample. Modify the code to use your custom <code>font-family</code>.</p>
 <p>The variables with "--font-stack-" can be updated for the body, heading, and accent. For more specific elements different CSS code would be needed.</p>
@@ -927,7 +931,6 @@ h3 {
 </code></pre></div>
 <p></div><br />
 </div></p>
-<p><img src="https://user-images.githubusercontent.com/1010232/142937317-00396a84-493e-4947-b8ae-3cfb64cae866.png" alt="image" /></p>
 <h3 id="7-change-color-of-size-chart-link-a-name7a">7. Change color of size chart link <a name="7"></a></h3>
 <p>You can update the background-color and color properties with any valid HEX color code.<br />
 To find additional HEX color codes, visit:  https://colorhunt.co</p>
