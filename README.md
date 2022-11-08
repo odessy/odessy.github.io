@@ -239,6 +239,16 @@ The variables with "--font-stack-" can be updated for the body, heading, and acc
 }
 ```
 [/tab]
+[tab name="version 6.3"]
+```css
+:root {
+  --FONT-STACK-BODY: 'Gotham', sans-serif;
+  --FONT-STACK-HEADING:  'Gotham', sans-serif;
+  --FONT-STACK-ACCENT:  'Gotham', sans-serif;
+  --FONT-WEIGHT-NAV:  'Gotham', sans-serif;
+}
+```
+[/tab]
 [/tabs]
 
 
