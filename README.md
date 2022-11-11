@@ -595,7 +595,7 @@ Hide the colors available text and show the swatches on desktop.
 /* end */
 ```
 [/tab]
-[tab name="version 6.3"]The theme wrapper limits the max-width of the section to `--LAYOUT-WIDTH`. This can be changed Theme settings > Layout.
+[tab name="version 6.3"]The theme wrapper limits the max-width of the section to `--LAYOUT-WIDTH`. This can be changed in Theme settings > Layout.
 ```css
 /* CSS - Increase max width for wrapper */
 .wrapper, .wrapper .grandparent .header__dropdown__wrapper {
