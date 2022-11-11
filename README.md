@@ -579,8 +579,9 @@ Hide the colors available text and show the swatches on desktop.
 
 ### 15. Increase max width for theme wrapper <a name="15"></a>
 
-The theme wrapper limits the max-width of the section to 1080px. This CSS changes it to 1500px.
 
+[tabs]
+[tab name="version 6.1 to 6.2"]The theme wrapper limits the max-width of the section to 1080px. This CSS changes it to 1500px.
 ```css
 /* CSS - Increase max width for wrapper */
 .wrapper, .wrapper .grandparent .header__dropdown__wrapper {
@@ -593,6 +594,23 @@ The theme wrapper limits the max-width of the section to 1080px. This CSS change
 }
 /* end */
 ```
+[/tab]
+[tab name="version 6.3"]The theme wrapper limits the max-width of the section to `--LAYOUT-WIDTH`. This can be changed Theme settings > Layout.
+```css
+/* CSS - Increase max width for wrapper */
+.wrapper, .wrapper .grandparent .header__dropdown__wrapper {
+    max-width: var(--LAYOUT-WIDTH);
+}
+@media only screen and (min-width: 768px){
+  .wrapper--brick {
+    max-width: var(--LAYOUT-WIDTH);
+  }
+}
+/* end */
+```
+[/tab]
+[/tabs]
+
 
 ### 16. Products: Large vertical image display with sticky column <a name="16"></a>
 
