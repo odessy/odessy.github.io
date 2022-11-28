@@ -525,6 +525,7 @@ h3 {
 <li><a href="#16">Products: Large vertical image display with sticky column</a></li>
 <li><a href="#17">Products: Move thumbnails to left or right of featured product image</a></li>
 <li><a href="#18">Add drop-down arrow indicators to top-level menus</a></li>
+<li><a href="#19">Larger swatches on product page</a></li>
 </ol>
 <h2 id="advanced-changes">Advanced Changes</h2>
 <p>May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes</p>
@@ -1949,6 +1950,55 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 </code></pre></div>
 <h4 id="example-with-the-default-code-1">Example with the default code:</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/167903869-6fa8fdba-1629-4176-a1f8-d6b5809b78c6.png" alt="image" /></p>
+<h3 id="18-larger-swatches-on-product-page-a-name19a">18. Larger swatches on product page <a name="19"></a></h3>
+<p>Update the <code>--width</code> to change the size of the image. </p>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - Increase the size of the swatches on the product page  - */
+.product-page .swatch__button {
+  --width: 38px;
+  --height: var(--width);  
+  --offset: 4px;
+}
+.product-page .swatch__button label {
+  width: var(--width);
+  height: var(--height);
+}
+.product-page .swatch__button input:checked ~ label::after {
+  width: calc(var(--width) + var(--offset) * 2);
+  height: calc(var(--height) + var(--offset) *2);
+  top: calc(var(--offset) * -1);
+  left: calc(var(--offset) * -1);
+  border: 2px solid var(--primary);
+}
+/* - end - */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - Increase the size of the swatches on the product page  - */</span>
+<span class="hljs-selector-class">.product-page</span> <span class="hljs-selector-class">.swatch__button</span> {
+  <span class="hljs-attr">--width</span>: <span class="hljs-number">38px</span>;
+  <span class="hljs-attr">--height</span>: <span class="hljs-built_in">var</span>(--width);  
+  <span class="hljs-attr">--offset</span>: <span class="hljs-number">4px</span>;
+}
+<span class="hljs-selector-class">.product-page</span> <span class="hljs-selector-class">.swatch__button</span> <span class="hljs-selector-tag">label</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--width);
+  <span class="hljs-attribute">height</span>: <span class="hljs-built_in">var</span>(--height);
+}
+<span class="hljs-selector-class">.product-page</span> <span class="hljs-selector-class">.swatch__button</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:checked</span> ~ <span class="hljs-selector-tag">label</span><span class="hljs-selector-pseudo">::after</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--width) + <span class="hljs-built_in">var</span>(--offset) * <span class="hljs-number">2</span>);
+  <span class="hljs-attribute">height</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--height) + <span class="hljs-built_in">var</span>(--offset) *<span class="hljs-number">2</span>);
+  <span class="hljs-attribute">top</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--offset) * -<span class="hljs-number">1</span>);
+  <span class="hljs-attribute">left</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--offset) * -<span class="hljs-number">1</span>);
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-built_in">var</span>(--primary);
+}
+<span class="hljs-comment">/* - end - */</span>
+</code></pre></div>
 <h2 id="advanced-changes-1">Advanced Changes</h2>
 <h3 id="1-show-cart-drawer-when-product-added-to-cart-a-name21a">1. Show cart drawer when product added to cart <a name="21"></a></h3>
 <div class="content" style="position: relative;">

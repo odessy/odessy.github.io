@@ -24,6 +24,7 @@ To add any <b>CSS</b> code in this list follow these steps: [Where to add CSS](h
 16. [Products: Large vertical image display with sticky column](#16)
 17. [Products: Move thumbnails to left or right of featured product image](#17)
 18. [Add drop-down arrow indicators to top-level menus](#18)
+19. [Larger swatches on product page](#19)
 
 ## Advanced Changes
 May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
@@ -791,6 +792,32 @@ Update the ```--position``` and ```--large-position``` to change the position to
 
 ![image](https://user-images.githubusercontent.com/1010232/167903869-6fa8fdba-1629-4176-a1f8-d6b5809b78c6.png)
 
+
+
+### 18. Larger swatches on product page <a name="19"></a>
+
+Update the ```--width``` to change the size of the image. 
+
+```css
+/* CSS - Increase the size of the swatches on the product page  - */
+.product-page .swatch__button {
+  --width: 38px;
+  --height: var(--width);  
+  --offset: 4px;
+}
+.product-page .swatch__button label {
+  width: var(--width);
+  height: var(--height);
+}
+.product-page .swatch__button input:checked ~ label::after {
+  width: calc(var(--width) + var(--offset) * 2);
+  height: calc(var(--height) + var(--offset) *2);
+  top: calc(var(--offset) * -1);
+  left: calc(var(--offset) * -1);
+  border: 2px solid var(--primary);
+}
+/* - end - */
+```
 
 ## Advanced Changes
 
