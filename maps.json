@@ -1,0 +1,52 @@
+[
+  {
+    "name": "pipeline",
+    "versions": "6.0,6.1,6.3,6.4",
+    "map": {
+      "kicker": "kicker",
+      "title": "heading",
+      "link": [
+        "button",
+        "link_1"
+      ],
+      "link_text": [
+        "button",
+        "link_text_1"
+      ],
+      "richtext": [
+        "text",
+        "richtext"
+      ],
+      "button_color": [
+        "button",
+        "button_color_1"
+      ],
+      "button_style": [
+        "button",
+        "button_style_1"
+      ],
+      "subscriptions_enable_selectors": [
+        "subscription",
+        "subscriptions_enable_selectors"
+      ],
+      "show_quantity": "quantity",
+      "show_remaining": "size-remaining",
+      "show_remaining_style": [
+        "size-remaining",
+        "show_remaining_style"
+      ],
+      "info_page": [
+        "size-remaining",
+        "info_page"
+      ],
+      "form": "add-buttons",
+      "enable_payment_button": [
+        "add-buttons",
+        "enable_payment_button"
+      ],
+      "featured_collection": "collection",
+      "section-collection-grid": "section-list-collections",
+      "list-collections": "section-list-collections"
+    }
+  }
+]
