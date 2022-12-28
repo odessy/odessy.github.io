@@ -39,6 +39,7 @@
         "size-remaining",
         "info_page"
       ],
+      "variant_form": "variant-selectors",
       "form": "add-buttons",
       "enable_payment_button": [
         "add-buttons",
