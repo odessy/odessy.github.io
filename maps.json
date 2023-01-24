@@ -10,7 +10,10 @@
       "show_quantity": [
         "buttons", 
         "show_quantity"
-       ]
+       ],
+      "section-logo-list": "section-press-logos",
+      "section-text-row": "section-columns",
+      "text-item": "icon"
     }
   }, 
   {
