@@ -11,6 +11,7 @@
         "buttons", 
         "show_quantity"
        ],
+      "show_remaining": "inventory_countdown",
       "section-logo-list": "section-press-logos",
       "section-text-row": "section-columns",
       "text-item": "icon"
