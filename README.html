@@ -657,6 +657,101 @@ h3 {
 <span class="hljs-comment">/* - end - */</span>
 </code></pre></div>
 <p></div><br />
+<div class="tab" name="version 6.3 and up"><span class="tab-name">version 6.3 and up</span></p>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* CSS - change Add to Cart button color */
+.upsell__btn,
+.product__submit__buttons .btn--add-to-cart {
+  background-color: var(--COLOR-PRIMARY);
+  border: 1px solid var(--COLOR-PRIMARY);
+  color: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.upsell__btn:hover, .upsell__btn:focus,
+.product__submit__buttons .btn--add-to-cart:hover, .product__submit__buttons .btn--add-to-cart:focus {
+  background-color: var(--COLOR-PRIMARY-HOVER);
+  border: 1px solid var(--COLOR-PRIMARY-HOVER);
+  color: var(--COLOR-PRIMARY-OPPOSITE);
+}
+/* change quick add and quick view buttons color */
+.product-grid-item__actions{
+  --text-light: var(--COLOR-PRIMARY-OPPOSITE);
+  --COLOR-BADGE: var(--COLOR-PRIMARY);
+  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.product-grid-item__actions:hover, .product-grid-item__actions:focus{
+  --COLOR-BADGE: var(--COLOR-PRIMARY-HOVER);
+}
+.product-grid-item__btn:hover, .product-grid-item__btn:focus{
+  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.inline-add-product__options-menu-list-item-button{
+  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
+  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
+}
+/* Change loading and complete state colors */
+.btn-state-loading .svg-loader circle,
+.btn-state-loading .svg-loader circle~circle{
+  stroke: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.btn-state-complete{
+    border-left: 2px solid var(--COLOR-PRIMARY-OPPOSITE);
+    border-bottom: 2px solid var(--COLOR-PRIMARY-OPPOSITE);  
+}
+/* - end - */
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* CSS - change Add to Cart button color */</span>
+<span class="hljs-selector-class">.upsell__btn</span>,
+<span class="hljs-selector-class">.product__submit__buttons</span> <span class="hljs-selector-class">.btn--add-to-cart</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY);
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-built_in">var</span>(--COLOR-PRIMARY);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+}
+<span class="hljs-selector-class">.upsell__btn</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.upsell__btn</span><span class="hljs-selector-pseudo">:focus</span>,
+<span class="hljs-selector-class">.product__submit__buttons</span> <span class="hljs-selector-class">.btn--add-to-cart</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product__submit__buttons</span> <span class="hljs-selector-class">.btn--add-to-cart</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+}
+<span class="hljs-comment">/* change quick add and quick view buttons color */</span>
+<span class="hljs-selector-class">.product-grid-item__actions</span>{
+  <span class="hljs-attr">--text-light</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+  <span class="hljs-attr">--COLOR-BADGE</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY);
+  <span class="hljs-attr">--COLOR-BADGE-TEXT</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+}
+<span class="hljs-selector-class">.product-grid-item__actions</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product-grid-item__actions</span><span class="hljs-selector-pseudo">:focus</span>{
+  <span class="hljs-attr">--COLOR-BADGE</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
+}
+<span class="hljs-selector-class">.product-grid-item__btn</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product-grid-item__btn</span><span class="hljs-selector-pseudo">:focus</span>{
+  <span class="hljs-attr">--COLOR-BADGE-TEXT-HOVER</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+}
+<span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span>{
+  <span class="hljs-attr">--COLOR-BADGE-TEXT</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+}
+<span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span><span class="hljs-selector-pseudo">:focus</span>{
+  <span class="hljs-attr">--COLOR-BADGE-TEXT-HOVER</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
+}
+<span class="hljs-comment">/* Change loading and complete state colors */</span>
+<span class="hljs-selector-class">.btn-state-loading</span> <span class="hljs-selector-class">.svg-loader</span> circle,
+<span class="hljs-selector-class">.btn-state-loading</span> <span class="hljs-selector-class">.svg-loader</span> circle~circle{
+  stroke: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+}
+<span class="hljs-selector-class">.btn-state-complete</span>{
+    <span class="hljs-attribute">border-left</span>: <span class="hljs-number">2px</span> solid <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);  
+}
+<span class="hljs-comment">/* - end - */</span>
+</code></pre></div>
+<p></div><br />
 </div></p>
 <h4 id="example-when-this-is-used">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142236205-beccfc66-05d4-4f86-8c41-fcdfdfda6cc1.png" alt="image" /></p>
