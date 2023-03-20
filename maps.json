@@ -35,9 +35,9 @@
       "section-text-row": "section-columns",
       "text-item": "icon",
       "link": "first_button_link",
-      "link_text": "first_button_text",
-      "button_color": "first_button_type",
-      "button_style": "first_button_style"
+      "link_text": ["image", "first_button_text"],
+      "button_color": ["image", "first_button_type"],
+      "button_style": ["image", "first_button_style"]
     }
   }, 
   {
