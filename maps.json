@@ -37,7 +37,8 @@
       "link": ["image", "first_button_link"],
       "link_text": ["image", "first_button_text"],
       "button_color": ["image", "first_button_type"],
-      "button_style": ["image", "first_button_style"]
+      "button_style": ["image", "first_button_style"],
+      "arrows_style": "show_arrows"
     }
   }, 
   {
