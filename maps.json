@@ -33,7 +33,11 @@
        ],
       "section-logo-list": "section-press-logos",
       "section-text-row": "section-columns",
-      "text-item": "icon"
+      "text-item": "icon",
+      "link": "first_button_link",
+      "link_text": "first_button_text",
+      "button_color": "first_button_type",
+      "button_style": "first_button_style"
     }
   }, 
   {
