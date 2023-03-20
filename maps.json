@@ -34,7 +34,7 @@
       "section-logo-list": "section-press-logos",
       "section-text-row": "section-columns",
       "text-item": "icon",
-      "link": "first_button_link",
+      "link": ["image", "first_button_link"],
       "link_text": ["image", "first_button_text"],
       "button_color": ["image", "first_button_type"],
       "button_style": ["image", "first_button_style"]
