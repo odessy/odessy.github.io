@@ -291,7 +291,7 @@ You can adjust the px values in the code to further reduce the padding-top and p
 
 #### a. Uploading the custom font
 
-We recommend uploading the font files to Settings > Files.
+We recommend uploading the font files to Content > Files.
 
 You can use the links from files in the code for the URL.
 
@@ -304,6 +304,8 @@ Example of the font-face import code.
   url('https://cdn.shopify.com/s/files/1/0611/7824/9366/files/font.woff?v=1661161539')format("woff");
 }
 ```
+
+To avoid downloading the old fonts to your customer's computer [switch to system fonts](https://help.shopify.com/en/manual/online-store/store-speed/improving-speed#fonts) after importing custom fonts.
 
 #### b. Overriding the theme font
 

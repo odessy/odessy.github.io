@@ -1048,7 +1048,7 @@ h3 {
 </code></pre></div>
 <h3 id="6-overriding-the-theme-font-a-name6a">6. Overriding the theme font <a name="6"></a></h3>
 <h4 id="a-uploading-the-custom-font">a. Uploading the custom font</h4>
-<p>We recommend uploading the font files to Settings &gt; Files.</p>
+<p>We recommend uploading the font files to Content &gt; Files.</p>
 <p>You can use the links from files in the code for the URL.</p>
 <p>Example of the font-face import code.</p>
 <div class="content" style="position: relative;">
@@ -1072,6 +1072,7 @@ h3 {
   <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;https://cdn.shopify.com/s/files/1/0611/7824/9366/files/font.woff?v=1661161539&#x27;</span>)<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;woff&quot;</span>);
 }
 </code></pre></div>
+<p>To avoid downloading the old fonts to your customer's computer <a href="https://help.shopify.com/en/manual/online-store/store-speed/improving-speed#fonts">switch to system fonts</a> after importing custom fonts.</p>
 <h4 id="b-overriding-the-theme-font">b. Overriding the theme font</h4>
 <p>Add this CSS below the <a href="https://github.com/font-face">@font-face</a> code. The 'Gotham' is only an example in this code sample. Modify the code to use your custom <code>font-family</code>.</p>
 <p>The variables with "--font-stack-" can be updated for the body, heading, and accent. For more specific elements different CSS code would be needed.</p>
