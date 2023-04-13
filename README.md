@@ -109,6 +109,21 @@ This allows the add to cart button to use the primary accent color
   border: 1px solid var(--COLOR-PRIMARY-HOVER);
   color: var(--COLOR-PRIMARY-OPPOSITE);
 }
+/* Change loading and complete state colors */
+.btn-state-loading .svg-loader circle,
+.btn-state-loading .svg-loader circle~circle{
+  stroke: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.btn-state-complete{
+    border-left: 2px solid var(--COLOR-PRIMARY-OPPOSITE);
+    border-bottom: 2px solid var(--COLOR-PRIMARY-OPPOSITE);  
+}
+/* - end - */
+```
+
+Quick add and quick view buttons color
+
+```css
 /* change quick add and quick view buttons color */
 .product-grid-item__actions{
   --text-light: var(--COLOR-PRIMARY-OPPOSITE);
@@ -127,17 +142,8 @@ This allows the add to cart button to use the primary accent color
 .inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
   --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
 }
-/* Change loading and complete state colors */
-.btn-state-loading .svg-loader circle,
-.btn-state-loading .svg-loader circle~circle{
-  stroke: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.btn-state-complete{
-    border-left: 2px solid var(--COLOR-PRIMARY-OPPOSITE);
-    border-bottom: 2px solid var(--COLOR-PRIMARY-OPPOSITE);  
-}
-/* - end - */
 ```
+
 [/tab]
 [tab name="version 6.5 and up"]
 ```css
@@ -154,6 +160,20 @@ This allows the add to cart button to use the primary accent color
   border: 1px solid var(--COLOR-PRIMARY-HOVER);
   color: var(--COLOR-PRIMARY-OPPOSITE);
 }
+/* Change loading and complete state colors */
+.btn-state-loading .svg-loader circle,
+.btn-state-loading .svg-loader circle~circle{
+  stroke: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.btn-state-complete{
+    border-left: 2px solid var(--COLOR-PRIMARY-OPPOSITE);
+    border-bottom: 2px solid var(--COLOR-PRIMARY-OPPOSITE);  
+}
+/* - end - */
+```
+Quick add and quick view buttons color
+
+```css
 /* change quick add and quick view buttons color */
 .product-grid-item__actions{
   --text-light: var(--COLOR-PRIMARY-OPPOSITE);
@@ -172,17 +192,8 @@ This allows the add to cart button to use the primary accent color
 .inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
   --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
 }
-/* Change loading and complete state colors */
-.btn-state-loading .svg-loader circle,
-.btn-state-loading .svg-loader circle~circle{
-  stroke: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.btn-state-complete{
-    border-left: 2px solid var(--COLOR-PRIMARY-OPPOSITE);
-    border-bottom: 2px solid var(--COLOR-PRIMARY-OPPOSITE);  
-}
-/* - end - */
 ```
+
 [/tab]
 [/tabs]
 
