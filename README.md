@@ -40,111 +40,6 @@ May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
 This allows the add to cart button to use the primary accent color
 
 [tabs]
-[tab name="version 6.1"]
-```css
-/* CSS - change Add to Cart button color */
-.upsell__btn,
-.product__submit__buttons .btn--add-to-cart {
-  background-color: var(---color-primary);
-  border: 1px solid var(---color-primary);
-  color: var(---color-primary-opposite);
-}
-.upsell__btn:hover, .upsell__btn:focus,
-.product__submit__buttons .btn--add-to-cart:hover, .product__submit__buttons .btn--add-to-cart:focus {
-  background-color: var(---color-primary-hover);
-  border: 1px solid var(---color-primary-hover);
-  color: var(---color-primary-opposite);
-}
-/* Change loading and complete state colors */
-.btn-state-loading .svg-loader circle,
-.btn-state-loading .svg-loader circle~circle{
-  stroke: var(---color-primary-opposite);
-}
-.btn-state-complete{
-    border-left: 2px solid var(---color-primary-opposite);
-    border-bottom: 2px solid var(---color-primary-opposite);  
-}
-/* - end - */
-```
-[/tab]
-[tab name="version 6.2"]
-```css
-/* CSS - change Add to Cart button color */
-.upsell__btn,
-.product__submit__buttons .btn--add-to-cart {
-  background-color: var(--COLOR-PRIMARY);
-  border: 1px solid var(--COLOR-PRIMARY);
-  color: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.upsell__btn:hover, .upsell__btn:focus,
-.product__submit__buttons .btn--add-to-cart:hover, .product__submit__buttons .btn--add-to-cart:focus {
-  background-color: var(--COLOR-PRIMARY-HOVER);
-  border: 1px solid var(--COLOR-PRIMARY-HOVER);
-  color: var(--COLOR-PRIMARY-OPPOSITE);
-}
-/* Change loading and complete state colors */
-.btn-state-loading .svg-loader circle,
-.btn-state-loading .svg-loader circle~circle{
-  stroke: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.btn-state-complete{
-    border-left: 2px solid var(--COLOR-PRIMARY-OPPOSITE);
-    border-bottom: 2px solid var(--COLOR-PRIMARY-OPPOSITE);  
-}
-/* - end - */
-```
-[/tab]
-[tab name="version 6.3 and 6.4"]
-```css
-/* CSS - change Add to Cart button color */
-.upsell__btn,
-.product__submit__buttons .btn--add-to-cart {
-  background-color: var(--COLOR-PRIMARY);
-  border: 1px solid var(--COLOR-PRIMARY);
-  color: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.upsell__btn:hover, .upsell__btn:focus,
-.product__submit__buttons .btn--add-to-cart:hover, .product__submit__buttons .btn--add-to-cart:focus {
-  background-color: var(--COLOR-PRIMARY-HOVER);
-  border: 1px solid var(--COLOR-PRIMARY-HOVER);
-  color: var(--COLOR-PRIMARY-OPPOSITE);
-}
-/* Change loading and complete state colors */
-.btn-state-loading .svg-loader circle,
-.btn-state-loading .svg-loader circle~circle{
-  stroke: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.btn-state-complete{
-    border-left: 2px solid var(--COLOR-PRIMARY-OPPOSITE);
-    border-bottom: 2px solid var(--COLOR-PRIMARY-OPPOSITE);  
-}
-/* - end - */
-```
-
-Quick add and quick view buttons color
-
-```css
-/* change quick add and quick view buttons color */
-.product-grid-item__actions{
-  --text-light: var(--COLOR-PRIMARY-OPPOSITE);
-  --COLOR-BADGE: var(--COLOR-PRIMARY);
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.product-grid-item__actions:hover, .product-grid-item__actions:focus{
-  --COLOR-BADGE: var(--COLOR-PRIMARY-HOVER);
-}
-.product-grid-item__btn:hover, .product-grid-item__btn:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button{
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
-}
-```
-
-[/tab]
 [tab name="version 6.5 and up"]
 ```css
 /* CSS - change Add to Cart button color */
@@ -194,6 +89,86 @@ Quick add and quick view buttons color
 }
 ```
 
+[/tab]
+
+[tab name="version 6.2 to 6.4"]
+```css
+/* CSS - change Add to Cart button color */
+.upsell__btn,
+.product__submit__buttons .btn--add-to-cart {
+  background-color: var(--COLOR-PRIMARY);
+  border: 1px solid var(--COLOR-PRIMARY);
+  color: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.upsell__btn:hover, .upsell__btn:focus,
+.product__submit__buttons .btn--add-to-cart:hover, .product__submit__buttons .btn--add-to-cart:focus {
+  background-color: var(--COLOR-PRIMARY-HOVER);
+  border: 1px solid var(--COLOR-PRIMARY-HOVER);
+  color: var(--COLOR-PRIMARY-OPPOSITE);
+}
+/* Change loading and complete state colors */
+.btn-state-loading .svg-loader circle,
+.btn-state-loading .svg-loader circle~circle{
+  stroke: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.btn-state-complete{
+    border-left: 2px solid var(--COLOR-PRIMARY-OPPOSITE);
+    border-bottom: 2px solid var(--COLOR-PRIMARY-OPPOSITE);  
+}
+/* - end - */
+```
+
+Quick add and quick view buttons color
+
+```css
+/* change quick add and quick view buttons color */
+.product-grid-item__actions{
+  --text-light: var(--COLOR-PRIMARY-OPPOSITE);
+  --COLOR-BADGE: var(--COLOR-PRIMARY);
+  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.product-grid-item__actions:hover, .product-grid-item__actions:focus{
+  --COLOR-BADGE: var(--COLOR-PRIMARY-HOVER);
+}
+.product-grid-item__btn:hover, .product-grid-item__btn:focus{
+  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.inline-add-product__options-menu-list-item-button{
+  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
+  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
+}
+```
+
+[/tab]
+
+[tab name="version 6.1"]
+```css
+/* CSS - change Add to Cart button color */
+.upsell__btn,
+.product__submit__buttons .btn--add-to-cart {
+  background-color: var(---color-primary);
+  border: 1px solid var(---color-primary);
+  color: var(---color-primary-opposite);
+}
+.upsell__btn:hover, .upsell__btn:focus,
+.product__submit__buttons .btn--add-to-cart:hover, .product__submit__buttons .btn--add-to-cart:focus {
+  background-color: var(---color-primary-hover);
+  border: 1px solid var(---color-primary-hover);
+  color: var(---color-primary-opposite);
+}
+/* Change loading and complete state colors */
+.btn-state-loading .svg-loader circle,
+.btn-state-loading .svg-loader circle~circle{
+  stroke: var(---color-primary-opposite);
+}
+.btn-state-complete{
+    border-left: 2px solid var(---color-primary-opposite);
+    border-bottom: 2px solid var(---color-primary-opposite);  
+}
+/* - end - */
+```
 [/tab]
 [/tabs]
 
