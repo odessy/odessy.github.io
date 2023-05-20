@@ -343,6 +343,14 @@ The variables with "--font-stack-" can be updated for the body, heading, and acc
 [/tabs]
 
 
+#### b. Use system fonts
+
+Change to system fonts if you don't need to use a specific font in the theme settings.
+
+[System fonts](https://shopify.dev/docs/themes/architecture/settings/fonts#system-fonts) are fonts that are already installed on a user’s computer. This removes the need for browsers to download the font.
+
+
+
 ### 7. Change color of size chart link <a name="7"></a>
 
 You can update the background-color and color properties with any valid HEX color code.
