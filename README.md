@@ -343,7 +343,7 @@ The variables with "--font-stack-" can be updated for the body, heading, and acc
 [/tabs]
 
 
-#### b. Use system fonts
+#### c. Use system fonts
 
 Change to system fonts if you don't need to use a specific font in the theme settings.
 
