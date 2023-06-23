@@ -660,17 +660,15 @@ Hide the colors available text and show the swatches on desktop.
 
 
 ```css
-/* CSS - Always show grid swatches on desktop */
-@media only screen and (min-width: 480px){
-    .product-grid-item .grid__swatch__container .grid__swatch__placeholder {
-        display: none;
-    }
-    .product-grid-item .grid__swatch__container .grid__swatch__hover {
-        visibility: visible;
-        opacity: 1;
-        height: initial;
-        top: 0;
-    }
+/* CSS - Always show grid swatches */
+.product-grid-item .grid__swatch__container .grid__swatch__placeholder {
+    display: none;
+}
+.product-grid-item .grid__swatch__container .grid__swatch__hover {
+    visibility: visible;
+    opacity: 1;
+    height: initial;
+    top: 0;
 }
 /* end */
 ```
