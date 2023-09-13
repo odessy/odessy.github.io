@@ -461,7 +461,7 @@ This will force text to use normal letter case.
 /* end */
 ```
 [/tab]
-[tab name="version 6.2 and up"]
+[tab name="version 6.2 to 6.5"]
 ```css
 /* CSS - Use initial text transform for all text */
 .announcement__more, .announcement__text, .announcement__text p, .rte.icon__bar__paragraph p,
@@ -475,6 +475,18 @@ This will force text to use normal letter case.
 }
 :root{
     --FONT-HEADING-CAPS: initial;
+}
+/* end */
+```
+[/tab]
+[tab name="version 7.0 and up"]
+```css
+/* CSS - Use initial text transform for all text */
+:root {
+    --FONT-NAV-TRANSFORM: initial;
+    --FONT-ACCENT-TRANSFORM: initial;
+    --FONT-KICKER-TRANSFORM: initial;
+    --FONT-BUTTON-TRANSFORM: initial;
 }
 /* end */
 ```
