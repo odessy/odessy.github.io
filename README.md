@@ -640,17 +640,17 @@ Add this to make the labels round
   .product-page > .wrapper {
       padding: 0;
   }
-  .grid.product-single{
+  .product-single{
     margin-left: 0;
   }  
-  .grid.product-single > .grid__item{
+  .product-single > .grid__item{
     padding-left: 0;
   }
   .breadcrumb,
   .media__thumb__wrapper {
      margin: 0 var(--gutter) 0 var(--gutter);
   }
-  .grid.product-single > .grid__item:not(.product__media__wrapper){
+  .product-single > .grid__item:not(.product__media__wrapper){
      padding: 0 var(--gutter);
   }
 }
