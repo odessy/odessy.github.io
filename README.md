@@ -277,6 +277,8 @@ You can adjust the px values in the code to further reduce the padding-top and p
 
 #### a. Uploading the custom font
 
+Convert to [web font](https://fonts.google.com/knowledge/glossary/web_font) WOFF and WOFF2 if in other formats.
+
 Upload the font files to Content > Files.
 
 Use the links from files in the code for the URL.
