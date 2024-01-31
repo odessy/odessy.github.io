@@ -35,7 +35,7 @@ May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
 This allows the add to cart button to use the primary accent color
 
 [tabs]
-[tab name="version 6.5 and up"]
+[tab name="version 6.5 to 7 and up"]
 ```css
 /* CSS - change Add to Cart button color */
 .product-clip__btn,
