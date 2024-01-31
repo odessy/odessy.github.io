@@ -579,7 +579,8 @@ h3 {
 <h2 id="simple-css-changes">Simple CSS changes</h2>
 <p>To add any <b>CSS</b> code in this list follow these steps: <a href="https://groupthought-themes.gitbook.io/tutorials/">Where to add CSS</a></p>
 <ol>
-<li><a href="#1">Solid Color for Add to cart button</a></li>
+<li><a href="#1">Solid Color for Add to cart button</a><br />
+a. <a href="#1a">Quick add and quick view buttons color</a></li>
 <li><a href="#2">Hide Add to cart button price</a></li>
 <li><a href="#3">Hide navigation cart link</a></li>
 <li><a href="#4">Solid background-color for header when scrolling</a></li>
@@ -663,54 +664,6 @@ h3 {
 }
 <span class="hljs-comment">/* - end - */</span>
 </code></pre></div>
-<p>Quick add and quick view buttons color</p>
-<div class="content" style="position: relative;">
-    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* change quick add and quick view buttons color */
-.product-grid-item__actions{
-  --text-light: var(--COLOR-PRIMARY-OPPOSITE);
-  --COLOR-BADGE: var(--COLOR-PRIMARY);
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.product-grid-item__actions:hover, .product-grid-item__actions:focus{
-  --COLOR-BADGE: var(--COLOR-PRIMARY-HOVER);
-}
-.product-grid-item__btn:hover, .product-grid-item__btn:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button{
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
-}
-" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
-       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-      </svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
-      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
-      </svg>
-    </clipboard-copy>
-  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* change quick add and quick view buttons color */</span>
-<span class="hljs-selector-class">.product-grid-item__actions</span>{
-  <span class="hljs-attr">--text-light</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
-  <span class="hljs-attr">--COLOR-BADGE</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY);
-  <span class="hljs-attr">--COLOR-BADGE-TEXT</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
-}
-<span class="hljs-selector-class">.product-grid-item__actions</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product-grid-item__actions</span><span class="hljs-selector-pseudo">:focus</span>{
-  <span class="hljs-attr">--COLOR-BADGE</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
-}
-<span class="hljs-selector-class">.product-grid-item__btn</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product-grid-item__btn</span><span class="hljs-selector-pseudo">:focus</span>{
-  <span class="hljs-attr">--COLOR-BADGE-TEXT-HOVER</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
-}
-<span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span>{
-  <span class="hljs-attr">--COLOR-BADGE-TEXT</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
-}
-<span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span><span class="hljs-selector-pseudo">:focus</span>{
-  <span class="hljs-attr">--COLOR-BADGE-TEXT-HOVER</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
-}
-</code></pre></div>
 <p></div></p>
 <p><div class="tab" name="version 6.2 to 6.4"><span class="tab-name">version 6.2 to 6.4</span></p>
 <div class="content" style="position: relative;">
@@ -769,54 +722,6 @@ h3 {
     <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);  
 }
 <span class="hljs-comment">/* - end - */</span>
-</code></pre></div>
-<p>Quick add and quick view buttons color</p>
-<div class="content" style="position: relative;">
-    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* change quick add and quick view buttons color */
-.product-grid-item__actions{
-  --text-light: var(--COLOR-PRIMARY-OPPOSITE);
-  --COLOR-BADGE: var(--COLOR-PRIMARY);
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.product-grid-item__actions:hover, .product-grid-item__actions:focus{
-  --COLOR-BADGE: var(--COLOR-PRIMARY-HOVER);
-}
-.product-grid-item__btn:hover, .product-grid-item__btn:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button{
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
-}
-" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
-       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-      </svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
-      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
-      </svg>
-    </clipboard-copy>
-  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* change quick add and quick view buttons color */</span>
-<span class="hljs-selector-class">.product-grid-item__actions</span>{
-  <span class="hljs-attr">--text-light</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
-  <span class="hljs-attr">--COLOR-BADGE</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY);
-  <span class="hljs-attr">--COLOR-BADGE-TEXT</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
-}
-<span class="hljs-selector-class">.product-grid-item__actions</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product-grid-item__actions</span><span class="hljs-selector-pseudo">:focus</span>{
-  <span class="hljs-attr">--COLOR-BADGE</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
-}
-<span class="hljs-selector-class">.product-grid-item__btn</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product-grid-item__btn</span><span class="hljs-selector-pseudo">:focus</span>{
-  <span class="hljs-attr">--COLOR-BADGE-TEXT-HOVER</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
-}
-<span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span>{
-  <span class="hljs-attr">--COLOR-BADGE-TEXT</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
-}
-<span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span><span class="hljs-selector-pseudo">:focus</span>{
-  <span class="hljs-attr">--COLOR-BADGE-TEXT-HOVER</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
-}
 </code></pre></div>
 <p></div></p>
 <p><div class="tab" name="version 6.1"><span class="tab-name">version 6.1</span></p>
@@ -880,6 +785,93 @@ h3 {
 <p></div><br />
 </div></p>
 <h4 id="example-when-this-is-used">Example when this is used</h4>
+<p><img src="https://user-images.githubusercontent.com/1010232/142236205-beccfc66-05d4-4f86-8c41-fcdfdfda6cc1.png" alt="image" /></p>
+<h3 id="a-quick-add-and-quick-view-buttons-color-a-name1aa">a. Quick add and quick view buttons color <a name="1a"></a></h3>
+<p><div class="tabs"><br />
+<div class="tab" name="version 7.0 and up"><span class="tab-name">version 7.0 and up</span></p>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* change quick add and quick view buttons color */
+.product-grid-item__content .bg-button{
+  background-color: var(--COLOR-PRIMARY);
+}
+.product-grid-item__content .bg-button .text-button-contrast{
+  color:var(--COLOR-PRIMARY-OPPOSITE)
+}
+.product-grid-item__content .bg-button:hover, .product-grid-item__content .bg-button:focus{
+  background-color: var(--COLOR-PRIMARY);
+}
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* change quick add and quick view buttons color */</span>
+<span class="hljs-selector-class">.product-grid-item__content</span> <span class="hljs-selector-class">.bg-button</span>{
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY);
+}
+<span class="hljs-selector-class">.product-grid-item__content</span> <span class="hljs-selector-class">.bg-button</span> <span class="hljs-selector-class">.text-button-contrast</span>{
+  <span class="hljs-attribute">color</span>:<span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE)
+}
+<span class="hljs-selector-class">.product-grid-item__content</span> <span class="hljs-selector-class">.bg-button</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product-grid-item__content</span> <span class="hljs-selector-class">.bg-button</span><span class="hljs-selector-pseudo">:focus</span>{
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY);
+}
+</code></pre></div>
+<p></div><br />
+<div class="tab" name="version 6.2 to 6.5"><span class="tab-name">version 6.2 to 6.5</span></p>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="/* change quick add and quick view buttons color */
+.product-grid-item__actions{
+  --text-light: var(--COLOR-PRIMARY-OPPOSITE);
+  --COLOR-BADGE: var(--COLOR-PRIMARY);
+  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.product-grid-item__actions:hover, .product-grid-item__actions:focus{
+  --COLOR-BADGE: var(--COLOR-PRIMARY-HOVER);
+}
+.product-grid-item__btn:hover, .product-grid-item__btn:focus{
+  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.inline-add-product__options-menu-list-item-button{
+  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
+  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
+}
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs css language-css"><span class="hljs-comment">/* change quick add and quick view buttons color */</span>
+<span class="hljs-selector-class">.product-grid-item__actions</span>{
+  <span class="hljs-attr">--text-light</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+  <span class="hljs-attr">--COLOR-BADGE</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY);
+  <span class="hljs-attr">--COLOR-BADGE-TEXT</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+}
+<span class="hljs-selector-class">.product-grid-item__actions</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product-grid-item__actions</span><span class="hljs-selector-pseudo">:focus</span>{
+  <span class="hljs-attr">--COLOR-BADGE</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
+}
+<span class="hljs-selector-class">.product-grid-item__btn</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.product-grid-item__btn</span><span class="hljs-selector-pseudo">:focus</span>{
+  <span class="hljs-attr">--COLOR-BADGE-TEXT-HOVER</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+}
+<span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span>{
+  <span class="hljs-attr">--COLOR-BADGE-TEXT</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-OPPOSITE);
+}
+<span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.inline-add-product__options-menu-list-item-button</span><span class="hljs-selector-pseudo">:focus</span>{
+  <span class="hljs-attr">--COLOR-BADGE-TEXT-HOVER</span>: <span class="hljs-built_in">var</span>(--COLOR-PRIMARY-HOVER);
+}
+</code></pre></div>
+<p></div><br />
+</div></p>
+<h4 id="example-when-this-is-used-1">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142236205-beccfc66-05d4-4f86-8c41-fcdfdfda6cc1.png" alt="image" /></p>
 <p>To use custom colors instead of the primary theme color also add this CSS code. Use any valid hex color for the properties</p>
 <p><div class="tabs"><br />
@@ -978,7 +970,7 @@ h3 {
 }
 <span class="hljs-comment">/* end */</span>
 </code></pre></div>
-<h4 id="example-when-this-is-used-1">Example when this is used</h4>
+<h4 id="example-when-this-is-used-2">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142242186-f46e55a5-ba3a-4bd4-b0cd-4b5b44cbf135.png" alt="image" /></p>
 <h3 id="3-hide-navigation-cart-link-a-name3a">3. Hide navigation cart link <a name="3"></a></h3>
 <div class="content" style="position: relative;">
@@ -1004,7 +996,7 @@ h3 {
 }
 <span class="hljs-comment">/* end */</span>
 </code></pre></div>
-<h4 id="example-when-this-is-used-2">Example when this is used</h4>
+<h4 id="example-when-this-is-used-3">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142244474-aaf98a1a-9c61-4b46-be78-1f30b577b301.png" alt="image" /></p>
 <h3 id="4-solid-background-color-for-header-when-scrolling-a-name4a">4. Solid background-color for header when scrolling <a name="4"></a></h3>
 <div class="content" style="position: relative;">
@@ -1217,7 +1209,7 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 }
 <span class="hljs-comment">/* end */</span>
 </code></pre></div>
-<h4 id="example-when-this-is-used-3">Example when this is used</h4>
+<h4 id="example-when-this-is-used-4">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142249538-3dee8a4a-afde-4dea-9723-fb2e522a6b0a.png" alt="image" /></p>
 <h3 id="7-sticky-currency-and-language-selectors-a-name7a">7. Sticky currency and language selectors <a name="7"></a></h3>
 <p>Use this to apply the change to both desktop and mobile</p>
@@ -1324,7 +1316,7 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 }
 <span class="hljs-comment">/* end */</span>
 </code></pre></div>
-<h4 id="example-when-this-is-used-4">Example when this is used</h4>
+<h4 id="example-when-this-is-used-5">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142250897-0b113da9-1cbe-419f-a27f-5a728aeab0c9.png" alt="image" /></p>
 <h3 id="8-use-initial-case-for-all-text-a-name8a">8. Use initial case for all text <a name="8"></a></h3>
 <p>This will force text to use normal letter case.</p>
@@ -1518,7 +1510,7 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 }
 <span class="hljs-comment">/* end */</span>
 </code></pre></div>
-<h4 id="example-when-this-is-used-5">Example when this is used</h4>
+<h4 id="example-when-this-is-used-6">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/142664998-c79541a6-8873-4c2d-a396-18b06f726195.png" alt="image" /></p>
 <h3 id="10-borderless-product-page-image-on-mobile-a-name10a">10. Borderless product page image on mobile <a name="10"></a></h3>
 <div class="content" style="position: relative;">
@@ -1584,7 +1576,7 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 }
 <span class="hljs-comment">/* end */</span>
 </code></pre></div>
-<h4 id="example-when-this-is-used-6">Example when this is used</h4>
+<h4 id="example-when-this-is-used-7">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/144066487-ddc1605f-f12b-4065-8bec-30605b2ddade.png" alt="image" /></p>
 <h3 id="11-always-show-grid-swatches-a-name11a">11. Always show grid swatches <a name="11"></a></h3>
 <p>Hide the colors available text and show the swatches on desktop.</p>
@@ -1622,7 +1614,7 @@ To find additional HEX color codes, visit:  https://colorhunt.co</p>
 }
 <span class="hljs-comment">/* end */</span>
 </code></pre></div>
-<h4 id="example-when-this-is-used-7">Example when this is used</h4>
+<h4 id="example-when-this-is-used-8">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/145248164-f1baea1f-7222-49eb-9db6-5ed8eb2b115b.png" alt="image" /></p>
 <h3 id="12-add-drop-down-arrow-indicators-to-top-level-menus-a-name12a">12. Add drop-down arrow indicators to top-level menus <a name="12"></a></h3>
 <div class="content" style="position: relative;">
@@ -1790,7 +1782,7 @@ document.addEventListener(&#039;theme:cart:popdown&#039;, (e) =&gt; {
 });
 <span class="hljs-comment">/* end */</span>
 </code></pre></div>
-<h4 id="example-when-this-is-used-8">Example when this is used</h4>
+<h4 id="example-when-this-is-used-9">Example when this is used</h4>
 <p><a href="https://www.loom.com/embed/9f05e0b5a58f4d45a5bdeacfece4ac00">Loom video link</a></p>
 <h3 id="2-add-sku-to-product-section-a-name22a">2. Add SKU to product section <a name="22"></a></h3>
 <p>Add the code below to the Liquid section block on the product page</p>
@@ -1876,7 +1868,7 @@ document.addEventListener(&#039;theme:cart:popdown&#039;, (e) =&gt; {
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-comment">&lt;!-- end SKU --&gt;</span> 
 </span></code></pre></div>
-<h4 id="example-when-this-is-used-9">Example when this is used</h4>
+<h4 id="example-when-this-is-used-10">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/144634357-43abd557-cbd0-4b7f-8144-b15f0472b991.png" alt="image" /></p>
 <h3 id="3-show-native-quantity-selector-for-quantity-input-a-name23a">3. Show native quantity selector for quantity input <a name="23"></a></h3>
 <p>This allows the quantity selector to use the min/max/step attributes.</p>
@@ -1923,7 +1915,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 <span class="hljs-comment">/* end */</span>
 </code></pre></div>
-<h4 id="example-when-this-is-used-10">Example when this is used</h4>
+<h4 id="example-when-this-is-used-11">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/144886979-cc352c4c-8da4-46c7-95f2-239e9f322d2a.png" alt="image" /></p>
 <h3 id="4-show-payment-types-below-add-to-cart-button-a-name24a">4. Show payment types below add to cart button <a name="24"></a></h3>
 <p>Add the code below to the <strong>Liquid</strong> section block on the product page.</p>
@@ -1965,7 +1957,7 @@ input[type=number]::-webkit-outer-spin-button {
 </span></code></pre></div>
 <p>Place the <strong>Liquid</strong> block below the <strong>Form</strong> block.</p>
 <p><img src="https://user-images.githubusercontent.com/1010232/147277912-30a26d4b-6988-4271-81c1-e11263954e8b.png" alt="image" /></p>
-<h4 id="example-when-this-is-used-11">Example when this is used</h4>
+<h4 id="example-when-this-is-used-12">Example when this is used</h4>
 <p><img src="https://user-images.githubusercontent.com/1010232/147277865-fc54676a-f38c-4c4f-8f48-7c1ef6ba6d4f.png" alt="image" /></p>
 <h3 id="5-scroll-to-top-button-a-name25a">5. Scroll to top button <a name="25"></a></h3>
 <p>Add this to the theme.css file</p>

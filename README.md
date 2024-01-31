@@ -7,6 +7,7 @@
 To add any <b>CSS</b> code in this list follow these steps: [Where to add CSS](https://groupthought-themes.gitbook.io/tutorials/)
 
 1. [Solid Color for Add to cart button](#1)
+    a. [Quick add and quick view buttons color](#1a)
 2. [Hide Add to cart button price](#2)
 3. [Hide navigation cart link](#3)
 4. [Solid background-color for header when scrolling](#4)
@@ -60,29 +61,6 @@ This allows the add to cart button to use the primary accent color
 }
 /* - end - */
 ```
-Quick add and quick view buttons color
-
-```css
-/* change quick add and quick view buttons color */
-.product-grid-item__actions{
-  --text-light: var(--COLOR-PRIMARY-OPPOSITE);
-  --COLOR-BADGE: var(--COLOR-PRIMARY);
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.product-grid-item__actions:hover, .product-grid-item__actions:focus{
-  --COLOR-BADGE: var(--COLOR-PRIMARY-HOVER);
-}
-.product-grid-item__btn:hover, .product-grid-item__btn:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button{
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
-}
-```
-
 [/tab]
 
 [tab name="version 6.2 to 6.4"]
@@ -111,30 +89,6 @@ Quick add and quick view buttons color
 }
 /* - end - */
 ```
-
-Quick add and quick view buttons color
-
-```css
-/* change quick add and quick view buttons color */
-.product-grid-item__actions{
-  --text-light: var(--COLOR-PRIMARY-OPPOSITE);
-  --COLOR-BADGE: var(--COLOR-PRIMARY);
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.product-grid-item__actions:hover, .product-grid-item__actions:focus{
-  --COLOR-BADGE: var(--COLOR-PRIMARY-HOVER);
-}
-.product-grid-item__btn:hover, .product-grid-item__btn:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button{
-  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
-}
-.inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
-  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
-}
-```
-
 [/tab]
 
 [tab name="version 6.1"]
@@ -165,6 +119,53 @@ Quick add and quick view buttons color
 ```
 [/tab]
 [/tabs]
+
+#### Example when this is used
+
+![image](https://user-images.githubusercontent.com/1010232/142236205-beccfc66-05d4-4f86-8c41-fcdfdfda6cc1.png)
+
+### a. Quick add and quick view buttons color <a name="1a"></a>
+
+
+[tabs]
+[tab name="version 7.0 and up"]
+```css
+/* change quick add and quick view buttons color */
+.product-grid-item__content .bg-button{
+  background-color: var(--COLOR-PRIMARY);
+}
+.product-grid-item__content .bg-button .text-button-contrast{
+  color:var(--COLOR-PRIMARY-OPPOSITE)
+}
+.product-grid-item__content .bg-button:hover, .product-grid-item__content .bg-button:focus{
+  background-color: var(--COLOR-PRIMARY);
+}
+```
+[/tab]
+[tab name="version 6.2 to 6.5"]
+```css
+/* change quick add and quick view buttons color */
+.product-grid-item__actions{
+  --text-light: var(--COLOR-PRIMARY-OPPOSITE);
+  --COLOR-BADGE: var(--COLOR-PRIMARY);
+  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.product-grid-item__actions:hover, .product-grid-item__actions:focus{
+  --COLOR-BADGE: var(--COLOR-PRIMARY-HOVER);
+}
+.product-grid-item__btn:hover, .product-grid-item__btn:focus{
+  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.inline-add-product__options-menu-list-item-button{
+  --COLOR-BADGE-TEXT: var(--COLOR-PRIMARY-OPPOSITE);
+}
+.inline-add-product__options-menu-list-item-button:hover, .inline-add-product__options-menu-list-item-button:focus{
+  --COLOR-BADGE-TEXT-HOVER: var(--COLOR-PRIMARY-HOVER);
+}
+```
+[/tab]
+[/tabs]
+
 
 #### Example when this is used
 
