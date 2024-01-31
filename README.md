@@ -8,17 +8,17 @@ To add any <b>CSS</b> code in this list follow these steps: [Where to add CSS](h
 
 1. [Solid Color for Add to cart button](#1)
 2. [Hide Add to cart button price](#2)
-3. [Hide navigation cart link](#4)
-4. [Solid background-color for header when scrolling](#5)
-5. [Overriding the theme font](#6)
-6. [Change color of size chart link](#7)
-7. [Sticky currency and language selectors](#8)
-8. [Use initial case for all text](#9)
-9. [Change background-color and roundness of variant radio labels](#10)
-10. [Borderless product page image on mobile](#12)
-11. [Always show grid swatches](#13)
-12. [Add drop-down arrow indicators to top-level menus](#18)
-13. [Larger swatches on product page](#19)
+3. [Hide navigation cart link](#3)
+4. [Solid background-color for header when scrolling](#4)
+5. [Overriding the theme font](#5)
+6. [Change color of size chart link](#6)
+7. [Sticky currency and language selectors](#7)
+8. [Use initial case for all text](#8)
+9. [Change background-color and roundness of variant radio labels](#9)
+10. [Borderless product page image on mobile](#10)
+11. [Always show grid swatches](#11)
+12. [Add drop-down arrow indicators to top-level menus](#12)
+13. [Larger swatches on product page](#13)
 
 ## Advanced Changes
 May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
@@ -224,7 +224,7 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 
 
 
-### 4. Hide navigation cart link <a name="4"></a>
+### 3. Hide navigation cart link <a name="3"></a>
 ```css
 /* CSS - hide navigation cart link */
 .header__desktop__button .navlink--cart,
@@ -237,7 +237,7 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 #### Example when this is used
 ![image](https://user-images.githubusercontent.com/1010232/142244474-aaf98a1a-9c61-4b46-be78-1f30b577b301.png)
 
-### 5. Solid background-color for header when scrolling <a name="5"></a>
+### 4. Solid background-color for header when scrolling <a name="4"></a>
 ```css
 /* CSS - solid background-color header */
 .js__header__stuck .theme__header:after {
@@ -246,7 +246,7 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 /* end */
 ```
 
-### 6. Overriding the theme font <a name="6"></a>
+### 5. Overriding the theme font <a name="5"></a>
 
 #### a. Uploading the custom font
 
@@ -324,7 +324,7 @@ Change to system fonts if you don't need to use a specific font in the theme set
 
 
 
-### 7. Change color of size chart link <a name="7"></a>
+### 6. Change color of size chart link <a name="6"></a>
 
 You can update the background-color and color properties with any valid HEX color code.
 To find additional HEX color codes, visit:  https://colorhunt.co
@@ -354,7 +354,7 @@ For the link hover color
 #### Example when this is used
 ![image](https://user-images.githubusercontent.com/1010232/142249538-3dee8a4a-afde-4dea-9723-fb2e522a6b0a.png)
 
-### 8. Sticky currency and language selectors <a name="8"></a>
+### 7. Sticky currency and language selectors <a name="7"></a>
 
 Use this to apply the change to both desktop and mobile
 
@@ -410,7 +410,7 @@ Use this to apply the change only to desktop
 ![image](https://user-images.githubusercontent.com/1010232/142250897-0b113da9-1cbe-419f-a27f-5a728aeab0c9.png)
 
 
-### 9. Use initial case for all text <a name="9"></a>
+### 8. Use initial case for all text <a name="8"></a>
 
 This will force text to use normal letter case.
 
@@ -466,7 +466,7 @@ This will force text to use normal letter case.
 [/tab]
 [/tabs]
 
-### 10. Change background-color and roundness of variant radio labels <a name="10"></a>
+### 9. Change background-color and roundness of variant radio labels <a name="9"></a>
 
 Update the ```--background-color``` and ```--color``` properties to any valid HEX code. 
 
@@ -508,7 +508,7 @@ Add this to make the labels round
 ![image](https://user-images.githubusercontent.com/1010232/142664998-c79541a6-8873-4c2d-a396-18b06f726195.png)
 
 
-### 12. Borderless product page image on mobile <a name="12"></a>
+### 10. Borderless product page image on mobile <a name="10"></a>
 
 ```css
 /* CSS - Borderless product page image on mobile */
@@ -544,7 +544,7 @@ Add this to make the labels round
 ![image](https://user-images.githubusercontent.com/1010232/144066487-ddc1605f-f12b-4065-8bec-30605b2ddade.png)
 
 
-### 13. Always show grid swatches <a name="13"></a>
+### 11. Always show grid swatches <a name="11"></a>
 
 Hide the colors available text and show the swatches on desktop.
 
@@ -570,7 +570,7 @@ Hide the colors available text and show the swatches on desktop.
 
 
 
-### 18. Add drop-down arrow indicators to top-level menus <a name="18"></a>
+### 12. Add drop-down arrow indicators to top-level menus <a name="12"></a>
 
 ```css
 /* CSS - code to add dropdown arrows in top-level navigation - */
@@ -602,7 +602,7 @@ Hide the colors available text and show the swatches on desktop.
 
 
 
-### 18. Larger swatches on product page <a name="19"></a>
+### 13. Larger swatches on product page <a name="13"></a>
 
 Update the ```--width``` to change the size of the image. 
 
