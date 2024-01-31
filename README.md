@@ -1,6 +1,6 @@
 [comment]: <> (https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
-# Pipeline theme version 6
+# Pipeline theme version 6 to 7
 
 ## Simple CSS changes
 
@@ -8,23 +8,17 @@ To add any <b>CSS</b> code in this list follow these steps: [Where to add CSS](h
 
 1. [Solid Color for Add to cart button](#1)
 2. [Hide Add to cart button price](#2)
-3. [Reduce padding above and below sections](#3)
-4. [Hide navigation cart link](#4)
-5. [Solid background-color for header when scrolling](#5)
-6. [Overriding the theme font](#6)
-7. [Change color of size chart link](#7)
-8. [Sticky currency and language selectors](#8)
-9. [Use initial case for all text](#9)
-10. [Change background-color and roundness of variant radio labels](#10)
-11. [Show dots for mobile product page thumbnails](#11)
-12. [Borderless product page image on mobile](#12)
-13. [Always show grid swatches](#13)
-14. [Show footer logo within footer section](#14)
-15. [Increase max width for theme wrapper](#15)
-16. [Products: Large vertical image display with sticky column](#16)
-17. [Products: Move thumbnails to left or right of featured product image](#17)
-18. [Add drop-down arrow indicators to top-level menus](#18)
-19. [Larger swatches on product page](#19)
+3. [Hide navigation cart link](#4)
+4. [Solid background-color for header when scrolling](#5)
+5. [Overriding the theme font](#6)
+6. [Change color of size chart link](#7)
+7. [Sticky currency and language selectors](#8)
+8. [Use initial case for all text](#9)
+9. [Change background-color and roundness of variant radio labels](#10)
+10. [Borderless product page image on mobile](#12)
+11. [Always show grid swatches](#13)
+12. [Add drop-down arrow indicators to top-level menus](#18)
+13. [Larger swatches on product page](#19)
 
 ## Advanced Changes
 May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
@@ -179,6 +173,21 @@ Quick add and quick view buttons color
 To use custom colors instead of the primary theme color also add this CSS code. Use any valid hex color for the properties
 
 [tabs]
+[tab name="version 6.2 and up"]
+```css
+/* CSS - custom colors Add to Cart button 
+--COLOR-PRIMARY  - the background color
+--COLOR-PRIMARY-HOVER  - the hover background color
+--COLOR-PRIMARY-OPPOSITE - the text color
+*/
+.product__submit__buttons .btn--add-to-cart {
+  --COLOR-PRIMARY: #444444;
+  --COLOR-PRIMARY-HOVER: #111111;
+  --COLOR-PRIMARY-OPPOSITE: #ffffff;
+}
+/* - end - */
+``` 
+[/tab]
 [tab name="version 6.1"]
 ```css
 /* CSS - custom colors Add to Cart button 
@@ -193,21 +202,6 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 }
 /* - end - */
 ```
-[/tab]
-[tab name="version 6.2"]
-```css
-/* CSS - custom colors Add to Cart button 
---COLOR-PRIMARY  - the background color
---COLOR-PRIMARY-HOVER  - the hover background color
---COLOR-PRIMARY-OPPOSITE - the text color
-*/
-.product__submit__buttons .btn--add-to-cart {
-  --COLOR-PRIMARY: #444444;
-  --COLOR-PRIMARY-HOVER: #111111;
-  --COLOR-PRIMARY-OPPOSITE: #ffffff;
-}
-/* - end - */
-``` 
 [/tab]
 [/tabs]
  
@@ -229,28 +223,7 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 ![image](https://user-images.githubusercontent.com/1010232/142242186-f46e55a5-ba3a-4bd4-b0cd-4b5b44cbf135.png)
 
 
-### 3. Reduce padding above and below sections <a name="3"></a>
-You can adjust the px values in the code to further reduce the padding-top and padding-bottom values
-```css
-/* CSS - reduce section padding */
-.homepage-logos.homepage-logos--tall,
-.homepage-collection-tabs,
-.homepage-blog, .homepage-collection, .homepage-columns, 
-.homepage-icons, .homepage-newsletter, .homepage-product {
-    padding-top: 36px;
-    padding-bottom: 36px;
-}
-.homepage-collection-grid, 
-.section-recent .recent__container__inner:not(.is-hidden), 
-.section-related {
-    padding-top: 36px;
-    padding-bottom: 34px;
-}
-.collection-tabs{
-  position: relative;
-}
-/* end */
-```
+
 ### 4. Hide navigation cart link <a name="4"></a>
 ```css
 /* CSS - hide navigation cart link */
@@ -535,99 +508,6 @@ Add this to make the labels round
 ![image](https://user-images.githubusercontent.com/1010232/142664998-c79541a6-8873-4c2d-a396-18b06f726195.png)
 
 
-### 11. Show dots for mobile product page thumbnails <a name="11"></a>
-
-[tabs]
-[tab name="version 6.1"]
-```css
-/* CSS - Show dots for mobile product page thumbnails */
-@media only screen and (max-width: 480px){
-  .media__thumb__wrapper .flickity-viewport {
-    height: auto !important;
-  }
-  .media__thumb__wrapper .flickity-viewport,
-  .media__thumb__wrapper .flickity-slider,
-  .media__thumb__wrapper .media__thumb {
-    position: relative !important;
-    transform: none !important;
-    left: 0 !important;
-  }
-  .media__thumb__wrapper  .media__thumb:before {
-    content: "";
-    background-color: #dcdcdc;
-    width: 8px;
-    height: 8px;
-    display: block;
-    border-radius: 50%;
-  }
-  .media__thumb__wrapper  .media__thumb.is-selected:before{
-   background-color: #5c5c5c;
-  }
-  .media__thumb__wrapper .media__thumb.is-selected:after,
-  .media__thumb__wrapper .media__thumb img,
-  .media__thumb__wrapper .media__thumb svg{
-    display: none;
-  }
-  .media__thumb__wrapper .media__thumb{
-    width: 8px;
-    height: 8px;
-  }
-  .media__thumb__wrapper .media__thumb{
-    text-align: center;
-  }
-  .media__thumb__wrapper.flickity-enabled .flickity-slider{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-  }
-}
-/* end */
-```
-[/tab]
-[tab name="version 6.2"]
-```css
-/* CSS - Show dots for mobile product page thumbnails */
-@media only screen and (max-width: 480px){
-  .media__thumb__wrapper  .media__thumb:before {
-    content: "";
-    background-color: #dcdcdc;
-    width: 8px;
-    height: 8px;
-    display: block;
-    border-radius: 50%;
-  }
-  .media__thumb__wrapper  .media__thumb.is-activated:before{
-   background-color: #5c5c5c;
-  }
-  .media__thumb__wrapper .media__thumb.is-activated:after,
-  .media__thumb__wrapper .media__thumb img,
-  .media__thumb__wrapper .media__thumb svg{
-    display: none;
-  }
-  .media__thumb__wrapper .media__thumb{
-    width: 8px;
-    height: 8px;
-  }
-  .media__thumb__wrapper{
-    justify-content: center;
-  }
-  .media__thumb__wrapper.flickity-disabled-mobile {
-    overflow: auto;
-  }
-  .media__thumb__wrapper + .custom-scrollbar{
-    display: none !important;
-  }
-}
-/* end */
-```
-[/tab]
-[/tabs]
-
-#### Example when this is used
-
-![image](https://user-images.githubusercontent.com/1010232/142922046-352e2699-c5a2-4207-9ced-8abd71252be2.png)
-
-
 ### 12. Borderless product page image on mobile <a name="12"></a>
 
 ```css
@@ -687,208 +567,6 @@ Hide the colors available text and show the swatches on desktop.
 
 #### Example when this is used
 ![image](https://user-images.githubusercontent.com/1010232/145248164-f1baea1f-7222-49eb-9db6-5ed8eb2b115b.png)
-
-
-### 14. Show footer logo within footer section <a name="14"></a>
-
-```css
-/* CSS - Show footer logo within footer section */
-.footer-logo-wrapper{
-  height: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.site-footer {
-    padding-top: 0px;
-}
-/* end */
-```
-
-#### Example when this is used
-![image](https://user-images.githubusercontent.com/1010232/146030338-362c84db-f9e5-41c1-9e28-1b4b030dbce4.png)
-
-
-### 15. Increase max width for theme wrapper <a name="15"></a>
-
-
-[tabs]
-[tab name="version 6.1 to 6.2"]The theme wrapper limits the max-width of the section to 1080px. This CSS changes it to 1500px.
-```css
-/* CSS - Increase max width for wrapper */
-.wrapper, .wrapper .grandparent .header__dropdown__wrapper {
-    max-width: 1500px;
-}
-@media only screen and (min-width: 768px){
-  .wrapper--brick {
-    max-width: 1500px;
-  }
-}
-/* end */
-```
-[/tab]
-[tab name="version 6.3"]The theme wrapper limits the max-width of the section to `--LAYOUT-WIDTH`. This can be changed in Theme settings > Layout.
-```css
-/* CSS - Increase max width for wrapper */
-.wrapper, .wrapper .grandparent .header__dropdown__wrapper {
-    max-width: var(--LAYOUT-WIDTH);
-}
-@media only screen and (min-width: 768px){
-  .wrapper--brick {
-    max-width: var(--LAYOUT-WIDTH);
-  }
-}
-/* end */
-```
-[/tab]
-[/tabs]
-
-
-### 16. Products: Large vertical image display with sticky column <a name="16"></a>
-
-With this modification, you can display all your product images in full size down the main product image column.
-
-```css
-/* CSS - Products: Large vertical image display with sticky column */
-@media only screen and (min-width: 768px){
-  .product__media__wrapper .flickity-viewport {
-    height: auto !important;
-  }
-  .product__media__wrapper .flickity-viewport,
-  .product__media__wrapper .flickity-slider,
-  .product__media__wrapper .product__media {
-    position: relative !important;
-    transform: none !important;
-    left: 0 !important;
-	padding-bottom: 0 !important;
-  }
-  .product__media__wrapper .flickity-slider .product__media {
-      margin: 0;
-      width: 100%;
-      height: auto;
-  }
-  .product__slides .flickity-slider>*{
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  .product__media__wrapper .flickity-slider .product__media:not(:first-of-type) {margin-top: var(--gutter);}  
-  /* end */
-
-  /* --- code to make product info column sticky --- */
-  .product-single > .grid__item:not(.product__media__wrapper) {
-    position: -webkit-sticky; 
-    position: sticky;
-    top: 0;
-    z-index: 5001;
-  }
-  /* - end - */
-}
-```
-
-
-#### Example with sticky right column:
-
-![image](https://user-images.githubusercontent.com/1010232/162497630-a5a72cf0-8555-4049-ab70-a5340fa451fb.png)
-
-
-### 17. Products: Move thumbnails to left or right of featured product image <a name="17"></a>
-
-Update the ```--position``` and ```--large-position``` to change the position to right or left. 
-
-```css
-/* CSS - Start Pipeline override code for thumbnails positioned on the left - */
-.product-page {
-
-  /* Set left or right position of thumbnails: */
-  --position: left;
-
-  /* Set left or right position of main image opposite of thumbnails: */
-  --large-position: right;
-
-  /* Set size of thumbnails use 50 for small or 100 for large: */
-  --thumb-size: 80px;
-
-  /* Set height of thumbs container: */
-  --thumb-container-height: 80vw;
-
-  /* Set height of thumbs container on desktop: */	
-  --thumb-container-desktop-height: 38vw;	
-
-  /* Set width of scrollbar: */
-  --scroll-bar-width: 3px;
-
-  /* Stop do not change below this line. */
-
-  --spacing: 10px;
-  --spacing-adjusted: calc(var(--spacing) * 0.5);
-  --thumb-full: calc(var(--thumb-size) + var(--scroll-bar-width) );
-  --thumb-space: calc(var(--thumb-size) + var(--scroll-bar-width) + var(--spacing));
-  --adjusted-width: calc(var(--thumb-size) + var(--scroll-bar-width) + var(--spacing) + var(--spacing-adjusted));
-}
-@media only screen and (min-width: 768px){
-	.product-page {
-	  --thumb-container-height: var(--thumb-container-desktop-height);
-	}
-}
-.media__thumb__wrapper .flickity-viewport {
-	height: auto !important;
-}
-.media__thumb__wrapper .flickity-viewport,
-.media__thumb__wrapper .flickity-slider,
-.media__thumb__wrapper .media__thumb {
-	position: relative !important;
-	transform: none !important;
-	left: 0 !important;
-}
-
-.media__thumb__wrapper::-webkit-scrollbar {
-	-webkit-appearance: none;
-	width: var(--scroll-bar-width);
-}
-.media__thumb__wrapper::-webkit-scrollbar-thumb {
-	border-radius: 14px;
-	background-color: var(--border);
-	box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-}  
-.media__thumb__wrapper .media__thumb {
-	margin-bottom: 10px;
-	margin-top: 0;
-	width: var(--thumb-size);
-	height: var(--thumb-size);  	  
-}
-.media__thumb__wrapper.flickity-disabled-mobile{
-	display: block;
-}
-.product__media__wrapper .custom-scrollbar{
-	display: none !important;
-}
-.media__thumb__wrapper {
-	float: var(--position);
-	width: var(--thumb-space);
-	overflow: scroll !important;
-	overflow-x: hidden !important;
-	max-height: var(--thumb-container-height);
-}
-.product__slides {
-	float: var(--large-position);
-	width: calc(100% - var(--adjusted-width));
-}
-/* - end - */
-```
-
-
-#### Example with the default code:
-
-[tabs]
-
-[tab name="desktop"]
-![image](https://user-images.githubusercontent.com/1010232/165978984-020e7e5c-6493-4bca-b9e3-6e8ff98e255c.png)
-[/tab]
-
-[tab name="mobile"]
-![image](https://user-images.githubusercontent.com/1010232/165979118-8e32ac09-03d9-4cd1-a260-9ae5f778a908.png)
-[/tab]
-
-[/tabs]
 
 
 
