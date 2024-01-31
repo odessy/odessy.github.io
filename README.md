@@ -206,7 +206,7 @@ To use custom colors instead of the primary theme color also add this CSS code. 
 [/tab]
 [/tabs]
  
-![image](https://user-images.githubusercontent.com/1010232/142880271-8f1d2ae4-e3ba-4ad8-a33d-da3ab2068454.png)
+![image](https://github.com/odessy/odessy.github.io/assets/1010232/602ee221-d1e6-4460-8327-7f2fdc9d5cf8)
 
 
 
