@@ -602,6 +602,7 @@ a. <a href="#1a">Quick add and quick view buttons color</a></li>
 <li><a href="#23">Show native quantity selector for quantity input</a></li>
 <li><a href="#24">Show payment types below add to cart button</a></li>
 <li><a href="#25">Scroll to top button</a></li>
+<li><a href="#26">Sticky add to cart - scroll to add to cart button</a></li>
 </ol>
 <h3 id="1-solid-color-for-add-to-cart-button-a-name1a">1. Solid Color for Add to cart button <a name="1"></a></h3>
 <p>This allows the add to cart button to use the primary accent color</p>
@@ -2134,6 +2135,71 @@ input[type=number]::-webkit-outer-spin-button {
     });
   </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div>
+<h3 id="6-sticky-add-to-cart---scroll-to-add-to-cart-button--a-name26a">6. Sticky add to cart - scroll to add to cart button  <a name="26"></a></h3>
+<p>Add the code below to the <strong>Liquid</strong> section block on the product page.</p>
+<p><div class="tabs"><br />
+<div class="tab" name="version 7 and up"><span class="tab-name">version 7 and up</span></p>
+<div class="content" style="position: relative;">
+    <div class="clipboard-container" style="position:absolute; right:0; top:0;">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{%- if product.available -%}
+&lt;div x-data=&quot;{visible: false, sectionId: &#039;{{ section.id }}&#039;, productId: &#039;{{ product.handle }}&#039;, ...handleClick}&quot;&gt;
+&lt;template x-teleport=&quot;body&quot;&gt;
+  &lt;button
+    @theme:scroll.document=&quot;visible = window.pageYOffset &gt; window.innerHeight&quot;
+    x-show.opacity=&quot;visible&quot;
+    @click=&quot;handleClick&quot;
+    class= &quot;btn btn--primary btn--full uppercase btn--add-to-cart buy-it-now block left-0 bottom-0 fixed z-20 w-full&quot;&gt;{{&#039;products.product.add_to_cart&#039; | t}}&lt;/button&gt;
+&lt;/template&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    function handleClick(e){
+        const button = document.querySelector(`[data-section-id=&quot;${this.sectionId}&quot;] form[data-product-handle=&quot;${this.productId}&quot;] button[type=&quot;submit&quot;].btn--add-to-cart`);
+        if(button){
+            const scrollToElement = button.offsetTop;
+            window.scrollTo({
+                top: scrollToElement,
+                left: 0,
+                behavior: &#039;smooth&#039;
+            });
+        }
+    }
+&lt;/script&gt;
+{%- endif -%}
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+       <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+      </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="display:none;">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+      </svg>
+    </clipboard-copy>
+  </div><pre><code class="hljs html language-html">{%- if product.available -%}
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">x-data</span>=<span class="hljs-string">&quot;{visible: false, sectionId: &#x27;{{ section.id }}&#x27;, productId: &#x27;{{ product.handle }}&#x27;, ...handleClick}&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">x-teleport</span>=<span class="hljs-string">&quot;body&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    @<span class="hljs-attr">theme:scroll.document</span>=<span class="hljs-string">&quot;visible = window.pageYOffset &gt; window.innerHeight&quot;</span>
+    <span class="hljs-attr">x-show.opacity</span>=<span class="hljs-string">&quot;visible&quot;</span>
+    @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;handleClick&quot;</span>
+    <span class="hljs-attr">class</span>= <span class="hljs-string">&quot;btn btn--primary btn--full uppercase btn--add-to-cart buy-it-now block left-0 bottom-0 fixed z-20 w-full&quot;</span>&gt;</span>{{&#x27;products.product.add_to_cart&#x27; | t}}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">handleClick</span>(<span class="hljs-params">e</span>){
+        <span class="hljs-keyword">const</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">`[data-section-id=&quot;<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.sectionId}</span>&quot;] form[data-product-handle=&quot;<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.productId}</span>&quot;] button[type=&quot;submit&quot;].btn--add-to-cart`</span>);
+        <span class="hljs-keyword">if</span>(button){
+            <span class="hljs-keyword">const</span> scrollToElement = button.<span class="hljs-property">offsetTop</span>;
+            <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">scrollTo</span>({
+                <span class="hljs-attr">top</span>: scrollToElement,
+                <span class="hljs-attr">left</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-attr">behavior</span>: <span class="hljs-string">&#x27;smooth&#x27;</span>
+            });
+        }
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+{%- endif -%}
+</code></pre></div>
+<p></div><br />
+</div></p>
 
         </div>
         <button type="button" class="btn btn--scroll-top" data-scroll-top-button></button>

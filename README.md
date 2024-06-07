@@ -28,6 +28,7 @@ May require <b>Liquid</b>, <b>CSS</b> and <b>Javascript</b> changes
 3. [Show native quantity selector for quantity input](#23)
 4. [Show payment types below add to cart button](#24)
 5. [Scroll to top button](#25)
+6. [Sticky add to cart - scroll to add to cart button](#26)
 
 
 ### 1. Solid Color for Add to cart button <a name="1"></a>
@@ -855,3 +856,40 @@ Add this to the end of your theme.liquid file after this line
     });
   </script>
 ```
+
+
+### 6. Sticky add to cart - scroll to add to cart button  <a name="26"></a>
+
+Add the code below to the **Liquid** section block on the product page.
+
+[tabs]
+[tab name="version 7 and up"]
+
+```html
+{%- if product.available -%}
+<div x-data="{visible: false, sectionId: '{{ section.id }}', productId: '{{ product.handle }}', ...handleClick}">
+<template x-teleport="body">
+  <button
+    @theme:scroll.document="visible = window.pageYOffset > window.innerHeight"
+    x-show.opacity="visible"
+    @click="handleClick"
+    class= "btn btn--primary btn--full uppercase btn--add-to-cart buy-it-now block left-0 bottom-0 fixed z-20 w-full">{{'products.product.add_to_cart' | t}}</button>
+</template>
+</div>
+<script>
+    function handleClick(e){
+        const button = document.querySelector(`[data-section-id="${this.sectionId}"] form[data-product-handle="${this.productId}"] button[type="submit"].btn--add-to-cart`);
+        if(button){
+            const scrollToElement = button.offsetTop;
+            window.scrollTo({
+                top: scrollToElement,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+</script>
+{%- endif -%}
+```
+[/tab]
+[/tabs]
