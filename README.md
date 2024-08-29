@@ -867,10 +867,10 @@ Add the code below to the **Liquid** section block on the product page.
 
 ```html
 {%- if product.available -%}
-<div x-data="{visible: false, sectionId: '{{ section.id }}', productId: '{{ product.handle }}', ...handleClick}">
+<div x-data="{visible: false, sectionId: '{{ section.id }}', productId: '{{ product.handle }}', ...handleClick, ...showButton}">
 <template x-teleport="body">
   <button
-    @theme:scroll.document="visible = window.pageYOffset > window.innerHeight"
+    @theme:scroll.document="showButton"
     x-show.opacity="visible"
     @click="handleClick"
     class= "btn btn--primary btn--full uppercase btn--add-to-cart buy-it-now block left-0 bottom-0 fixed z-20 w-full">{{'products.product.add_to_cart' | t}}</button>
@@ -886,6 +886,13 @@ Add the code below to the **Liquid** section block on the product page.
                 left: 0,
                 behavior: 'smooth'
             });
+        }
+    }
+    function showButton(e){
+        const button = document.querySelector(`[data-section-id="${this.sectionId}"] form[data-product-handle="${this.productId}"] button[type="submit"].btn--add-to-cart`);
+        if(button){
+            const top = button.getBoundingClientRect().top + button.getBoundingClientRect().height + window.scrollY;
+            this.visible = window.pageYOffset > top;
         }
     }
 </script>

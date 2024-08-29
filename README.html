@@ -2142,10 +2142,10 @@ input[type=number]::-webkit-outer-spin-button {
 <div class="content" style="position: relative;">
     <div class="clipboard-container" style="position:absolute; right:0; top:0;">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{%- if product.available -%}
-&lt;div x-data=&quot;{visible: false, sectionId: &#039;{{ section.id }}&#039;, productId: &#039;{{ product.handle }}&#039;, ...handleClick}&quot;&gt;
+&lt;div x-data=&quot;{visible: false, sectionId: &#039;{{ section.id }}&#039;, productId: &#039;{{ product.handle }}&#039;, ...handleClick, ...showButton}&quot;&gt;
 &lt;template x-teleport=&quot;body&quot;&gt;
   &lt;button
-    @theme:scroll.document=&quot;visible = window.pageYOffset &gt; window.innerHeight&quot;
+    @theme:scroll.document=&quot;showButton&quot;
     x-show.opacity=&quot;visible&quot;
     @click=&quot;handleClick&quot;
     class= &quot;btn btn--primary btn--full uppercase btn--add-to-cart buy-it-now block left-0 bottom-0 fixed z-20 w-full&quot;&gt;{{&#039;products.product.add_to_cart&#039; | t}}&lt;/button&gt;
@@ -2163,6 +2163,13 @@ input[type=number]::-webkit-outer-spin-button {
             });
         }
     }
+    function showButton(e){
+        const button = document.querySelector(`[data-section-id=&quot;${this.sectionId}&quot;] form[data-product-handle=&quot;${this.productId}&quot;] button[type=&quot;submit&quot;].btn--add-to-cart`);
+        if(button){
+            const top = button.getBoundingClientRect().top + button.getBoundingClientRect().height + window.scrollY;
+            this.visible = window.pageYOffset &gt; top;
+        }
+    }
 &lt;/script&gt;
 {%- endif -%}
 " tabindex="0" role="button">
@@ -2174,10 +2181,10 @@ input[type=number]::-webkit-outer-spin-button {
       </svg>
     </clipboard-copy>
   </div><pre><code class="hljs html language-html">{%- if product.available -%}
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">x-data</span>=<span class="hljs-string">&quot;{visible: false, sectionId: &#x27;{{ section.id }}&#x27;, productId: &#x27;{{ product.handle }}&#x27;, ...handleClick}&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">x-data</span>=<span class="hljs-string">&quot;{visible: false, sectionId: &#x27;{{ section.id }}&#x27;, productId: &#x27;{{ product.handle }}&#x27;, ...handleClick, ...showButton}&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">x-teleport</span>=<span class="hljs-string">&quot;body&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
-    @<span class="hljs-attr">theme:scroll.document</span>=<span class="hljs-string">&quot;visible = window.pageYOffset &gt; window.innerHeight&quot;</span>
+    @<span class="hljs-attr">theme:scroll.document</span>=<span class="hljs-string">&quot;showButton&quot;</span>
     <span class="hljs-attr">x-show.opacity</span>=<span class="hljs-string">&quot;visible&quot;</span>
     @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;handleClick&quot;</span>
     <span class="hljs-attr">class</span>= <span class="hljs-string">&quot;btn btn--primary btn--full uppercase btn--add-to-cart buy-it-now block left-0 bottom-0 fixed z-20 w-full&quot;</span>&gt;</span>{{&#x27;products.product.add_to_cart&#x27; | t}}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
@@ -2193,6 +2200,13 @@ input[type=number]::-webkit-outer-spin-button {
                 <span class="hljs-attr">left</span>: <span class="hljs-number">0</span>,
                 <span class="hljs-attr">behavior</span>: <span class="hljs-string">&#x27;smooth&#x27;</span>
             });
+        }
+    }
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">showButton</span>(<span class="hljs-params">e</span>){
+        <span class="hljs-keyword">const</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">`[data-section-id=&quot;<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.sectionId}</span>&quot;] form[data-product-handle=&quot;<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.productId}</span>&quot;] button[type=&quot;submit&quot;].btn--add-to-cart`</span>);
+        <span class="hljs-keyword">if</span>(button){
+            <span class="hljs-keyword">const</span> top = button.<span class="hljs-title function_">getBoundingClientRect</span>().<span class="hljs-property">top</span> + button.<span class="hljs-title function_">getBoundingClientRect</span>().<span class="hljs-property">height</span> + <span class="hljs-variable language_">window</span>.<span class="hljs-property">scrollY</span>;
+            <span class="hljs-variable language_">this</span>.<span class="hljs-property">visible</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">pageYOffset</span> &gt; top;
         }
     }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
