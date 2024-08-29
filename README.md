@@ -860,7 +860,7 @@ Add this to the end of your theme.liquid file after this line
 
 ### 6. Sticky add to cart - scroll to add to cart button  <a name="26"></a>
 
-Add the code below to the **Liquid** section block on the product page.
+Add the code below to the product page section's **Liquid** block.
 
 [tabs]
 [tab name="version 7 and up"]
